@@ -4,7 +4,7 @@
 /* Style the entire body of the webpage */
 body {
   font-family: 'Roboto', sans-serif;  /* Set the font to Roboto, with sans-serif as backup */
-  background-color: #ffffff;          /* Set background color to white */
+  background-color: #e6f3ff;          /* Set background color to light ocean blue */
   color: #418843;                        /* Set text color to Green*/
   margin: 0;                          /* Remove default spacing around the body */
   padding: 0;                         /* Remove default internal spacing */
