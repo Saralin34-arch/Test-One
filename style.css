@@ -4,10 +4,13 @@
 /* Style the entire body of the webpage */
 body {
   font-family: 'Roboto', sans-serif;  /* Set the font to Roboto, with sans-serif as backup */
-  background-color: #f7f8fa; /* Very light cool gray */
+  background-color: #fffef9; /* Slightly off-white for warmth */
   color: #111;                        /* Set text color to dark gray (almost black) */
   margin: 0;                          /* Remove default spacing around the body */
   padding: 0;                         /* Remove default internal spacing */
+  background-image: url('data:image/svg+xml;utf8,<svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 60 Q20 40 40 60 T80 60 T120 60" stroke="%2399c6df" stroke-width="2" fill="none"/><path d="M0 80 Q30 50 60 80 T120 80" stroke="%2399c6df" stroke-width="2" fill="none"/><path d="M0 40 Q15 30 30 40 T60 40 T90 40 T120 40" stroke="%2399c6df" stroke-width="1" fill="none"/><path d="M0 20 Q20 0 40 20 T80 20 T120 20" stroke="%2399c6df" stroke-width="1" fill="none"/></svg>');
+  background-repeat: repeat;
+  background-size: 120px 80px;
 }
 
 /* Style the header section at the top of the page */
