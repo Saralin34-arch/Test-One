@@ -28,11 +28,7 @@ var sketch1 = function(p) {
 
     // Yellow pill
     p.fill('#F7D850');
-    drawBlobbyPill(100, 320, 150);
-
-    // Giant blue half-ellipse (scaled up 5x)
-    p.fill('#8FB4D9');
-    drawBlobbyDroplet(350, 500, 140 * 5);
+    drawBlobbyPill(100, 400, 220);
 
     // Green almond-shaped leaf
     p.fill('#B7DDA8');
@@ -40,14 +36,14 @@ var sketch1 = function(p) {
 
     // --- ICON GEOMETRIES ---
     // Peanut (Friendly) - filled, much wider
-    p.fill('#FFB84C');
-    drawPeanut(540, 220, 180, 100); // 3x wider
+    // p.fill('#FFB84C');
+    // drawPeanut(540, 220, 180, 100); // 3x wider
     // Peanut (Friendly) - outline only, much wider
-    p.noFill();
-    p.stroke('#FFB84C');
-    p.strokeWeight(4);
-    drawPeanut(540, 320, 180, 100); // 3x wider, outline
-    p.noStroke();
+    // p.noFill();
+    // p.stroke('#FFB84C');
+    // p.strokeWeight(4);
+    // drawPeanut(540, 320, 180, 100); // 3x wider, outline
+    // p.noStroke();
     p.fill('#F7AFAF');
     drawClover(200, 600, 120);
     p.fill('#FF6B1C');
@@ -61,8 +57,8 @@ var sketch1 = function(p) {
     p.noStroke();
     p.square(320, 470, 120, 20, 15, 10, 5);
     // Circle (Bouncing Ball)
-    p.fill('#C75B12');
-    p.ellipse(350, 350, 60, 60);
+    // p.fill('#C75B12');
+    // p.ellipse(350, 350, 60, 60);
 
     // --- 67 degree thick line (centered at middle top of canvas, thinner and longer) ---
     p.push();
