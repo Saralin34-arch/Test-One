@@ -307,25 +307,21 @@ header, .canvas-title, .canvas-category-title, .section-title, .project-title, .
   background: none;
   border: none;
   padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
   outline: none;
-  transition: transform 0.15s, box-shadow 0.15s;
-  position: relative;
+  box-shadow: none;
+  transition: none;
 }
-.shape-btn:focus, .shape-btn:hover {
-  transform: translateY(-4px) scale(1.04);
-  box-shadow: 0 6px 24px rgba(30,30,40,0.10);
+.shape-btn:focus .shape-svg,
+.shape-btn:hover .shape-svg {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+  transition: transform 0.15s, filter 0.15s;
 }
-/* Organic misalignment for each button */
-.shape-btn:nth-child(1) { top: 0px; }
-.shape-btn:nth-child(2) { top: 18px; }
-.shape-btn:nth-child(3) { top: -12px; }
-.shape-btn:nth-child(4) { top: 10px; }
-.shape-btn:nth-child(5) { top: -16px; }
-.shape-btn:nth-child(6) { top: 8px; }
 .shape-svg {
   color: var(--shape-color);
   width: 64px;
@@ -333,8 +329,9 @@ header, .canvas-title, .canvas-category-title, .section-title, .project-title, .
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.15s, filter 0.15s;
 }
-.shape-label {
+.shape-canvas-label {
   font-family: 'Montserrat', Arial, sans-serif;
   font-size: 15px;
   font-weight: 600;
@@ -342,6 +339,7 @@ header, .canvas-title, .canvas-category-title, .section-title, .project-title, .
   margin-top: 8px;
   letter-spacing: 0.02em;
   text-align: center;
+  margin-bottom: 0;
 }
 @media (max-width: 700px) {
   .canvas-shape-buttons {
