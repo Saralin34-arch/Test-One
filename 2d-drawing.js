@@ -7,7 +7,7 @@ var sketch1 = function(p) {
     p.createCanvas(700, 700);
     p.noLoop();
     p.angleMode(p.DEGREES);
-    p.background('#FDF6F2');
+    p.background('#FFFFFF'); // pure white background
 
     // Draw non-tilted grid
     drawStraightGrid();
