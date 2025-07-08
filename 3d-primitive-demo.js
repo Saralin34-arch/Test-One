@@ -5,19 +5,15 @@
 function setup() {
   let c = createCanvas(300, 300, WEBGL);
   c.parent('3d-primitive-canvas');
-  describe('A green cylinder on a gray background. Its top and bottom are missing.');
+  describe('A white cylinder on a gray background.');
 }
 
 function draw() {
-  background(200); // gray background
+  background(200);
+  // Enable orbiting with the mouse.
   orbitControl();
-  // Draw the cylinder with green color matching previous palette
-  normalMaterial();
-  ambientLight(150);
-  directionalLight(180, 255, 180, 0.5, 1, -1); // soft greenish light
-  push();
-  fill('#B7DDA8'); // green matching previous tone
-  noStroke();
-  cylinder(30, 50, 24, 1, false, false);
-  pop();
+  // Draw the cylinder.
+  // Set its radius to 30 and height to 50.
+  // Set its detailX to 24 and detailY to 2.
+  cylinder(30, 50, 24, 2);
 } 
