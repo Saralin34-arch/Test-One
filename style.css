@@ -4,13 +4,11 @@
 /* Style the entire body of the webpage */
 body {
   font-family: 'Roboto', sans-serif;  /* Set the font to Roboto, with sans-serif as backup */
-  background-color: #fffef9; /* Slightly off-white for warmth */
+  background-color: #ffffff; /* Pure white background */
   color: #333333; /* Dark gray for all text */
   margin: 0;                          /* Remove default spacing around the body */
   padding: 0;                         /* Remove default internal spacing */
-  background-image: url('data:image/svg+xml;utf8,<svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="80" fill="white"/><path d="M5 10c10 5 30 5 50 0s40-5 60 0" stroke="%23a3b7bb" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M0 25c15 7 35 7 55 0s40-7 65 0" stroke="%23a3b7bb" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M10 40c10 5 30 5 50 0s40-5 50 0" stroke="%23a3b7bb" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M0 55c20 7 40 7 60 0s40-7 60 0" stroke="%23a3b7bb" stroke-width="7" stroke-linecap="round" fill="none"/></svg>');
-  background-repeat: repeat;
-  background-size: 120px 80px;
+  background-image: none;
 }
 
 /* Style the header section at the top of the page */
