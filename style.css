@@ -4,7 +4,7 @@
 /* Style the entire body of the webpage */
 body {
   font-family: 'Work Sans', Arial, sans-serif;
-  background-color: #f7f7f8;
+  background-color: #F8F5EC;
   color: #222;
   margin: 0;
   padding: 0;
@@ -252,6 +252,9 @@ button:hover {
   box-shadow: 0 1px 4px rgba(30,30,40,0.04);
   transition: background 0.2s, color 0.2s, border 0.2s;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 .canvas-category-buttons button:hover {
   background: #f0f4fa;
@@ -273,4 +276,13 @@ button:hover {
 /* Update font-family for relevant selectors */
 header, .canvas-title, .canvas-category-title, .section-title, .project-title, .project-meta, .project-subtitle, button, .canvas-category-buttons button {
   font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.icon-svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  vertical-align: middle;
+  font-size: 1.2em;
 }
