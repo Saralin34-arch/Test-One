@@ -39,37 +39,38 @@ var sketch1 = function(p) {
     drawBlobbyLeaf(330, 570, 180);
 
     // --- ICON GEOMETRIES ---
-    // Peanut (Friendly)
+    // Peanut (Friendly) - filled, much wider
     p.fill('#FFB84C');
-    drawPeanut(540, 220, 60, 100);
-
-    // Clover (Cheerful)
+    drawPeanut(540, 220, 180, 100); // 3x wider
+    // Peanut (Friendly) - outline only, much wider
+    p.noFill();
+    p.stroke('#FFB84C');
+    p.strokeWeight(8);
+    drawPeanut(540, 320, 180, 100); // 3x wider, outline
+    p.noStroke();
     p.fill('#F7AFAF');
-    drawClover(200, 600, 60);
-
-    // Arch (Energetic)
+    drawClover(200, 600, 120);
     p.fill('#FF6B1C');
     drawArch(600, 600, 80, 100);
-
-    // Cloud (Fresh)
     p.fill('#F9D6B7');
     drawCloud(500, 400, 80, 50);
-
-    // Diamond (Warm)
     p.fill('#FFE08A');
     drawDiamond(600, 120, 60);
-
+    // Blue half ellipse (smaller)
+    p.fill('#8FB4D9');
+    drawHalfEllipse(350, 500, 120, 60);
     // Circle (Bouncing Ball)
     p.fill('#C75B12');
     p.ellipse(350, 350, 60, 60);
 
-    // --- 67 degree thick line ---
+    // --- 67 degree thick line (moved to upper right corner) ---
     p.push();
     p.stroke('#8FB4D9');
     p.strokeWeight(18);
-    p.translate(350, 350);
+    p.noFill();
+    p.translate(600, 100); // move to upper right
     p.rotate(67);
-    p.line(-200, 0, 200, 0);
+    p.line(-80, 0, 120, 0);
     p.pop();
   };
 
@@ -164,6 +165,18 @@ var sketch1 = function(p) {
     p.vertex(x + s / 2, y);
     p.vertex(x, y + s / 2);
     p.vertex(x - s / 2, y);
+    p.endShape(p.CLOSE);
+  }
+
+  // Half ellipse shape (top half)
+  function drawHalfEllipse(x, y, w, h) {
+    p.beginShape();
+    for (let a = 180; a <= 360; a += 5) {
+      let px = x + p.cos(a) * w / 2;
+      let py = y + p.sin(a) * h / 2;
+      p.vertex(px, py);
+    }
+    p.vertex(x, y);
     p.endShape(p.CLOSE);
   }
 };
