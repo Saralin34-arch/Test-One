@@ -1,235 +1,133 @@
-/* Import Google Fonts - this loads the Roboto font family from Google's servers */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+/* Import Inter font for a modern, clean look */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
 /* Style the entire body of the webpage */
 body {
-  font-family: 'Roboto', sans-serif;  /* Set the font to Roboto, with sans-serif as backup */
-  background-color: #ffffff; /* Pure white background */
-  color: #333333; /* Dark gray for all text */
-  margin: 0;                          /* Remove default spacing around the body */
-  padding: 0;                         /* Remove default internal spacing */
-  background-image: none;
+  font-family: 'Inter', sans-serif;
+  background-color: #f7f7f8;
+  color: #222;
+  margin: 0;
+  padding: 0;
 }
 
 /* Style the header section at the top of the page */
 header {
-  position: relative;
-  background: #f5e7d3; /* Soft beige */
-  overflow: hidden;
-  display: flex;                      /* Use flexbox layout for flexible positioning */
-  justify-content: space-between;     /* Spread items evenly across the header */
-  align-items: center;                /* Center items vertically */
-  padding: 24px 40px;                 /* Add 24px top/bottom, 40px left/right spacing inside */
-  border-bottom: 1px solid #ccc;      /* Add a light gray line at the bottom */
-  font-size: 14px;                    /* Set font size to 14 pixels */
-}
-
-/* Decorative SVG background for header */
-header::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 0;
-  background: url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" viewBox="0 0 800 180" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="90" r="70" fill="%23e6f0fa" fill-opacity="0.8"/><circle cx="320" cy="90" r="70" fill="%23e6f0fa" fill-opacity="0.8"/><circle cx="520" cy="90" r="70" fill="%23e6f0fa" fill-opacity="0.8"/><circle cx="720" cy="90" r="70" fill="%23e6f0fa" fill-opacity="0.8"/><polyline points="40,150 200,40 400,100 600,40 760,150" stroke="%23000" stroke-width="2" fill="none"/><polyline points="40,150 400,100 760,150" stroke="%23000" stroke-width="1" fill="none"/><polyline points="200,40 400,100 600,40" stroke="%23000" stroke-width="1" fill="none"/></svg>');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center top;
-  opacity: 1;
-  pointer-events: none;
-}
-
-header > * {
-  position: relative;
-  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 48px;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 15px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(30,30,40,0.03);
 }
 
 /* Style the left section of the header */
 header .left {
-  color: #333333;
+  color: #b0b0b8;
+  font-weight: 600;
 }
 
 /* Style the center section of the header */
 header .center {
-  font-weight: 400;                   /* Set font weight to normal (not bold) */
-  text-align: center;                 /* Center the text horizontally */
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.02em;
 }
 
 /* Style the span element inside the center section */
 header .center span {
-  font-size: 12px;                    /* Make this text smaller (12 pixels) */
-  color: #333333;
-}
-
-/* Style links in the right section of the header */
-header .right a, header .right {
-  color: #333333;
-  text-decoration: none;              /* Remove the underline from links */
-  font-weight: 400;                   /* Set font weight to normal */
-}
-
-/* Style the main content area */
-main {
-  max-width: 800px;                   /* Limit the maximum width to 800 pixels */
-  margin: 60px auto;                  /* Add 60px top/bottom margin, center horizontally */
-  padding: 0 20px;                    /* Add 20px left/right padding, no top/bottom */
-}
-
-/* Style the project year/date */
-.project-meta {
-  font-size: 14px;                    /* Set font size to 14 pixels */
-  color: #333333;
-  margin-bottom: 8px;                 /* Add 8 pixels of space below this element */
-}
-
-/* Style the main project title */
-.project-title {
-  font-size: 24px;                    /* Set font size to 24 pixels (larger) */
-  font-weight: 400;                   /* Set font weight to normal (not bold) */
-  margin-bottom: 4px;                 /* Add 4 pixels of space below this element */
-  color: #333333;
-}
-
-/* Style the project subtitle */
-.project-subtitle {
-  font-size: 16px;                    /* Set font size to 16 pixels */
-  color: #333333;
-  margin-bottom: 24px;                /* Add 24 pixels of space below this element */
-}
-
-/* Style the advisor information */
-.advisor {
-  font-size: 14px;                    /* Set font size to 14 pixels */
-  margin-bottom: 40px;                /* Add 40 pixels of space below this element */
-  color: #333333;
-}
-
-/* Style section titles (like "Abstract", "Motivation") */
-.section-title {
-  font-weight: 700;                   /* Make the text bold */
-  text-transform: uppercase;          /* Convert text to all capital letters */
-  margin-top: 40px;                   /* Add 40 pixels of space above this element */
-  margin-bottom: 12px;                /* Add 12 pixels of space below this element */
-  font-size: 14px;                    /* Set font size to 14 pixels */
-  color: #333333;
-}
-
-/* Style all paragraph elements */
-p {
-  font-size: 16px;                    /* Set font size to 16 pixels */
-  line-height: 1.6;                   /* Set space between lines to 1.6 times the font size */
-  margin-bottom: 24px;                /* Add 24 pixels of space below each paragraph */
-  color: #333333;
-}
-
-/* Style for our interactive button */
-button {
-  background-color: #111;             /* Set button background to dark gray */
-  color: white;                       /* Set button text color to white */
-  border: none;                       /* Remove the default button border */
-  padding: 12px 24px;                 /* Add 12px top/bottom, 24px left/right spacing inside */
-  font-size: 14px;                    /* Set button text size to 14 pixels */
-  font-weight: 400;                   /* Set font weight to normal */
-  cursor: pointer;                    /* Change mouse cursor to hand when hovering over button */
-  margin-bottom: 20px;                /* Add 20 pixels of space below the button */
-  transition: background-color 0.3s;  /* Smooth color change animation (0.3 seconds) */
-  border-radius: 4px;                 /* Add slightly rounded corners to the button */
-}
-
-/* Change button appearance when user hovers over it */
-button:hover {
-  background-color: #333;             /* Change background to lighter gray on hover */
-}
-
-/* Style for the message display area */
-#messageDisplay {
-  font-size: 16px;                    /* Set font size to 16 pixels */
-  line-height: 1.6;                   /* Set space between lines */
-  margin-top: 20px;                   /* Add 20 pixels of space above this element */
-  padding: 16px;                      /* Add 16 pixels of spacing inside the element */
-  border: 1px solid #bbb;
-  background-color: #f5f5f5;
-  border-radius: 4px;                 /* Add slightly rounded corners */
-  min-height: 20px;                   /* Set minimum height so the area is visible even when empty */
-  color: #333333;
-}
-
-/* Style for canvas containers to add spacing between them */
-#canvas-container-1,
-#canvas-container-2,
-#canvas-container-3 {
-  margin-bottom: 40px;                /* Add 40 pixels of space below each canvas */
-  border: 1px solid #eee;             /* Add a subtle border around each canvas */
-  border-radius: 4px;                 /* Add slightly rounded corners */
-  overflow: hidden;                   /* Ensure canvas content doesn't overflow the border */
-}
-
-/* Add extra spacing after the last canvas container */
-#canvas-container-3 {
-  margin-bottom: 60px;                /* Extra space after the last canvas */
+  font-size: 13px;
+  color: #aaa;
+  font-weight: 400;
 }
 
 /* Style links in the right section of the header */
 header .right a {
-  color: #ffffff;                        /* Set link color to black */
-  text-decoration: none;              /* Remove the underline from links */
-  font-weight: 400;                   /* Set font weight to normal */
+  color: #222;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+/* Change link color when user hovers over it */
+header .right a:hover {
+  color: #666;
 }
 
 /* Style the main content area */
 main {
-  max-width: 800px;                   /* Limit the maximum width to 800 pixels */
-  margin: 60px auto;                  /* Add 60px top/bottom margin, center horizontally */
-  padding: 0 20px;                    /* Add 20px left/right padding, no top/bottom */
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 24px;
 }
 
 /* Style the project year/date */
 .project-meta {
-  font-size: 14px;                    /* Set font size to 14 pixels */
-  color: #ffffff;                        /* Set text color to light gray */
-  margin-bottom: 8px;                 /* Add 8 pixels of space below this element */
+  font-size: 15px;
+  color: #b0b0b8;
+  margin-bottom: 8px;
 }
 
 /* Style the main project title */
 .project-title {
-  font-size: 24px;                    /* Set font size to 24 pixels (larger) */
-  font-weight: 400;                   /* Set font weight to normal (not bold) */
-  margin-bottom: 4px;                 /* Add 4 pixels of space below this element */
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
 }
 
 /* Style the project subtitle */
 .project-subtitle {
-  font-size: 16px;                    /* Set font size to 16 pixels */
-  color: #ffffff;                        /* Set text color to light gray */
-  margin-bottom: 24px;                /* Add 24 pixels of space below this element */
+  font-size: 18px;
+  color: #b0b0b8;
+  margin-bottom: 28px;
 }
 
 /* Style the advisor information */
 .advisor {
-  font-size: 14px;                    /* Set font size to 14 pixels */
-  margin-bottom: 40px;                /* Add 40 pixels of space below this element */
-  color: #333;                        /* Set text color to dark gray */
+  font-size: 15px;
+  margin-bottom: 40px;
+  color: #444;
 }
 
 /* Style section titles (like "Abstract", "Motivation") */
 .section-title {
-  font-weight: 700;                   /* Make the text bold */
-  text-transform: uppercase;          /* Convert text to all capital letters */
-  margin-top: 40px;                   /* Add 40 pixels of space above this element */
-  margin-bottom: 12px;                /* Add 12 pixels of space below this element */
-  font-size: 14px;                    /* Set font size to 14 pixels */
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 48px;
+  margin-bottom: 16px;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  color: #888;
 }
 
 /* Style all paragraph elements */
 p {
-  font-size: 16px;                    /* Set font size to 16 pixels */
-  line-height: 1.6;                   /* Set space between lines to 1.6 times the font size */
-  margin-bottom: 24px;                /* Add 24 pixels of space below each paragraph */
-  color: #ffffff;                        /* Set text color to dark gray (almost black) */
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+  color: #222;
+}
+
+/* Style for our interactive button */
+button {
+  background-color: #222;
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 24px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(30,30,40,0.06);
 }
 
 /* Change button appearance when user hovers over it */
 button:hover {
-  background-color: #333;             /* Change background to lighter gray on hover */
+  background-color: #444;
 }
 
 /* Style for the message display area */
@@ -238,8 +136,50 @@ button:hover {
   line-height: 1.6;                   /* Set space between lines */
   margin-top: 20px;                   /* Add 20 pixels of space above this element */
   padding: 16px;                      /* Add 16 pixels of spacing inside the element */
-  border: 1px solid #ffffff;             /* Add a light gray border around the element */
-  background-color: #e1e1e1;          /* Set background color to very light gray */
+  border: 1px solid #ccc;             /* Add a light gray border around the element */
+  background-color: #f9f9f9;          /* Set background color to very light gray */
   border-radius: 4px;                 /* Add slightly rounded corners */
   min-height: 20px;                   /* Set minimum height so the area is visible even when empty */
+}
+
+/* --- Canvas Card Aesthetic --- */
+#canvas-container-1, #canvas-container-2, #canvas-container-3 {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(30,30,40,0.10), 0 1.5px 4px rgba(30,30,40,0.04);
+  padding: 32px 24px 24px 24px;
+  margin: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 480px;
+  transition: box-shadow 0.2s;
+}
+#canvas-container-1:hover, #canvas-container-2:hover, #canvas-container-3:hover {
+  box-shadow: 0 8px 32px rgba(30,30,40,0.16), 0 2px 8px rgba(30,30,40,0.06);
+}
+
+#canvas-container-1 canvas,
+#canvas-container-2 canvas,
+#canvas-container-3 canvas {
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(30,30,40,0.08);
+  background: #f7f7f8;
+  margin-bottom: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  main {
+    padding: 0 8px;
+  }
+  .project-title {
+    font-size: 22px;
+  }
+  #canvas-container-1, #canvas-container-2, #canvas-container-3 {
+    padding: 16px 4px 12px 4px;
+    min-height: 320px;
+  }
 }

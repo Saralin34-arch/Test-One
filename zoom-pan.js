@@ -1,7 +1,9 @@
-// spatial-canvas-sketch.js
-// Interactive p5.js sketch: grid, primitives, zoom, and pan
+// zoom-pan.js
+// Zoom Pan Sketch - p5.js Instance Mode
+// Author: Sara Lin
+// Description: Interactive grid with primitives, zoom, and pan in a dedicated canvas container.
 
-// Zoom Pan Sketch - using p5.js instance mode
+// --- Configuration ---
 var sketch3 = function(p) {
   // All variables are scoped to this instance
   var canvasWidth = 800;
@@ -14,50 +16,24 @@ var sketch3 = function(p) {
   var lastMouseX, lastMouseY;
   var canvas;
 
+  // --- Setup ---
   p.setup = function() {
     canvas = p.createCanvas(canvasWidth, canvasHeight);
     canvas.parent('canvas-container-3');
   };
 
+  // --- Main Draw Loop ---
   p.draw = function() {
     p.background(250);
     // Apply pan and zoom
     p.translate(p.width / 2 + offsetX, p.height / 2 + offsetY);
     p.scale(zoom);
     p.translate(-p.width / 2, -p.height / 2);
-
     drawGrid();
     drawPrimitives();
   };
 
-  function drawGrid() {
-    p.stroke(200);
-    p.strokeWeight(1);
-    for (var x = 0; x <= p.width; x += gridSpacing) {
-      p.line(x, 0, x, p.height);
-    }
-    for (var y = 0; y <= p.height; y += gridSpacing) {
-      p.line(0, y, p.width, y);
-    }
-  }
-
-  function drawPrimitives() {
-    // Rectangle
-    p.fill(255, 100, 100);
-    p.rect(120, 80, 100, 60);
-    // Ellipse
-    p.fill(100, 180, 255);
-    p.ellipse(350, 200, 90, 90);
-    // Line
-    p.stroke(80, 200, 120);
-    p.strokeWeight(4);
-    p.line(500, 100, 700, 300);
-    // Triangle
-    p.noStroke();
-    p.fill(255, 220, 80);
-    p.triangle(600, 80, 750, 60, 700, 200);
-  }
-
+  // --- Interaction ---
   p.mouseWheel = function(event) {
     // Only zoom if mouse is over this canvas
     if (canvas && canvas.elt.matches(':hover')) {
@@ -94,7 +70,36 @@ var sketch3 = function(p) {
   p.mouseReleased = function() {
     isDragging = false;
   };
+
+  // --- Helper Functions ---
+  function drawGrid() {
+    p.stroke(200);
+    p.strokeWeight(1);
+    for (var x = 0; x <= p.width; x += gridSpacing) {
+      p.line(x, 0, x, p.height);
+    }
+    for (var y = 0; y <= p.height; y += gridSpacing) {
+      p.line(0, y, p.width, y);
+    }
+  }
+
+  function drawPrimitives() {
+    // Rectangle
+    p.fill(255, 100, 100);
+    p.rect(120, 80, 100, 60);
+    // Ellipse
+    p.fill(100, 180, 255);
+    p.ellipse(350, 200, 90, 90);
+    // Line
+    p.stroke(80, 200, 120);
+    p.strokeWeight(4);
+    p.line(500, 100, 700, 300);
+    // Triangle
+    p.noStroke();
+    p.fill(255, 220, 80);
+    p.triangle(600, 80, 750, 60, 700, 200);
+  }
 };
 
-// Create the instance
+// --- Create the p5 Instance ---
 var myp5_3 = new p5(sketch3, 'canvas-container-3'); 

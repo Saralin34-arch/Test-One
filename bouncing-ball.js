@@ -1,10 +1,16 @@
-// Bouncing Ball Sketch - using p5.js instance mode
+// bouncing-ball.js
+// Bouncing Ball Sketch - p5.js Instance Mode
+// Author: Sara Lin
+// Description: Animates a bouncing ball in a dedicated canvas container.
+
+// --- Configuration ---
 var sketch2 = function(p) {
   // All variables are scoped to this instance
   var x, y; // Ball position
   var dx, dy; // Ball velocity
   var radius = 30; // Ball radius
 
+  // --- Setup ---
   p.setup = function() {
     // Create the canvas and attach it to the container
     var canvas = p.createCanvas(800, 400);
@@ -17,6 +23,7 @@ var sketch2 = function(p) {
     dy = 3;
   };
 
+  // --- Main Draw Loop ---
   p.draw = function() {
     // Clear the background
     p.background(240);
@@ -40,5 +47,5 @@ var sketch2 = function(p) {
   };
 };
 
-// Create the instance
+// --- Create the p5 Instance ---
 var myp5_2 = new p5(sketch2, 'canvas-container-2'); 

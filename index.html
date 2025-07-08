@@ -6,23 +6,11 @@
 
 <head>
   <!-- The head section contains information about the page, not visible content -->
-
-
-  <!-- ------------------------------------------------------------ -->
-  <!-- Load Three.js library from CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <!-- This loads the Three.js library which provides functions for creating 3D graphics -->
-  
-  <!-- Load Three.js OrbitControls from CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-  <!-- This loads the OrbitControls module for interactive camera controls -->
-  <!-- ------------------------------------------------------------ -->
-
   
   <meta charset="UTF-8">
   <!-- This sets the character encoding to UTF-8, which supports special characters and emojis -->
   
-  <title>Computational Design Workflows</title>
+  <title>Module 1</title>
   <!-- This is the title that appears in the browser tab and bookmarks -->
   
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -30,6 +18,9 @@
   
   <link rel="stylesheet" href="style.css">
   <!-- This links our CSS file to style the page - the href points to our style.css file -->
+  
+  <!-- REQUIRED: Load p5.js library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
 </head>
 
 <body>
@@ -44,15 +35,15 @@
     
     <div class="center">
       <!-- This div creates a container for the center of the header -->
-      Computational Design Workflows<br>
+      Computational Design Practices<br>
       <!-- This is the main text in the center -->
       <!-- <br> creates a line break, moving the next text to a new line -->
-      <span>Exploration of Digital Objects</span>
+      <span>Project Archive</span>
       <!-- span is an inline element that groups text without creating a new line -->
       <!-- class="center" allows us to style this span differently -->
     </div>
     
-    <div class="right">About</div>
+    <div class="right"><a href="#">About</a></div>
     <!-- This div creates a container for the right side of the header -->
     <!-- <a href="#">About</a> creates a clickable link (currently goes nowhere with #) -->
   </header>
@@ -64,7 +55,7 @@
     <!-- This div displays the year/project metadata -->
     <!-- class="project-meta" allows us to style this with CSS -->
     
-    <div class="project-title">Welcome to My Computational Design Portfolio</div>
+    <div class="project-title">Project Title</div>
     <!-- This div displays the main project title -->
     <!-- class="project-title" allows us to style this with CSS -->
     
@@ -72,64 +63,63 @@
     <!-- This div displays the student's name as a subtitle -->
     <!-- class="project-subtitle" allows us to style this with CSS -->
     
-    <div class="advisor">Advisor Name</div>
+    <div class="advisor">Advisor<br><strong>Advisor Name</strong></div>
     <!-- This div displays advisor information -->
     <!-- <br> creates a line break -->
     <!-- <strong> makes the text bold for emphasis -->
     
-    <div class="section-title">Introduction</div>
-    <!-- Section heading for the Three.js canvas demonstration -->
+    <div class="section-title">Abstract</div>
+    <!-- This div creates a section heading -->
+    <!-- class="section-title" allows us to style all section titles consistently -->
     
-    <p>This website showcases explorations in computational design, featuring interactive 2D and 3D digital objects. Use the buttons below to navigate to the 2D or 3D drawing sections and experience the creative possibilities of code-based design.</p>
-    <!-- Introduction to the first section -->
-
-    <div style="display: flex; gap: 32px; margin: 40px 0; justify-content: center;">
-      <button style="font-size: 1.2em; padding: 20px 40px;" onclick="window.location.href='2d.html'">2D</button>
-      <button style="font-size: 1.2em; padding: 20px 40px;" onclick="window.location.href='3d.html'">3D</button>
-    </div>
-
-    <!-- ------------------------------------------------------------ -->
-
-    <!-- ADD A NEW 'CANVAS CONTAINER' FOR EACH NEW THREE.JS SKETCH (THE ORDER IS DEFINED BY THE CONTAINER NUMBER BELOW + THE MOST RECENT SKETCH SHOULD BE AT THE TOP) -->
-
-    <!-- Section for first Three.js sketch (3d-primitives.js) -->
-    <div class="section-title">3D Primitives with Rotating Box</div>
-    <p>A simple Three.js scene featuring a rotating box on a wireframe grid with ambient and directional lighting.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    <!-- <p> creates a paragraph element for text content -->
+    <!-- This is placeholder text (Lorem ipsum) commonly used in web design -->
     
-    <!-- Canvas container for first Three.js sketch (3d-primitives.js) -->
-    <div id="threejs-container-1"></div>
-  
-    <!-- Section for second Three.js sketch (orbit-camera.js) --> 
-    <div class="section-title">Interactive 3D Scene with Orbit Controls</div>
-    <p>An interactive Three.js scene with multiple 3D primitives (box, sphere, cylinder, cone) and orbit camera controls for navigation.</p>
+    <div class="section-title">Motivation</div>
+    <!-- Another section heading for the Motivation section -->
     
-    <!-- Canvas container for second Three.js sketch (orbit-camera.js) --> 
-    <div id="threejs-container-2"></div>
+    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+    <!-- Another paragraph with placeholder text for the Motivation section -->
+    
+    <div class="section-title">Methodology</div>
+    <!-- Section heading for the Methodology section -->
+    
+    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+    <!-- Another paragraph with placeholder text for the Methodology section -->
+    
+    <div class="section-title">Interactive Demo</div>
+    <!-- Section heading for our JavaScript demonstration -->
+    
+    <p>Click the button below to see JavaScript in action:</p>
+    <!-- Instructions for the user -->
+    
+    <button id="demoButton">Click Me!</button>
+    <!-- This creates a clickable button -->
+    <!-- id="demoButton" gives this button a unique identifier so JavaScript can find it -->
+    <!-- The text "Click Me!" is what users will see on the button -->
+    
+    <div id="messageDisplay"></div>
+    <!-- This div will be used by JavaScript to show messages -->
+    <!-- id="messageDisplay" gives this div a unique identifier -->
+    <!-- It starts empty but JavaScript will add content to it -->
 
-    <!-- Section for third Three.js sketch (orbit-camera.js) --> 
-    <div class="section-title">Atmospheric Geomteries</div>
-    <p>An interactive Three.js scene with multiple 3D primitives (box, sphere, cylinder, cone) and orbit camera controls for navigation.</p>
-    
-    <!-- Canvas container for second Three.js sketch (orbit-camera.js) --> 
-    <div id="threejs-container-3"></div>
- 
-    <!-- ------------------------------------------------------------ -->
-    
+    <!-- Canvas container for first sketch -->
+    <div id="canvas-container-1"></div>
+    <!-- Canvas container for second sketch -->
+    <div id="canvas-container-2"></div>
+    <!-- Canvas container for third sketch -->
+    <div id="canvas-container-3"></div>
   </main>
   <!-- End of main content area -->
   
-
-  <!-- ------------------------------------------------------------ -->
-
-  <!-- LOAD EACH NEW THREE.JS SCRIPT HERE -->
-
-  <script src="3d-primitive.js"></script>
-  <script src="orbit-camera.js"></script>
-  <script src="atmospheric-geometry.js"></script>
-
-  <!-- ------------------------------------------------------------ -->
-
-
+  <script src="script.js"></script>
+  <script src="2d-drawing.js"></script>
+  <script src="bouncing-ball.js"></script>
+  <script src="zoom-pan.js"></script>
+  <!-- This links our JavaScript file to the HTML page -->
+  <!-- The script tag is placed at the end of the body so the HTML loads first -->
+  <!-- src="script.js" tells the browser to load and run our JavaScript file -->
 </body>
 <!-- End of body - all visible content goes above this line -->
 </html>

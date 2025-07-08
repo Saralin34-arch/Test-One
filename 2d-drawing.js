@@ -1,4 +1,9 @@
-// 2D Drawing Sketch - using p5.js instance mode
+// 2d-drawing.js
+// 2D Drawing Sketch - p5.js Instance Mode
+// Author: Sara Lin
+// Description: Draws a grid and geometric primitives in a dedicated canvas container.
+
+// --- Configuration ---
 var sketch1 = function(p) {
   // All variables are scoped to this instance
   var canvasWidth = 800;
@@ -6,17 +11,20 @@ var sketch1 = function(p) {
   var gridSpacing = 40;
   var canvas;
 
+  // --- Setup ---
   p.setup = function() {
     canvas = p.createCanvas(canvasWidth, canvasHeight);
     canvas.parent('canvas-container-1');
   };
 
+  // --- Main Draw Loop ---
   p.draw = function() {
     p.background(250);
     drawGrid();
     drawPrimitives();
   };
 
+  // --- Helper Functions ---
   function drawGrid() {
     p.stroke(200);
     p.strokeWeight(1);
@@ -46,5 +54,5 @@ var sketch1 = function(p) {
   }
 };
 
-// Create the instance
+// --- Create the p5 Instance ---
 var myp5_1 = new p5(sketch1, 'canvas-container-1'); 
