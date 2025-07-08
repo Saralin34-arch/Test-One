@@ -57,7 +57,7 @@ header .right a:hover {
 
 /* Style the main content area */
 main {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 60px auto;
   padding: 0 24px;
 }
@@ -95,11 +95,12 @@ main {
 .section-title {
   font-weight: 700;
   text-transform: uppercase;
-  margin-top: 48px;
-  margin-bottom: 16px;
-  font-size: 15px;
+  margin-top: 64px;
+  margin-bottom: 28px;
+  font-size: 28px;
   letter-spacing: 0.08em;
   color: #888;
+  text-align: center;
 }
 
 /* Style all paragraph elements */
@@ -176,7 +177,13 @@ button:hover {
 
 /* Responsive adjustments */
 @media (max-width: 700px) {
+  .section-title {
+    font-size: 20px;
+    margin-top: 40px;
+    margin-bottom: 18px;
+  }
   main {
+    max-width: 100%;
     padding: 0 8px;
   }
   .project-title {
@@ -285,4 +292,61 @@ header, .canvas-title, .canvas-category-title, .section-title, .project-title, .
   margin-right: 10px;
   vertical-align: middle;
   font-size: 1.2em;
+}
+
+.canvas-shape-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  margin-bottom: 24px;
+  position: relative;
+}
+.shape-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+  position: relative;
+}
+.shape-btn:focus, .shape-btn:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 6px 24px rgba(30,30,40,0.10);
+}
+/* Organic misalignment for each button */
+.shape-btn:nth-child(1) { top: 0px; }
+.shape-btn:nth-child(2) { top: 18px; }
+.shape-btn:nth-child(3) { top: -12px; }
+.shape-btn:nth-child(4) { top: 10px; }
+.shape-btn:nth-child(5) { top: -16px; }
+.shape-btn:nth-child(6) { top: 8px; }
+.shape-svg {
+  color: var(--shape-color);
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shape-label {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #444;
+  margin-top: 8px;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .canvas-shape-buttons {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .shape-btn { top: 0 !important; }
 }

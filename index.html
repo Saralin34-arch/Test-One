@@ -85,51 +85,51 @@
     <!-- 2D and 3D Category Navigation -->
     <div class="canvas-category-group">
       <div class="canvas-category-title">2D</div>
-      <div class="canvas-category-buttons">
-        <button onclick="document.getElementById('2d-drawing-title').scrollIntoView({behavior: 'smooth'})">
-          <span class="icon-svg" style="color:#FFB84C;">
+      <div class="canvas-shape-buttons">
+        <button class="shape-btn" style="--shape-color:#FFB84C;" onclick="document.getElementById('2d-drawing-title').scrollIntoView({behavior: 'smooth'})">
+          <span class="shape-svg">
             <!-- Friendly (peanut) -->
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><ellipse cx="7" cy="11" rx="5" ry="8"/><ellipse cx="15" cy="11" rx="5" ry="8"/></svg>
+            <svg viewBox="0 0 44 44" width="64" height="64" fill="currentColor"><ellipse cx="14" cy="22" rx="12" ry="18"/><ellipse cx="30" cy="22" rx="12" ry="18"/></svg>
           </span>
-          2D Drawing
+          <span class="shape-label">Friendly</span>
         </button>
-        <button onclick="document.getElementById('bouncing-ball-title').scrollIntoView({behavior: 'smooth'})">
-          <span class="icon-svg" style="color:#C75B12;">
+        <button class="shape-btn" style="--shape-color:#C75B12;" onclick="document.getElementById('bouncing-ball-title').scrollIntoView({behavior: 'smooth'})">
+          <span class="shape-svg">
             <!-- Confident (starburst) -->
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><polygon points="11,2 13,8 20,8 14,12 16,20 11,15 6,20 8,12 2,8 9,8"/></svg>
+            <svg viewBox="0 0 44 44" width="64" height="64" fill="currentColor"><polygon points="22,4 26,16 40,16 28,24 32,40 22,30 12,40 16,24 4,16 18,16"/></svg>
           </span>
-          Bouncing Ball
+          <span class="shape-label">Confident</span>
         </button>
-        <button onclick="document.getElementById('zoom-pan-title').scrollIntoView({behavior: 'smooth'})">
-          <span class="icon-svg" style="color:#F7AFAF;">
+        <button class="shape-btn" style="--shape-color:#F7AFAF;" onclick="document.getElementById('zoom-pan-title').scrollIntoView({behavior: 'smooth'})">
+          <span class="shape-svg">
             <!-- Cheerful (clover) -->
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6 11a4 4 0 1 1 4-4 4 4 0 1 1 4 4 4 4 0 1 1-4 4 4 4 0 1 1-4-4z"/></svg>
+            <svg viewBox="0 0 44 44" width="64" height="64" fill="currentColor"><path d="M14 22a8 8 0 1 1 8-8 8 8 0 1 1 8 8 8 8 0 1 1-8 8 8 8 0 1 1-8-8z"/></svg>
           </span>
-          Zoom & Pan Demo
+          <span class="shape-label">Cheerful</span>
         </button>
       </div>
       <div class="canvas-category-title">3D</div>
-      <div class="canvas-category-buttons">
-        <button onclick="document.getElementById('orbit-camera-title').scrollIntoView({behavior: 'smooth'})">
-          <span class="icon-svg" style="color:#FFE08A;">
+      <div class="canvas-shape-buttons">
+        <button class="shape-btn" style="--shape-color:#FFE08A;" onclick="document.getElementById('orbit-camera-title').scrollIntoView({behavior: 'smooth'})">
+          <span class="shape-svg">
             <!-- Warm (diamond) -->
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="6" width="10" height="10" transform="rotate(45 11 11)"/></svg>
+            <svg viewBox="0 0 44 44" width="64" height="64" fill="currentColor"><rect x="12" y="12" width="20" height="20" transform="rotate(45 22 22)"/></svg>
           </span>
-          3D Orbit Camera Demo
+          <span class="shape-label">Warm</span>
         </button>
-        <button onclick="document.getElementById('primitives-title').scrollIntoView({behavior: 'smooth'})">
-          <span class="icon-svg" style="color:#FF6B1C;">
+        <button class="shape-btn" style="--shape-color:#FF6B1C;" onclick="document.getElementById('primitives-title').scrollIntoView({behavior: 'smooth'})">
+          <span class="shape-svg">
             <!-- Energetic (arch) -->
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M5 17a6 6 0 0 1 12 0v2H5v-2z"/><rect x="5" y="17" width="12" height="2"/></svg>
+            <svg viewBox="0 0 44 44" width="64" height="64" fill="currentColor"><path d="M8 36a14 14 0 0 1 28 0v4H8v-4z"/><rect x="8" y="36" width="28" height="4"/></svg>
           </span>
-          3D Primitives Demo
+          <span class="shape-label">Energetic</span>
         </button>
-        <button onclick="document.getElementById('atmospheric-title').scrollIntoView({behavior: 'smooth'})">
-          <span class="icon-svg" style="color:#F9D6B7;">
+        <button class="shape-btn" style="--shape-color:#F9D6B7;" onclick="document.getElementById('atmospheric-title').scrollIntoView({behavior: 'smooth'})">
+          <span class="shape-svg">
             <!-- Fresh (cloud) -->
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><ellipse cx="7" cy="11" rx="5" ry="6"/><ellipse cx="15" cy="11" rx="5" ry="6"/></svg>
+            <svg viewBox="0 0 44 44" width="64" height="64" fill="currentColor"><ellipse cx="14" cy="22" rx="12" ry="14"/><ellipse cx="30" cy="22" rx="12" ry="14"/></svg>
           </span>
-          3D Atmospheric Geometry Demo
+          <span class="shape-label">Fresh</span>
         </button>
       </div>
     </div>
