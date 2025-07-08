@@ -36,7 +36,7 @@ var sketch1 = function(p) {
 
     // Green almond-shaped leaf
     p.fill('#B7DDA8');
-    drawBlobbyLeaf(330, 570, 180);
+    drawBlobbyLeaf(330, 650, 180);
 
     // --- ICON GEOMETRIES ---
     // Peanut (Friendly) - filled, much wider
@@ -45,7 +45,7 @@ var sketch1 = function(p) {
     // Peanut (Friendly) - outline only, much wider
     p.noFill();
     p.stroke('#FFB84C');
-    p.strokeWeight(8);
+    p.strokeWeight(4);
     drawPeanut(540, 320, 180, 100); // 3x wider, outline
     p.noStroke();
     p.fill('#F7AFAF');
@@ -63,14 +63,14 @@ var sketch1 = function(p) {
     p.fill('#C75B12');
     p.ellipse(350, 350, 60, 60);
 
-    // --- 67 degree thick line (moved to upper right corner) ---
+    // --- 67 degree thick line (centered at middle top of canvas, thinner and longer) ---
     p.push();
     p.stroke('#8FB4D9');
-    p.strokeWeight(18);
+    p.strokeWeight(8);
     p.noFill();
-    p.translate(600, 100); // move to upper right
-    p.rotate(67);
-    p.line(-80, 0, 120, 0);
+    p.translate(350, 60); // center at middle top
+    p.rotate(157); // 67 + 90 degrees
+    p.line(-160, 0, 240, 0);
     p.pop();
   };
 
@@ -137,11 +137,15 @@ var sketch1 = function(p) {
     p.ellipse(x + w * 0.3, y, w * 0.6, h);
   }
 
-  // Clover shape (four circles)
+  // Clover shape (four circles, two offset up/right)
   function drawClover(x, y, r) {
-    for (let a = 0; a < 360; a += 90) {
+    for (let i = 0; i < 4; i++) {
+      let a = i * 90;
       let px = x + p.cos(a) * r * 0.7;
       let py = y + p.sin(a) * r * 0.7;
+      // Offset top and right circles
+      if (i === 0) { px += 30; py -= 30; } // right
+      if (i === 1) { px += 30; py -= 30; } // top
       p.ellipse(px, py, r, r);
     }
   }

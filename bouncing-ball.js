@@ -34,8 +34,8 @@ var sketch2 = function(p) {
     // Clear the background
     p.background(240);
 
-    // Ball 1: orange
-    p.fill('#F26B2B');
+    // Ball 1: pink
+    p.fill('#F7AFAF');
     p.noStroke();
     p.ellipse(x1, y1, radius1 * 2);
     x1 += dx1;
@@ -43,10 +43,12 @@ var sketch2 = function(p) {
     if (x1 - radius1 < 0 || x1 + radius1 > p.width) dx1 *= -1;
     if (y1 - radius1 < 0 || y1 + radius1 > p.height) dy1 *= -1;
 
-    // Ball 2: blue
-    p.fill('#8FB4D9');
-    p.noStroke();
+    // Ball 2: blue outline
+    p.noFill();
+    p.stroke('#8FB4D9');
+    p.strokeWeight(4);
     p.ellipse(x2, y2, radius2 * 2);
+    p.noStroke();
     x2 += dx2;
     y2 += dy2;
     if (x2 - radius2 < 0 || x2 + radius2 > p.width) dx2 *= -1;
