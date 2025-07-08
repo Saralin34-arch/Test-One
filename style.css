@@ -1,9 +1,9 @@
-/* Import Inter font for a modern, clean look */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+/* Import Montserrat and Work Sans for an architectural style */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Work+Sans:wght@400;500&display=swap');
 
 /* Style the entire body of the webpage */
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Work Sans', Arial, sans-serif;
   background-color: #f7f7f8;
   color: #222;
   margin: 0;
@@ -202,7 +202,7 @@ button:hover {
 }
 
 .canvas-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   font-size: 20px;
   font-weight: 500;
   color: #444;
@@ -227,7 +227,7 @@ button:hover {
   margin: 48px 0 24px 0;
 }
 .canvas-category-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   font-size: 18px;
   font-weight: 600;
   color: #888;
@@ -268,4 +268,9 @@ button:hover {
   .canvas-category-group {
     margin: 32px 0 16px 0;
   }
+}
+
+/* Update font-family for relevant selectors */
+header, .canvas-title, .canvas-category-title, .section-title, .project-title, .project-meta, .project-subtitle, button, .canvas-category-buttons button {
+  font-family: 'Montserrat', Arial, sans-serif;
 }
