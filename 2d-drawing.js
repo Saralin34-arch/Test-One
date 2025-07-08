@@ -56,9 +56,10 @@ var sketch1 = function(p) {
     drawCloud(500, 400, 80, 50);
     p.fill('#FFE08A');
     drawDiamond(600, 120, 60);
-    // Blue half ellipse (smaller)
+    // Blue square with unique corner radii (substitute for half ellipse)
     p.fill('#8FB4D9');
-    drawHalfEllipse(350, 500, 120, 60);
+    p.noStroke();
+    p.square(320, 470, 120, 20, 15, 10, 5);
     // Circle (Bouncing Ball)
     p.fill('#C75B12');
     p.ellipse(350, 350, 60, 60);

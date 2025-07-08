@@ -1,22 +1,28 @@
 // 3d-orbit-camera.js
 // p5.js WEBGL Cylinder & Torus Demo
 // Author: Sara Lin
-// Description: A white cylinder and a pink torus. Click and drag to orbit.
+// Description: Two white cylinders and a pink torus. Click and drag to orbit.
 
 var sketch3DOrbit = function(p) {
   p.setup = function() {
     let c = p.createCanvas(400, 400, p.WEBGL);
     c.parent('3d-orbit-camera');
-    p.describe('A white cylinder and a pink torus.');
+    p.describe('Two white cylinders and a pink torus.');
   };
 
   p.draw = function() {
     p.background(200);
     p.orbitControl();
     p.noStroke();
-    // Draw white cylinder in the center
+    // Draw first white cylinder in the center
     p.push();
     p.fill(255);
+    p.cylinder(30, 50, 5);
+    p.pop();
+    // Draw second white cylinder offset to the left
+    p.push();
+    p.fill(255);
+    p.translate(-100, 0, 0);
     p.cylinder(30, 50, 5);
     p.pop();
     // Draw pink torus offset to the right
