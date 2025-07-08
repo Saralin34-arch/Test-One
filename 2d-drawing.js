@@ -28,7 +28,7 @@ var sketch1 = function(p) {
 
     // Yellow pill
     p.fill('#F7D850');
-    drawBlobbyPill(100, 380, 150);
+    drawBlobbyPill(100, 320, 150);
 
     // Giant blue half-ellipse (scaled up 5x)
     p.fill('#8FB4D9');
@@ -37,6 +37,40 @@ var sketch1 = function(p) {
     // Green almond-shaped leaf
     p.fill('#B7DDA8');
     drawBlobbyLeaf(330, 570, 180);
+
+    // --- ICON GEOMETRIES ---
+    // Peanut (Friendly)
+    p.fill('#FFB84C');
+    drawPeanut(540, 220, 60, 100);
+
+    // Clover (Cheerful)
+    p.fill('#F7AFAF');
+    drawClover(200, 600, 60);
+
+    // Arch (Energetic)
+    p.fill('#FF6B1C');
+    drawArch(600, 600, 80, 100);
+
+    // Cloud (Fresh)
+    p.fill('#F9D6B7');
+    drawCloud(500, 400, 80, 50);
+
+    // Diamond (Warm)
+    p.fill('#FFE08A');
+    drawDiamond(600, 120, 60);
+
+    // Circle (Bouncing Ball)
+    p.fill('#C75B12');
+    p.ellipse(350, 350, 60, 60);
+
+    // --- 67 degree thick line ---
+    p.push();
+    p.stroke('#8FB4D9');
+    p.strokeWeight(18);
+    p.translate(350, 350);
+    p.rotate(67);
+    p.line(-200, 0, 200, 0);
+    p.pop();
   };
 
   // 🟥 Non-tilted grid (horizontal + vertical lines)
@@ -93,6 +127,43 @@ var sketch1 = function(p) {
       let py = y + p.sin(a) * size / 2;
       p.curveVertex(px, py);
     }
+    p.endShape(p.CLOSE);
+  }
+
+  // Peanut shape (two ellipses)
+  function drawPeanut(x, y, w, h) {
+    p.ellipse(x - w * 0.3, y, w * 0.6, h);
+    p.ellipse(x + w * 0.3, y, w * 0.6, h);
+  }
+
+  // Clover shape (four circles)
+  function drawClover(x, y, r) {
+    for (let a = 0; a < 360; a += 90) {
+      let px = x + p.cos(a) * r * 0.7;
+      let py = y + p.sin(a) * r * 0.7;
+      p.ellipse(px, py, r, r);
+    }
+  }
+
+  // Arch shape
+  function drawArch(x, y, w, h) {
+    p.arc(x, y, w, h, 180, 0, p.OPEN);
+    p.rect(x - w / 2, y, w, h / 2);
+  }
+
+  // Cloud shape (two ellipses)
+  function drawCloud(x, y, w, h) {
+    p.ellipse(x - w * 0.3, y, w, h);
+    p.ellipse(x + w * 0.3, y, w, h);
+  }
+
+  // Diamond shape
+  function drawDiamond(x, y, s) {
+    p.beginShape();
+    p.vertex(x, y - s / 2);
+    p.vertex(x + s / 2, y);
+    p.vertex(x, y + s / 2);
+    p.vertex(x - s / 2, y);
     p.endShape(p.CLOSE);
   }
 };
