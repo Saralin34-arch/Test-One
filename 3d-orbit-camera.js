@@ -1,87 +1,31 @@
 // 3d-orbit-camera.js
-// Three.js scene: grid, primitives, and orbit controls
+// p5.js WEBGL Cylinder & Torus Demo
 // Author: Sara Lin
+// Description: A white cylinder and a pink torus. Click and drag to orbit.
 
-(function() {
-  // Scene, camera, renderer setup
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(60, 800 / 400, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer({ antialias: true });
-  renderer.setSize(800, 400);
-  renderer.setClearColor(0xf0f0f0); // Light grey background
+var sketch3DOrbit = function(p) {
+  p.setup = function() {
+    let c = p.createCanvas(400, 400, p.WEBGL);
+    c.parent('3d-orbit-camera');
+    p.describe('A white cylinder and a pink torus.');
+  };
 
-  document.getElementById('3d-orbit-camera').appendChild(renderer.domElement);
+  p.draw = function() {
+    p.background(200);
+    p.orbitControl();
+    p.noStroke();
+    // Draw white cylinder in the center
+    p.push();
+    p.fill(255);
+    p.cylinder(30, 50, 5);
+    p.pop();
+    // Draw pink torus offset to the right
+    p.push();
+    p.fill('#F7AFAF');
+    p.translate(100, 0, 0);
+    p.torus(60, 20);
+    p.pop();
+  };
+};
 
-  // Add grid helper
-  const grid = new THREE.GridHelper(16, 32, 0xcccccc, 0xcccccc);
-  scene.add(grid);
-
-  // Add ambient and directional light
-  const ambient = new THREE.AmbientLight(0xffffff, 0.7);
-  scene.add(ambient);
-  const dirLight = new THREE.DirectionalLight(0xffffff, 0.7);
-  dirLight.position.set(5, 10, 7);
-  scene.add(dirLight);
-
-  // Add 3D primitives
-  // Box
-  const box = new THREE.Mesh(
-    new THREE.BoxGeometry(2, 2, 2),
-    new THREE.MeshPhongMaterial({ color: 0x3264a8 })
-  );
-  box.position.set(-5, 1, 0);
-  scene.add(box);
-  // Sphere
-  const sphere = new THREE.Mesh(
-    new THREE.SphereGeometry(1.2, 32, 32),
-    new THREE.MeshPhongMaterial({ color: 0xffa500 })
-  );
-  sphere.position.set(0, 1.2, 0);
-  scene.add(sphere);
-  // Cylinder
-  const cylinder = new THREE.Mesh(
-    new THREE.CylinderGeometry(1, 1, 2, 32),
-    new THREE.MeshPhongMaterial({ color: 0x4caf50 })
-  );
-  cylinder.position.set(5, 1, 0);
-  scene.add(cylinder);
-  // Cone
-  const cone = new THREE.Mesh(
-    new THREE.ConeGeometry(1, 2, 32),
-    new THREE.MeshPhongMaterial({ color: 0xe91e63 })
-  );
-  cone.position.set(2.5, 1, -4);
-  scene.add(cone);
-
-  // Camera position
-  camera.position.set(8, 8, 8);
-  camera.lookAt(0, 0, 0);
-
-  // OrbitControls (assumes OrbitControls is available globally)
-  if (typeof THREE.OrbitControls === 'undefined') {
-    const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js';
-    script.onload = setupControls;
-    document.head.appendChild(script);
-  } else {
-    setupControls();
-  }
-
-  function setupControls() {
-    const controls = new THREE.OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.1;
-    controls.screenSpacePanning = false;
-    controls.minDistance = 4;
-    controls.maxDistance = 40;
-    controls.target.set(0, 1, 0);
-
-    // Animation loop
-    function animate() {
-      requestAnimationFrame(animate);
-      controls.update();
-      renderer.render(scene, camera);
-    }
-    animate();
-  }
-})(); 
+new p5(sketch3DOrbit, '3d-orbit-camera'); 

@@ -1,47 +1,43 @@
 // 3d-primitives-canvas.js
-// This script creates a Three.js scene with a rotating box on a wireframe grid
+// p5.js WEBGL Torus & Cylinder Demo - Color Matched to 2D Drawing
 // Author: Sara Lin
+// Description: Multiple colored toruses and a white cylinder. Click and drag to orbit.
 
-(function() {
-  // Scene, camera, renderer setup
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, 800 / 400, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer({ antialias: true });
-  renderer.setSize(800, 400);
-  renderer.setClearColor(0xf0f0f0); // Light gray background
+var sketch3DPrimitives = function(p) {
+  let colors = ['#F7AFAF', '#8FB4D9', '#F7D850', '#F26B2B'];
+  let positions = [
+    [-100, 0, 0], // pink
+    [100, 0, 0],  // blue
+    [0, -100, 0], // yellow
+    [0, 100, 0]   // orange
+  ];
+  let radii = [60, 60, 60, 60];
+  let tubes = [20, 20, 20, 20];
 
-  document.getElementById('3d-primitives-canvas').appendChild(renderer.domElement);
+  p.setup = function() {
+    let c = p.createCanvas(400, 400, p.WEBGL);
+    c.parent('3d-primitives-canvas');
+    p.describe('Multiple colored toruses and a white cylinder.');
+  };
 
-  // Add ambient light
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-  scene.add(ambientLight);
+  p.draw = function() {
+    p.background(200);
+    p.orbitControl();
+    p.noStroke();
+    // Draw colored toruses
+    for (let i = 0; i < colors.length; i++) {
+      p.push();
+      p.fill(colors[i]);
+      p.translate(positions[i][0], positions[i][1], positions[i][2]);
+      p.torus(radii[i], tubes[i]);
+      p.pop();
+    }
+    // Draw white cylinder in the center
+    p.push();
+    p.fill(255);
+    p.cylinder(30, 50, 5);
+    p.pop();
+  };
+};
 
-  // Add directional light
-  const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-  directionalLight.position.set(5, 10, 7);
-  scene.add(directionalLight);
-
-  // Create a wireframe grid
-  const gridHelper = new THREE.GridHelper(10, 20, 0x888888, 0x888888);
-  scene.add(gridHelper);
-
-  // Create a box
-  const geometry = new THREE.BoxGeometry(1, 1, 1);
-  const material = new THREE.MeshPhongMaterial({ color: 0x3264a8, shininess: 100 });
-  const box = new THREE.Mesh(geometry, material);
-  box.position.y = 0.5; // Sit on top of the grid
-  scene.add(box);
-
-  // Position the camera
-  camera.position.set(3, 3, 5);
-  camera.lookAt(0, 0.5, 0);
-
-  // Animation loop
-  function animate() {
-    requestAnimationFrame(animate);
-    box.rotation.x += 0.01;
-    box.rotation.y += 0.01;
-    renderer.render(scene, camera);
-  }
-  animate();
-})(); 
+new p5(sketch3DPrimitives, '3d-primitives-canvas'); 
