@@ -183,3 +183,36 @@ button:hover {
     min-height: 320px;
   }
 }
+
+/* --- Canvas Card Aesthetic for Three.js --- */
+.three-canvas-container {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(30,30,40,0.10), 0 1.5px 4px rgba(30,30,40,0.04);
+  padding: 32px 24px 24px 24px;
+  margin: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 480px;
+  transition: box-shadow 0.2s;
+}
+.three-canvas-container:hover {
+  box-shadow: 0 8px 32px rgba(30,30,40,0.16), 0 2px 8px rgba(30,30,40,0.06);
+}
+
+.three-canvas-container canvas {
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(30,30,40,0.08);
+  background: #f7f7f8;
+  margin-bottom: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 700px) {
+  .three-canvas-container {
+    padding: 16px 4px 12px 4px;
+    min-height: 320px;
+  }
+}

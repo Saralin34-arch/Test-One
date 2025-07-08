@@ -21,6 +21,9 @@
   
   <!-- REQUIRED: Load p5.js library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+
+  <!-- REQUIRED: Load Three.js library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 
 <body>
@@ -110,6 +113,9 @@
     <div id="canvas-container-2"></div>
     <!-- Canvas container for third sketch -->
     <div id="canvas-container-3"></div>
+
+    <!-- 3D Canvas container for Three.js orbit camera demo -->
+    <div id="3d-orbit-camera" class="three-canvas-container"></div>
   </main>
   <!-- End of main content area -->
   
@@ -117,6 +123,9 @@
   <script src="2d-drawing.js"></script>
   <script src="bouncing-ball.js"></script>
   <script src="zoom-pan.js"></script>
+  <script src="3d-orbit-camera.js"></script>
+  <script src="3d-primitives-canvas.js"></script>
+  <script src="3d-atmospheric-geometry.js"></script>
   <!-- This links our JavaScript file to the HTML page -->
   <!-- The script tag is placed at the end of the body so the HTML loads first -->
   <!-- src="script.js" tells the browser to load and run our JavaScript file -->
