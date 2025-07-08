@@ -8,7 +8,7 @@ body {
   color: #333333; /* Dark gray for all text */
   margin: 0;                          /* Remove default spacing around the body */
   padding: 0;                         /* Remove default internal spacing */
-  background-image: url('data:image/svg+xml;utf8,<svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 60 Q20 40 40 60 T80 60 T120 60" stroke="%2399c6df" stroke-width="2" fill="none"/><path d="M0 80 Q30 50 60 80 T120 80" stroke="%2399c6df" stroke-width="2" fill="none"/><path d="M0 40 Q15 30 30 40 T60 40 T90 40 T120 40" stroke="%2399c6df" stroke-width="1" fill="none"/><path d="M0 20 Q20 0 40 20 T80 20 T120 20" stroke="%2399c6df" stroke-width="1" fill="none"/></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="80" fill="white"/><path d="M5 10c10 5 30 5 50 0s40-5 60 0" stroke="%23a3b7bb" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M0 25c15 7 35 7 55 0s40-7 65 0" stroke="%23a3b7bb" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M10 40c10 5 30 5 50 0s40-5 50 0" stroke="%23a3b7bb" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M0 55c20 7 40 7 60 0s40-7 60 0" stroke="%23a3b7bb" stroke-width="7" stroke-linecap="round" fill="none"/></svg>');
   background-repeat: repeat;
   background-size: 120px 80px;
 }
