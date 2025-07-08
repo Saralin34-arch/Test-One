@@ -143,12 +143,13 @@ button:hover {
 }
 
 /* --- Canvas Card Aesthetic --- */
-#canvas-container-1, #canvas-container-2, #canvas-container-3 {
+#canvas-container-1, #canvas-container-2, #canvas-container-3,
+.three-canvas-container {
   background: #fff;
   border-radius: 18px;
   box-shadow: 0 4px 24px rgba(30,30,40,0.10), 0 1.5px 4px rgba(30,30,40,0.04);
   padding: 32px 24px 24px 24px;
-  margin: 40px 0;
+  margin: 64px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -161,13 +162,16 @@ button:hover {
 
 #canvas-container-1 canvas,
 #canvas-container-2 canvas,
-#canvas-container-3 canvas {
+#canvas-container-3 canvas,
+.three-canvas-container canvas {
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(30,30,40,0.08);
   background: #f7f7f8;
   margin-bottom: 0;
   max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
 }
 
 /* Responsive adjustments */
@@ -178,43 +182,23 @@ button:hover {
   .project-title {
     font-size: 22px;
   }
-  #canvas-container-1, #canvas-container-2, #canvas-container-3 {
+  #canvas-container-1, #canvas-container-2, #canvas-container-3,
+  .three-canvas-container {
     padding: 16px 4px 12px 4px;
     min-height: 320px;
+    margin: 40px 0;
+  }
+  #canvas-container-1 canvas,
+  #canvas-container-2 canvas,
+  #canvas-container-3 canvas,
+  .three-canvas-container canvas {
+    height: 240px;
   }
 }
 
 /* --- Canvas Card Aesthetic for Three.js --- */
-.three-canvas-container {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(30,30,40,0.10), 0 1.5px 4px rgba(30,30,40,0.04);
-  padding: 32px 24px 24px 24px;
-  margin: 40px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 480px;
-  transition: box-shadow 0.2s;
-}
 .three-canvas-container:hover {
   box-shadow: 0 8px 32px rgba(30,30,40,0.16), 0 2px 8px rgba(30,30,40,0.06);
-}
-
-.three-canvas-container canvas {
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(30,30,40,0.08);
-  background: #f7f7f8;
-  margin-bottom: 0;
-  max-width: 100%;
-  height: auto;
-}
-
-@media (max-width: 700px) {
-  .three-canvas-container {
-    padding: 16px 4px 12px 4px;
-    min-height: 320px;
-  }
 }
 
 .canvas-title {
@@ -233,5 +217,55 @@ button:hover {
     font-size: 16px;
     margin-top: 32px;
     margin-bottom: 8px;
+  }
+}
+
+.canvas-category-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 48px 0 24px 0;
+}
+.canvas-category-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #888;
+  margin: 16px 0 8px 0;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.canvas-category-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+.canvas-category-buttons button {
+  background: #fff;
+  color: #3264a8;
+  border: 1.5px solid #e0e4ea;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px 22px;
+  box-shadow: 0 1px 4px rgba(30,30,40,0.04);
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  cursor: pointer;
+}
+.canvas-category-buttons button:hover {
+  background: #f0f4fa;
+  color: #222;
+  border-color: #bcd0ea;
+}
+@media (max-width: 700px) {
+  .canvas-category-buttons {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    align-items: stretch;
+  }
+  .canvas-category-group {
+    margin: 32px 0 16px 0;
   }
 }
