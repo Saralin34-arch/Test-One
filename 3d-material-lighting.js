@@ -19,6 +19,7 @@ function setup() {
   createSelectionArea();
 }
 
+function draw() {
   background(0);
   ambientLight(80);
   directionalLight(255, 255, 255, 0.5, 1, -0.5);
