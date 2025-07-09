@@ -135,13 +135,22 @@
           <div class="shape-canvas-label">3D Primitives Demo</div>
         </div>
         <div class="shape-btn-label-group">
-          <button class="shape-btn" style="--shape-color:#F9D6B7;" onclick="document.getElementById('atmospheric-title').scrollIntoView({behavior: 'smooth'})">
+          <button class="shape-btn" style="--shape-color:#F9D6B7;" onclick="document.getElementById('lighting-title').scrollIntoView({behavior: 'smooth'})">
             <span class="shape-svg">
               <!-- Fresh (cloud) -->
               <svg viewBox="0 0 44 44" width="64" height="64" fill="currentColor"><ellipse cx="14" cy="22" rx="12" ry="14"/><ellipse cx="30" cy="22" rx="12" ry="14"/></svg>
             </span>
           </button>
-          <div class="shape-canvas-label">3D Atmospheric Geometry Demo</div>
+          <div class="shape-canvas-label">3D Lighting Demo</div>
+        </div>
+        <div class="shape-btn-label-group">
+          <button class="shape-btn" style="--shape-color:#F7AFAF;" onclick="document.getElementById('spatial-title').scrollIntoView({behavior: 'smooth'})">
+            <span class="shape-svg">
+              <!-- Cheerful (clover) -->
+              <svg viewBox="0 0 44 44" width="64" height="64" fill="currentColor"><path d="M14 22a8 8 0 1 1 8-8 8 8 0 1 1 8 8 8 8 0 1 1-8 8 8 8 0 1 1-8-8z"/></svg>
+            </span>
+          </button>
+          <div class="shape-canvas-label">3D Spatial Canvas</div>
         </div>
       </div>
     </div>
@@ -162,9 +171,12 @@
     <!-- 3D Canvas container for new Primitive Demo -->
     <div class="canvas-title" id="primitive-title">3D Primitive Demo</div>
     <div id="3d-primitive-canvas" class="three-canvas-container"></div>
-    <!-- 3D Canvas container for Three.js atmospheric geometry demo -->
+    <!-- 3D Canvas container for Three.js lighting demo -->
     <div class="canvas-title" id="lighting-title">3D Lighting Demo</div>
     <div id="3d-lighting-canvas" class="three-canvas-container"></div>
+    <!-- 3D Canvas container for Three.js spatial canvas demo -->
+    <div class="canvas-title" id="spatial-title">3D Spatial Canvas</div>
+    <div id="3d-spatial-canvas" class="three-canvas-container"></div>
   </main>
   <!-- End of main content area -->
   
@@ -175,6 +187,7 @@
   <script src="3d-orbit-control.js"></script>
   <script src="3d-primitive-demo.js"></script>
   <script src="3d-lighting-demo.js"></script>
+  <script src="3d-spatial-canvas.js"></script>
   <!-- This links our JavaScript file to the HTML page -->
   <!-- The script tag is placed at the end of the body so the HTML loads first -->
   <!-- src="script.js" tells the browser to load and run our JavaScript file -->
