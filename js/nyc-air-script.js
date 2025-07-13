@@ -33,16 +33,16 @@ d3.csv("../data/nyc_air_quality_full_coords.csv").then(data => {
     .thresholds(15)
     (points);
 
-  // Draw contours with elegant styling
+  // Draw contours with single color styling
   svg.append("g")
     .selectAll("path")
     .data(contours)
     .join("path")
       .attr("d", d3.geoPath())
-      .attr("fill", (d, i) => d3.interpolateReds(i / 15))
+      .attr("fill", "#e63946")
       .attr("stroke", "#000000")
       .attr("stroke-width", 0.5)
-      .attr("opacity", 0.7);
+      .attr("opacity", 0.8);
 
   // Draw points with refined styling
   svg.append("g")
@@ -110,16 +110,14 @@ d3.csv("../data/nyc_air_quality_full_coords.csv").then(data => {
     .attr("transform", `translate(${width - 150}, 60)`);
 
   const legendData = [
-    { color: d3.interpolateReds(0.2), label: "Low" },
-    { color: d3.interpolateReds(0.5), label: "Medium" },
-    { color: d3.interpolateReds(0.8), label: "High" }
+    { color: "#e63946", label: "NO₂ Levels" }
   ];
 
   legend.selectAll("rect")
     .data(legendData)
     .join("rect")
       .attr("x", 0)
-      .attr("y", (d, i) => i * 25)
+      .attr("y", 0)
       .attr("width", 20)
       .attr("height", 15)
       .attr("fill", d => d.color)
@@ -130,7 +128,7 @@ d3.csv("../data/nyc_air_quality_full_coords.csv").then(data => {
     .data(legendData)
     .join("text")
       .attr("x", 30)
-      .attr("y", (d, i) => i * 25 + 12)
+      .attr("y", 12)
       .style("font-family", "Breite Grotesk, sans-serif")
       .style("font-size", "14px")
       .style("font-weight", "600")
