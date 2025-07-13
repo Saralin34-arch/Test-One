@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>D3 Data Visualization - Columbia GSAPP</title>
+  <title>NYC Air Quality D3 Contours - Columbia GSAPP</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="d3-style.css">
+  <link rel="stylesheet" href="nyc-air-style.css">
 </head>
 
 <body>
@@ -13,26 +13,27 @@
     <div class="left">Columbia GSAPP</div>
     <div class="center">
       Digital Archive<br>
-      <span>D3 Data Visualization</span>
+      <span>NYC Air Quality D3 Contours</span>
     </div>
     <div class="right">
       <a href="index.html">Home</a>
       <a href="2d-demos.html">2D</a>
       <a href="3d-demos.html">3D</a>
+      <a href="d3-demos.html">D3</a>
     </div>
   </header>
 
   <!-- Breadcrumb navigation -->
   <div class="breadcrumb">
-    <a href="index.html">Home</a> <span>→</span> D3 Data Visualization
+    <a href="index.html">Home</a> <span>→</span> NYC Air Quality D3 Contours
   </div>
 
   <main>
     <!-- Exhibition header -->
     <section class="exhibition-header">
       <div class="project-meta">2025</div>
-      <div class="project-title">D3 Data Visualization</div>
-      <div class="project-subtitle">Smart Citizen Temporal Analysis</div>
+      <div class="project-title">NYC Air Quality D3 Contours</div>
+      <div class="project-subtitle">NO₂ Density Visualization</div>
       <div class="advisor">Sara Lin<br><strong>Catherine Griffiths</strong></div>
     </section>
 
@@ -42,25 +43,24 @@
         <div class="exhibition-info">
           <div class="exhibition-number">01</div>
           <div class="exhibition-details">
-            <h3>Temperature Over Time</h3>
-            <p class="exhibition-description">Interactive visualization of Smart Citizen sensor data showing temperature variations over time using D3.js.</p>
+            <h3>NYC NO₂ Air Quality Contours</h3>
+            <p class="exhibition-description">Interactive visualization of NYC air quality data showing NO₂ levels (ppb) using spatial density contours based on community district data.</p>
             <div class="exhibition-meta">
               <span class="meta-tag">D3.js</span>
+              <span class="meta-tag">Geospatial</span>
               <span class="meta-tag">Data Visualization</span>
-              <span class="meta-tag">Time Series</span>
             </div>
           </div>
         </div>
         <div class="exhibition-canvas">
           <div id="chart-container">
-            <h4 class="canvas-title">Smart Citizen: Temperature Over Time</h4>
-            <div id="chart"></div>
+            <h4 class="canvas-title">NYC Air Quality – NO₂ Density Contours</h4>
+            <p class="canvas-description">This map visualizes average NO₂ levels (ppb) using spatial density contours based on community district data.</p>
+            <div id="nyc-map"></div>
           </div>
         </div>
       </div>
     </section>
-
-
   </main>
 
   <!-- Bauhaus-style footer -->
@@ -79,6 +79,6 @@
   </footer>
 
   <script src="d3.v7.min.js"></script>
-  <script src="d3-script.js"></script>
+  <script src="nyc-air-script.js"></script>
 </body>
 </html> 
