@@ -1,6 +1,6 @@
-const margin = {top: 40, right: 40, bottom: 60, left: 80},
-  width = 800 - margin.left - margin.right,
-  height = 400 - margin.top - margin.bottom;
+const margin = {top: 50, right: 50, bottom: 80, left: 100},
+  width = 1000 - margin.left - margin.right,
+  height = 600 - margin.top - margin.bottom;
 
 const svg = d3.select("#chart")
   .append("svg")
@@ -14,9 +14,9 @@ svg.append("text")
   .attr("x", width / 2)
   .attr("y", -10)
   .attr("text-anchor", "middle")
-  .style("font-family", "Inter, sans-serif")
-  .style("font-size", "16px")
-  .style("font-weight", "500")
+  .style("font-family", "Breite Grotesk, sans-serif")
+  .style("font-size", "18px")
+  .style("font-weight", "600")
   .style("fill", "#000000")
   .text("Temperature Over Time");
 
@@ -43,8 +43,9 @@ d3.csv("../data/geodata.csv").then(data => {
       .tickFormat(d3.timeFormat("%b %d"))
       .tickSize(5)
       .tickPadding(8))
-    .style("font-family", "Inter, sans-serif")
-    .style("font-size", "12px")
+    .style("font-family", "Breite Grotesk, sans-serif")
+    .style("font-size", "14px")
+    .style("font-weight", "500")
     .style("color", "#525252");
 
   // Add Y axis
@@ -52,8 +53,9 @@ d3.csv("../data/geodata.csv").then(data => {
     .call(d3.axisLeft(y)
       .tickSize(5)
       .tickPadding(8))
-    .style("font-family", "Inter, sans-serif")
-    .style("font-size", "12px")
+    .style("font-family", "Breite Grotesk, sans-serif")
+    .style("font-size", "14px")
+    .style("font-weight", "500")
     .style("color", "#525252");
 
   // Add axis labels
@@ -63,18 +65,18 @@ d3.csv("../data/geodata.csv").then(data => {
     .attr("x", 0 - (height / 2))
     .attr("dy", "1em")
     .style("text-anchor", "middle")
-    .style("font-family", "Inter, sans-serif")
-    .style("font-size", "14px")
-    .style("font-weight", "500")
+    .style("font-family", "Breite Grotesk, sans-serif")
+    .style("font-size", "16px")
+    .style("font-weight", "600")
     .style("fill", "#000000")
     .text("Temperature (°C)");
 
   svg.append("text")
     .attr("transform", `translate(${width / 2}, ${height + margin.bottom - 10})`)
     .style("text-anchor", "middle")
-    .style("font-family", "Inter, sans-serif")
-    .style("font-size", "14px")
-    .style("font-weight", "500")
+    .style("font-family", "Breite Grotesk, sans-serif")
+    .style("font-size", "16px")
+    .style("font-weight", "600")
     .style("fill", "#000000")
     .text("Date");
 
@@ -114,8 +116,9 @@ d3.csv("../data/geodata.csv").then(data => {
         .style("border", "1px solid #e5e5e5")
         .style("padding", "8px 12px")
         .style("border-radius", "0")
-        .style("font-family", "Inter, sans-serif")
-        .style("font-size", "12px")
+        .style("font-family", "Breite Grotesk, sans-serif")
+        .style("font-size", "14px")
+        .style("font-weight", "500")
         .style("pointer-events", "none")
         .style("z-index", "1000")
         .style("box-shadow", "none");
@@ -147,7 +150,8 @@ d3.csv("../data/geodata.csv").then(data => {
     .style("align-items", "center")
     .style("justify-content", "center")
     .style("height", "100%")
-    .style("font-family", "Inter, sans-serif")
+    .style("font-family", "Breite Grotesk, sans-serif")
+    .style("font-weight", "500")
     .style("color", "#525252")
     .html(`
       <div style="text-align: center;">
