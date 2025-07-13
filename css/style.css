@@ -1,5 +1,5 @@
-/* Import Montserrat for Bauhaus geometric style */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+/* Import Breite Grotesk font */
+@import url('https://fonts.cdnfonts.com/css/breite-grotesk');
 
 :root {
   --bauhaus-red: #e63946;
@@ -11,7 +11,7 @@
 }
 
 body {
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Breite Grotesk', Arial, sans-serif;
   background: var(--bauhaus-white);
   color: var(--bauhaus-black);
   margin: 0;
@@ -60,7 +60,7 @@ main {
 }
 
 .section-title, .project-title, .canvas-title, .canvas-category-title {
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Breite Grotesk', Arial, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
