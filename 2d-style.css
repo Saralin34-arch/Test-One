@@ -1,83 +1,94 @@
-/* Import Montserrat for Bauhaus geometric style */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+/* Import fonts to match Bauhaus-Archiv typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --bauhaus-red: #e63946;
-  --bauhaus-blue: #457b9d;
-  --bauhaus-yellow: #f4d35e;
-  --bauhaus-black: #111;
-  --bauhaus-gray: #e5e5e5;
-  --bauhaus-white: #fff;
+  /* Bauhaus-Archiv exact color palette */
+  --bauhaus-black: #000000;
+  --bauhaus-white: #ffffff;
+  --bauhaus-gray-100: #f8f8f8;
+  --bauhaus-gray-200: #e8e8e8;
+  --bauhaus-gray-300: #d0d0d0;
+  --bauhaus-gray-400: #a0a0a0;
+  --bauhaus-gray-500: #707070;
+  --bauhaus-gray-600: #404040;
+  --bauhaus-gray-700: #202020;
+  --bauhaus-red: #d32f2f;
+  --bauhaus-blue: #1976d2;
+  --bauhaus-yellow: #fbc02d;
 }
 
 body {
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: var(--bauhaus-white);
   color: var(--bauhaus-black);
   margin: 0;
   padding: 0;
-  letter-spacing: 0.01em;
+  line-height: 1.6;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 32px 48px;
-  border-bottom: 4px solid var(--bauhaus-blue);
+  padding: 24px 48px;
+  border-bottom: 1px solid var(--bauhaus-gray-200);
   background: var(--bauhaus-white);
-  font-size: 16px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: normal;
 }
 
 header .left, header .center, header .right {
   color: var(--bauhaus-black);
+  font-weight: 500;
 }
 header .center {
   text-align: center;
   flex: 1;
+  font-weight: 600;
 }
 header .right a {
-  color: var(--bauhaus-red);
+  color: var(--bauhaus-black);
   text-decoration: none;
-  font-weight: 700;
-  margin-left: 24px;
+  font-weight: 500;
+  margin-left: 32px;
   transition: color 0.2s;
 }
 header .right a:hover {
-  color: var(--bauhaus-blue);
+  color: var(--bauhaus-gray-500);
 }
 
 /* Breadcrumb navigation */
 .breadcrumb {
-  background: var(--bauhaus-gray);
+  background: var(--bauhaus-gray-100);
   padding: 16px 48px;
   font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: normal;
 }
 
 .breadcrumb a {
-  color: var(--bauhaus-blue);
+  color: var(--bauhaus-black);
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .breadcrumb a:hover {
-  color: var(--bauhaus-red);
+  color: var(--bauhaus-gray-500);
 }
 
 .breadcrumb span {
-  color: var(--bauhaus-black);
+  color: var(--bauhaus-gray-500);
 }
 
 main {
   max-width: 1200px;
-  margin: 60px auto;
-  padding: 0 24px;
+  margin: 40px auto;
+  padding: 0 48px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 48px;
@@ -90,10 +101,10 @@ main {
 }
 
 .section-title, .project-title, .canvas-title, .canvas-category-title {
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: -0.01em;
   color: var(--bauhaus-black);
   margin-bottom: 12px;
   margin-top: 48px;
@@ -101,21 +112,15 @@ main {
   position: relative;
 }
 .section-title::before, .project-title::before, .canvas-title::before, .canvas-category-title::before {
-  content: '';
-  display: inline-block;
-  width: 48px;
-  height: 8px;
-  background: var(--bauhaus-yellow);
-  margin-right: 16px;
-  vertical-align: middle;
-  border-radius: 0;
+  display: none;
 }
 
 .project-meta, .project-subtitle, .advisor {
-  color: var(--bauhaus-blue);
-  font-size: 16px;
+  color: var(--bauhaus-gray-500);
+  font-size: 14px;
   margin-bottom: 8px;
   text-align: left;
+  font-weight: 400;
 }
 
 p {
@@ -123,26 +128,27 @@ p {
   line-height: 1.6;
   color: var(--bauhaus-black);
   margin-bottom: 24px;
+  font-weight: 400;
 }
 
 button, .canvas-category-buttons button {
-  background: var(--bauhaus-red);
+  background: var(--bauhaus-black);
   color: var(--bauhaus-white);
   border: none;
-  padding: 14px 32px;
-  font-size: 16px;
-  font-weight: 700;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
   margin-bottom: 24px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  text-transform: none;
+  letter-spacing: normal;
   border-radius: 0;
   box-shadow: none;
   transition: background 0.2s, color 0.2s;
 }
 button:hover, .canvas-category-buttons button:hover {
-  background: var(--bauhaus-blue);
-  color: var(--bauhaus-yellow);
+  background: var(--bauhaus-gray-600);
+  color: var(--bauhaus-white);
 }
 
 #messageDisplay {
@@ -150,8 +156,8 @@ button:hover, .canvas-category-buttons button:hover {
   line-height: 1.6;
   margin-top: 20px;
   padding: 16px;
-  border: 2px solid var(--bauhaus-blue);
-  background: var(--bauhaus-gray);
+  border: 1px solid var(--bauhaus-gray-200);
+  background: var(--bauhaus-gray-100);
   border-radius: 0;
   min-height: 20px;
   color: var(--bauhaus-black);
@@ -180,24 +186,25 @@ button:hover, .canvas-category-buttons button:hover {
 .exhibition-number {
   font-size: 48px;
   font-weight: 700;
-  color: var(--bauhaus-red);
+  color: var(--bauhaus-black);
   line-height: 1;
   min-width: 60px;
 }
 
 .exhibition-details h3 {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--bauhaus-black);
   margin-bottom: 16px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  text-transform: none;
+  letter-spacing: -0.01em;
 }
 
 .exhibition-description {
-  color: var(--bauhaus-black);
+  color: var(--bauhaus-gray-600);
   margin-bottom: 24px;
   line-height: 1.6;
+  font-size: 16px;
 }
 
 .exhibition-meta {
@@ -207,13 +214,13 @@ button:hover, .canvas-category-buttons button:hover {
 }
 
 .meta-tag {
-  background: var(--bauhaus-blue);
+  background: var(--bauhaus-black);
   color: var(--bauhaus-white);
-  padding: 4px 12px;
+  padding: 6px 12px;
   font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: normal;
   border-radius: 0;
 }
 
@@ -223,7 +230,7 @@ button:hover, .canvas-category-buttons button:hover {
 
 #canvas-container-1, #canvas-container-2, #canvas-container-3, .three-canvas-container {
   background: var(--bauhaus-white);
-  border: 4px solid var(--bauhaus-black);
+  border: 1px solid var(--bauhaus-gray-200);
   box-shadow: none;
   border-radius: 0;
   padding: 32px 24px 24px 24px;
@@ -235,12 +242,12 @@ button:hover, .canvas-category-buttons button:hover {
   transition: border-color 0.2s;
 }
 #canvas-container-1:hover, #canvas-container-2:hover, #canvas-container-3:hover, .three-canvas-container:hover {
-  border-color: var(--bauhaus-blue);
+  border-color: var(--bauhaus-gray-400);
 }
 
 #canvas-container-1 canvas, #canvas-container-2 canvas, #canvas-container-3 canvas, .three-canvas-container canvas {
-  border: 4px solid var(--bauhaus-yellow);
-  background: var(--bauhaus-gray);
+  border: 1px solid var(--bauhaus-gray-200);
+  background: var(--bauhaus-gray-100);
   margin-bottom: 0;
   max-width: 100%;
   width: 100%;
@@ -264,42 +271,46 @@ button:hover, .canvas-category-buttons button:hover {
 }
 
 .related-item {
-  background: var(--bauhaus-gray);
-  border: 2px solid var(--bauhaus-black);
+  background: var(--bauhaus-white);
+  border: 1px solid var(--bauhaus-gray-200);
   padding: 24px;
   text-align: left;
   transition: border-color 0.2s;
 }
 
 .related-item:hover {
-  border-color: var(--bauhaus-blue);
+  border-color: var(--bauhaus-gray-400);
 }
 
 .related-item h4 {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--bauhaus-black);
   margin-bottom: 16px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  text-transform: none;
+  letter-spacing: -0.01em;
 }
 
 .related-item p {
-  color: var(--bauhaus-black);
+  color: var(--bauhaus-gray-600);
   margin-bottom: 24px;
+  font-size: 16px;
 }
 
 .related-link {
-  color: var(--bauhaus-red);
+  color: var(--bauhaus-black);
   text-decoration: none;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: normal;
   transition: color 0.2s;
+  border-bottom: 1px solid var(--bauhaus-black);
+  padding-bottom: 2px;
 }
 
 .related-link:hover {
-  color: var(--bauhaus-blue);
+  color: var(--bauhaus-gray-500);
+  border-bottom-color: var(--bauhaus-gray-500);
 }
 
 .canvas-shape-buttons, .canvas-category-buttons {
@@ -328,7 +339,7 @@ button:hover, .canvas-category-buttons button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--bauhaus-blue);
+  color: var(--bauhaus-gray-600);
   transition: transform 0.15s, filter 0.15s;
 }
 .shape-btn:focus .shape-svg, .shape-btn:hover .shape-svg {
@@ -337,10 +348,10 @@ button:hover, .canvas-category-buttons button:hover {
 }
 .shape-canvas-label {
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--bauhaus-black);
   margin-top: 8px;
-  letter-spacing: 0.02em;
+  letter-spacing: normal;
   text-align: center;
   margin-bottom: 0;
 }
@@ -348,9 +359,10 @@ button:hover, .canvas-category-buttons button:hover {
 /* Footer */
 .bauhaus-footer {
   width: 100%;
-  background: var(--bauhaus-gray);
+  background: var(--bauhaus-gray-100);
   margin-top: 80px;
   padding: 48px 0 24px 0;
+  border-top: 1px solid var(--bauhaus-gray-200);
 }
 
 .footer-content {
@@ -359,28 +371,29 @@ button:hover, .canvas-category-buttons button:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 48px;
-  padding: 0 24px;
+  padding: 0 48px;
 }
 
 .footer-section h4 {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--bauhaus-red);
-  margin-bottom: 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--bauhaus-black);
+  margin-bottom: 16px;
+  text-transform: none;
+  letter-spacing: normal;
 }
 
 .footer-section p {
-  color: var(--bauhaus-black);
+  color: var(--bauhaus-gray-600);
   margin-bottom: 0;
+  font-size: 14px;
 }
 
 /* Bauhaus geometric accent bar for section dividers */
 .bauhaus-divider {
   width: 100%;
-  height: 8px;
-  background: linear-gradient(90deg, var(--bauhaus-red) 0 20%, var(--bauhaus-yellow) 20% 60%, var(--bauhaus-blue) 60% 100%);
+  height: 1px;
+  background: var(--bauhaus-gray-200);
   margin: 48px 0 32px 0;
   border-radius: 0;
 }
@@ -388,16 +401,16 @@ button:hover, .canvas-category-buttons button:hover {
 @media (max-width: 700px) {
   header {
     flex-direction: column;
-    padding: 18px 8px;
+    padding: 16px 24px;
     font-size: 13px;
   }
   .breadcrumb {
-    padding: 12px 16px;
+    padding: 12px 24px;
     font-size: 12px;
   }
   main {
     max-width: 100%;
-    padding: 0 8px;
+    padding: 0 24px;
     gap: 24px;
   }
   .section-title, .project-title, .canvas-title, .canvas-category-title {
@@ -438,5 +451,6 @@ button:hover, .canvas-category-buttons button:hover {
   .footer-content {
     grid-template-columns: 1fr;
     gap: 24px;
+    padding: 0 24px;
   }
 } 
