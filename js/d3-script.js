@@ -20,7 +20,7 @@ svg.append("text")
   .style("fill", "#000000")
   .text("Temperature Over Time");
 
-d3.csv("geodata.csv").then(data => {
+d3.csv("../data/geodata.csv").then(data => {
   const parseTime = d3.utcParse("%Y-%m-%dT%H:%M:%SZ");
 
   data.forEach(d => {

@@ -12,7 +12,7 @@ const projection = d3.geoMercator()
   .scale(40000)
   .translate([width / 2, height / 2]);
 
-d3.csv("nyc_air_quality_full_coords.csv").then(data => {
+d3.csv("../data/nyc_air_quality_full_coords.csv").then(data => {
   // Clean and parse data
   data = data.filter(d => d.lat && d.lon && d["Data Value"]);
   data.forEach(d => {
