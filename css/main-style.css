@@ -73,15 +73,15 @@ main {
 
 .project-meta, .project-subtitle, .advisor {
   color: var(--bauhaus-gray-600);
-  font-size: 18px;
+  font-size: 24px;
   margin-bottom: 12px;
   text-align: left;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.02em;
 }
 
 .project-title {
-  font-size: 48px;
+  font-size: 64px;
   font-weight: 900;
   margin-bottom: 24px;
   letter-spacing: -0.03em;
@@ -94,11 +94,11 @@ main {
 }
 
 .section-title {
-  font-weight: 800;
+  font-weight: 900;
   text-transform: none;
   margin-top: 120px;
   margin-bottom: 48px;
-  font-size: 42px;
+  font-size: 56px;
   letter-spacing: -0.02em;
   color: var(--bauhaus-black);
   text-align: left;
@@ -152,8 +152,8 @@ p {
 }
 
 .collection-info h3 {
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 36px;
+  font-weight: 800;
   color: var(--bauhaus-black);
   margin-bottom: 20px;
   text-transform: none;
@@ -216,8 +216,8 @@ p {
 }
 
 .programme-content h3 {
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 32px;
+  font-weight: 800;
   color: var(--bauhaus-black);
   margin-bottom: 20px;
   text-transform: none;
@@ -276,8 +276,8 @@ p {
 }
 
 .research-item h3 {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 28px;
+  font-weight: 800;
   color: var(--bauhaus-black);
   margin-bottom: 20px;
   text-transform: none;
@@ -311,8 +311,8 @@ p {
 }
 
 .footer-section h4 {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
   color: var(--bauhaus-black);
   margin-bottom: 20px;
   text-transform: none;
