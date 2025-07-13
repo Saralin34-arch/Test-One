@@ -1,65 +1,59 @@
-/* Import Montserrat and Work Sans for an architectural style */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Work+Sans:wght@400;500&display=swap');
+/* Import Montserrat for Bauhaus geometric style */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
-/* Style the entire body of the webpage */
+:root {
+  --bauhaus-red: #e63946;
+  --bauhaus-blue: #457b9d;
+  --bauhaus-yellow: #f4d35e;
+  --bauhaus-black: #111;
+  --bauhaus-gray: #e5e5e5;
+  --bauhaus-white: #fff;
+}
+
 body {
-  font-family: 'Work Sans', Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   background: #22302F url('main-bg.svg') no-repeat center center fixed;
   background-size: cover;
-  color: #f5f5f5;
+  color: var(--bauhaus-white);
   margin: 0;
   padding: 0;
   text-align: center;
+  letter-spacing: 0.01em;
 }
 
-/* Style the header section at the top of the page */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 32px 48px;
-  border-bottom: 1px solid #e5e5e5;
-  font-size: 15px;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(30,30,40,0.03);
+  border-bottom: 4px solid var(--bauhaus-blue);
+  background: rgba(255, 255, 255, 0.95);
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
-/* Style the left section of the header */
-header .left {
-  color: #e0e0e8;
-  font-weight: 600;
+header .left, header .center, header .right {
+  color: var(--bauhaus-black);
 }
-
-/* Style the center section of the header */
 header .center {
-  font-weight: 400;
   text-align: center;
-  letter-spacing: 0.02em;
+  flex: 1;
 }
-
-/* Style the span element inside the center section */
-header .center span {
-  font-size: 13px;
-  color: #d0d0d8;
-  font-weight: 400;
-}
-
-/* Style links in the right section of the header */
 header .right a {
-  color: #f5f5f5;
+  color: var(--bauhaus-red);
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 700;
+  margin-left: 24px;
   transition: color 0.2s;
 }
-
-/* Change link color when user hovers over it */
 header .right a:hover {
-  color: #b0b0b8;
+  color: var(--bauhaus-blue);
 }
 
-/* Style the main content area */
 main {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 60px auto;
   padding: 0 24px;
   text-align: center;
@@ -68,157 +62,319 @@ main {
   align-items: center;
 }
 
-/* Style the project year/date */
-.project-meta {
-  font-size: 15px;
-  color: #d0d0d8;
+/* Hero Section */
+.hero-section {
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+.project-meta, .project-subtitle, .advisor {
+  color: var(--bauhaus-yellow);
+  font-size: 16px;
   margin-bottom: 8px;
   text-align: center;
 }
 
-/* Style the main project title */
 .project-title {
   font-size: 32px;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 4px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.12em;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  text-transform: uppercase;
+  color: var(--bauhaus-white);
 }
 
-/* Style the project subtitle */
-.project-subtitle {
-  font-size: 18px;
-  color: #d0d0d8;
-  margin-bottom: 28px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Style the advisor information */
-.advisor {
-  font-size: 15px;
-  margin-bottom: 40px;
-  color: #e0e0e8;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Style section titles (like "Abstract", "Motivation") */
 .section-title {
   font-weight: 700;
   text-transform: uppercase;
   margin-top: 64px;
   margin-bottom: 28px;
   font-size: 28px;
-  letter-spacing: 0.08em;
-  color: #e0e0e8;
+  letter-spacing: 0.12em;
+  color: var(--bauhaus-white);
   text-align: center;
+  position: relative;
+}
+.section-title::before {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 8px;
+  background: var(--bauhaus-yellow);
+  margin: 0 auto 16px auto;
+  border-radius: 0;
 }
 
-/* Style all paragraph elements */
 p {
-  font-size: 17px;
-  line-height: 1.7;
-  margin-bottom: 28px;
-  color: #f5f5f5;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  color: var(--bauhaus-white);
   text-align: center;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* --- Navigation Button Styling --- */
-.canvas-category-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 48px 0 24px 0;
-  text-align: center;
+/* Collection Section */
+.collection-section {
+  width: 100%;
+  margin-bottom: 80px;
 }
 
-.canvas-category-title {
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  color: #e0e0e8;
-  margin: 16px 0 8px 0;
-  letter-spacing: 0.02em;
-  text-align: center;
-}
-
-.canvas-category-title + .canvas-shape-buttons {
-  margin-bottom: 32px;
-}
-
-.canvas-category-title:nth-of-type(2) {
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 48px;
   margin-top: 48px;
 }
 
-.canvas-shape-buttons {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  margin: 16px 0;
+.collection-item {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--bauhaus-white);
+  padding: 32px;
+  text-align: left;
+  transition: border-color 0.2s;
+}
+
+.collection-item:hover {
+  border-color: var(--bauhaus-yellow);
+}
+
+.collection-image {
+  margin-bottom: 24px;
   text-align: center;
 }
 
+.collection-info h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--bauhaus-white);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.collection-info p {
+  color: var(--bauhaus-gray);
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.collection-link {
+  color: var(--bauhaus-yellow);
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+
+.collection-link:hover {
+  color: var(--bauhaus-white);
+}
+
+/* Programme Section */
+.programme-section {
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+.programme-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 48px;
+  margin-top: 48px;
+}
+
+.programme-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 8px solid var(--bauhaus-red);
+  padding: 32px;
+  text-align: left;
+}
+
+.programme-date {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--bauhaus-yellow);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.programme-content h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--bauhaus-white);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.programme-content p {
+  color: var(--bauhaus-gray);
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.programme-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.feature-tag {
+  background: var(--bauhaus-blue);
+  color: var(--bauhaus-white);
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-radius: 0;
+}
+
+/* Research Section */
+.research-section {
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.research-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid var(--bauhaus-gray);
+  padding: 24px;
+  text-align: left;
+  transition: border-color 0.2s;
+}
+
+.research-item:hover {
+  border-color: var(--bauhaus-yellow);
+}
+
+.research-item h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--bauhaus-white);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.research-item p {
+  color: var(--bauhaus-gray);
+  text-align: left;
+  margin-bottom: 0;
+}
+
+/* Footer */
+.bauhaus-footer {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  margin-top: 80px;
+  padding: 48px 0 24px 0;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 48px;
+  padding: 0 24px;
+}
+
+.footer-section h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--bauhaus-yellow);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.footer-section p {
+  color: var(--bauhaus-gray);
+  margin-bottom: 0;
+}
+
+/* Shape buttons for collection */
 .shape-btn {
   width: 80px;
   height: 80px;
-  border: none;
-  border-radius: 16px;
-  background: var(--shape-color);
+  border: 4px solid var(--bauhaus-white);
+  border-radius: 0;
+  background: var(--bauhaus-red);
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  box-shadow: none;
   position: relative;
   overflow: hidden;
+}
+
+.shape-btn:nth-child(2) {
+  background: var(--bauhaus-blue);
+}
+
+.shape-btn:nth-child(3) {
+  background: var(--bauhaus-yellow);
+}
+
+.shape-btn:nth-child(4) {
+  background: var(--bauhaus-red);
+}
+
+.shape-btn:nth-child(5) {
+  background: var(--bauhaus-blue);
+}
+
+.shape-btn:nth-child(6) {
+  background: var(--bauhaus-yellow);
 }
 
 .shape-btn:focus .shape-svg,
 .shape-btn:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  border-color: var(--bauhaus-yellow);
 }
 
 .shape-svg {
   width: 48px;
   height: 48px;
-  color: white;
+  color: var(--bauhaus-white);
   transition: transform 0.3s ease;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
 
-.shape-btn-label-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  text-align: center;
+/* Bauhaus geometric accent bar for section dividers */
+.bauhaus-divider {
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(90deg, var(--bauhaus-red) 0 20%, var(--bauhaus-yellow) 20% 60%, var(--bauhaus-blue) 60% 100%);
+  margin: 48px 0 32px 0;
+  border-radius: 0;
 }
 
-.shape-canvas-label {
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: #666;
-  text-align: center;
-  line-height: 1.3;
-  max-width: 100px;
-  letter-spacing: 0.01em;
-}
-
-/* Responsive adjustments */
 @media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    padding: 18px 8px;
+    font-size: 13px;
+  }
   .section-title {
     font-size: 20px;
     margin-top: 40px;
@@ -231,10 +387,15 @@ p {
   .project-title {
     font-size: 22px;
   }
-  .canvas-shape-buttons {
-    gap: 16px;
+  .collection-grid, .programme-grid, .research-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
-  .shape-btn { 
-    top: 0 !important; 
+  .collection-item, .programme-item, .research-item {
+    padding: 16px;
+  }
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 } 

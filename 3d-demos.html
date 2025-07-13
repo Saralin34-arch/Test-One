@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>3D Demos - Module 1</title>
+  <title>3D Interactive Demos - Bauhaus Digital Archive</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="3d-style.css">
   <!-- REQUIRED: Load p5.js library -->
@@ -12,42 +12,163 @@
 </head>
 
 <body>
+  <!-- Bauhaus-style header with navigation -->
   <header>
     <div class="left">Columbia GSAPP</div>
     <div class="center">
-      Computational Design Practices<br>
-      <span>Project Archive</span>
+      Bauhaus Digital Archive<br>
+      <span>3D Interactive Demos</span>
     </div>
-    <div class="right"><a href="index.html">Back to Main</a></div>
+    <div class="right">
+      <a href="index.html">Home</a>
+      <a href="2d-demos.html">2D Demos</a>
+    </div>
   </header>
 
-  <main>
-    <div class="project-meta">2025</div>
-    <div class="project-title">3D Interactive Demos</div>
-    <div class="project-subtitle">Sara Lin</div>
-    <div class="advisor">Advisor<br><strong>Catherine Griffiths</strong></div>
-    
-    <div class="section-title">Abstract</div>
-    <p>the aim of the project is to learn from beginning how to create web-base art from scratch</p>
-    
-    <div class="section-title">3D Interactive Demos</div>
+  <!-- Breadcrumb navigation -->
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a> → 
+    <a href="#collection">Collection</a> → 
+    <span>3D Interactive Demos</span>
+  </nav>
 
-    <!-- 3D Canvas container for Three.js orbit camera demo -->
-    <div class="canvas-title" id="orbit-control-title">3D Orbit Control Demo</div>
-    <div id="3d-orbit-control" class="three-canvas-container"></div>
-    
-    <!-- 3D Canvas container for new Primitive Demo -->
-    <div class="canvas-title" id="primitive-title">3D Primitives Demo</div>
-    <div id="3d-primitive-canvas" class="three-canvas-container"></div>
-    
-    <!-- 3D Canvas container for Three.js lighting demo -->
-    <div class="canvas-title" id="lighting-title">3D Lighting Demo</div>
-    <div id="3d-lighting-canvas" class="three-canvas-container"></div>
-    
-    <!-- 3D Canvas container for Three.js spatial canvas demo -->
-    <div class="canvas-title" id="spatial-title">3D Spatial Canvas</div>
-    <div id="3d-spatial-canvas" class="three-canvas-container"></div>
+  <main>
+    <!-- Exhibition header -->
+    <section class="exhibition-header">
+      <div class="project-meta">2025</div>
+      <div class="project-title">3D Interactive Demos</div>
+      <div class="project-subtitle">Sara Lin</div>
+      <div class="advisor">Advisor<br><strong>Catherine Griffiths</strong></div>
+      
+      <div class="bauhaus-divider"></div>
+      
+      <div class="section-title">Exhibition Overview</div>
+      <p>This collection explores three-dimensional design through computational geometry, lighting, and spatial relationships. Each demo demonstrates different aspects of 3D visualization and interaction using Three.js and p5.js WEBGL.</p>
+    </section>
+
+    <!-- Exhibition items -->
+    <section class="exhibition-section">
+      <div class="section-title">Exhibition Items</div>
+      
+      <!-- Exhibition item 1 -->
+      <article class="exhibition-item">
+        <div class="exhibition-info">
+          <div class="exhibition-number">01</div>
+          <div class="exhibition-details">
+            <h3>3D Orbit Control Demo</h3>
+            <p class="exhibition-description">Interactive 3D scene with camera orbit controls. Features a sphere composed of blue boxes on a white background, demonstrating spatial navigation and geometric composition.</p>
+            <div class="exhibition-meta">
+              <span class="meta-tag">Orbit Controls</span>
+              <span class="meta-tag">3D Navigation</span>
+              <span class="meta-tag">Geometric</span>
+            </div>
+          </div>
+        </div>
+        <div class="exhibition-canvas">
+          <div class="canvas-title" id="orbit-control-title">3D Orbit Control Demo</div>
+          <div id="3d-orbit-control" class="three-canvas-container"></div>
+        </div>
+      </article>
+
+      <div class="bauhaus-divider"></div>
+      
+      <!-- Exhibition item 2 -->
+      <article class="exhibition-item">
+        <div class="exhibition-info">
+          <div class="exhibition-number">02</div>
+          <div class="exhibition-details">
+            <h3>3D Primitives Demo</h3>
+            <p class="exhibition-description">Collection of basic 3D primitives including torus, cylinder, and octahedron. Demonstrates fundamental geometric forms and their spatial relationships.</p>
+            <div class="exhibition-meta">
+              <span class="meta-tag">Primitives</span>
+              <span class="meta-tag">Geometry</span>
+              <span class="meta-tag">Forms</span>
+            </div>
+          </div>
+        </div>
+        <div class="exhibition-canvas">
+          <div class="canvas-title" id="primitive-title">3D Primitives Demo</div>
+          <div id="3d-primitive-canvas" class="three-canvas-container"></div>
+        </div>
+      </article>
+
+      <div class="bauhaus-divider"></div>
+      
+      <!-- Exhibition item 3 -->
+      <article class="exhibition-item">
+        <div class="exhibition-info">
+          <div class="exhibition-number">03</div>
+          <div class="exhibition-details">
+            <h3>3D Lighting Demo</h3>
+            <p class="exhibition-description">Advanced lighting exploration with multiple light sources and materials. Features a box with various lighting conditions demonstrating atmospheric and dramatic effects.</p>
+            <div class="exhibition-meta">
+              <span class="meta-tag">Lighting</span>
+              <span class="meta-tag">Materials</span>
+              <span class="meta-tag">Atmosphere</span>
+            </div>
+          </div>
+        </div>
+        <div class="exhibition-canvas">
+          <div class="canvas-title" id="lighting-title">3D Lighting Demo</div>
+          <div id="3d-lighting-canvas" class="three-canvas-container"></div>
+        </div>
+      </article>
+
+      <div class="bauhaus-divider"></div>
+      
+      <!-- Exhibition item 4 -->
+      <article class="exhibition-item">
+        <div class="exhibition-info">
+          <div class="exhibition-number">04</div>
+          <div class="exhibition-details">
+            <h3>3D Spatial Canvas</h3>
+            <p class="exhibition-description">Complex spatial composition with atmospheric geometry and environmental effects. Explores depth, perspective, and spatial relationships in three-dimensional space.</p>
+            <div class="exhibition-meta">
+              <span class="meta-tag">Spatial</span>
+              <span class="meta-tag">Atmospheric</span>
+              <span class="meta-tag">Depth</span>
+            </div>
+          </div>
+        </div>
+        <div class="exhibition-canvas">
+          <div class="canvas-title" id="spatial-title">3D Spatial Canvas</div>
+          <div id="3d-spatial-canvas" class="three-canvas-container"></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Related exhibitions -->
+    <section class="related-section">
+      <div class="bauhaus-divider"></div>
+      <div class="section-title">Related Exhibitions</div>
+      <div class="related-grid">
+        <div class="related-item">
+          <h4>2D Interactive Demos</h4>
+          <p>Two-dimensional explorations including organic compositions, animations, and interactive canvases.</p>
+          <a href="2d-demos.html" class="related-link">View Exhibition →</a>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- Bauhaus-style footer -->
+  <footer class="bauhaus-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Columbia GSAPP</h4>
+        <p>Computational Design Practices</p>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>sara.lin@columbia.edu</p>
+      </div>
+      <div class="footer-section">
+        <h4>Advisor</h4>
+        <p>Catherine Griffiths</p>
+      </div>
+    </div>
+    <div class="bauhaus-divider"></div>
+  </footer>
 
   <script src="3d-orbit-control.js"></script>
   <script src="3d-primitive-demo.js"></script>

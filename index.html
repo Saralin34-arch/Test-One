@@ -2,59 +2,147 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Module 1 - Navigation</title>
+  <title>Bauhaus Digital Archive - Columbia GSAPP</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="main-style.css">
 </head>
 
 <body>
+  <!-- Bauhaus-style header with navigation -->
   <header>
     <div class="left">Columbia GSAPP</div>
     <div class="center">
-      Computational Design Practices<br>
-      <span>Project Archive</span>
+      Bauhaus Digital Archive<br>
+      <span>Computational Design Practices</span>
     </div>
-    <div class="right"><a href="#">About</a></div>
+    <div class="right">
+      <a href="#collection">Collection</a>
+      <a href="#programme">Programme</a>
+      <a href="#research">Research</a>
+    </div>
   </header>
 
   <main>
-    <div class="project-meta">2025</div>
-    <div class="project-title">Method As Practice Class Assignment Series</div>
-    <div class="project-subtitle">Sara Lin</div>
-    <div class="advisor">Advisor<br><strong>Catherine Griffiths</strong></div>
-    
-    <div class="section-title">Abstract</div>
-    <p>the aim of the project is to learn from beginning how to create web-base art from scratch</p>
-    
-    <div class="section-title">Interactive Demos</div>
-    
-    <div class="canvas-category-group">
-      <div class="canvas-category-title">2D Demos</div>
-      <div class="canvas-shape-buttons">
-        <div class="shape-btn-label-group">
-          <a href="2d-demos.html" class="shape-btn" style="--shape-color:#FFB84C; text-decoration: none; display: flex; align-items: center; justify-content: center;">
-            <span class="shape-svg">
-              <!-- Friendly (peanut) -->
-              <svg viewBox="0 0 44 44" width="64" height="64" fill="currentColor"><ellipse cx="14" cy="22" rx="12" ry="18"/><ellipse cx="30" cy="22" rx="12" ry="18"/></svg>
-            </span>
-          </a>
-          <div class="shape-canvas-label">2D Interactive Demos</div>
+    <!-- Hero section like Bauhaus-Archiv -->
+    <section class="hero-section">
+      <div class="project-meta">2025</div>
+      <div class="project-title">Method As Practice Class Assignment Series</div>
+      <div class="project-subtitle">Sara Lin</div>
+      <div class="advisor">Advisor<br><strong>Catherine Griffiths</strong></div>
+      
+      <div class="bauhaus-divider"></div>
+      
+      <div class="section-title">Abstract</div>
+      <p>The aim of the project is to learn from beginning how to create web-based art from scratch, exploring the intersection of Bauhaus principles and computational design practices.</p>
+    </section>
+
+    <!-- Collection section like Bauhaus-Archiv -->
+    <section id="collection" class="collection-section">
+      <div class="section-title">Collection</div>
+      <div class="collection-grid">
+        <div class="collection-item">
+          <div class="collection-image">
+            <a href="2d-demos.html" class="shape-btn" style="--shape-color:var(--bauhaus-red); text-decoration: none; display: flex; align-items: center; justify-content: center;">
+              <span class="shape-svg">
+                <svg viewBox="0 0 44 44" width="64" height="64" fill="currentColor"><ellipse cx="14" cy="22" rx="12" ry="18"/><ellipse cx="30" cy="22" rx="12" ry="18"/></svg>
+              </span>
+            </a>
+          </div>
+          <div class="collection-info">
+            <h3>2D Interactive Demos</h3>
+            <p>Organic grid compositions, bouncing ball animations, and zoom-pan interactions exploring geometric abstraction.</p>
+            <a href="2d-demos.html" class="collection-link">View Collection →</a>
+          </div>
+        </div>
+        
+        <div class="collection-item">
+          <div class="collection-image">
+            <a href="3d-demos.html" class="shape-btn" style="--shape-color:var(--bauhaus-blue); text-decoration: none; display: flex; align-items: center; justify-content: center;">
+              <span class="shape-svg">
+                <svg viewBox="0 0 44 44" width="64" height="64" fill="currentColor"><rect x="12" y="12" width="20" height="20" transform="rotate(45 22 22)"/></svg>
+              </span>
+            </a>
+          </div>
+          <div class="collection-info">
+            <h3>3D Interactive Demos</h3>
+            <p>Three-dimensional explorations including orbit controls, primitive geometries, lighting studies, and spatial canvases.</p>
+            <a href="3d-demos.html" class="collection-link">View Collection →</a>
+          </div>
         </div>
       </div>
-      
-      <div class="canvas-category-title">3D Demos</div>
-      <div class="canvas-shape-buttons">
-        <div class="shape-btn-label-group">
-          <a href="3d-demos.html" class="shape-btn" style="--shape-color:#FFE08A; text-decoration: none; display: flex; align-items: center; justify-content: center;">
-            <span class="shape-svg">
-              <!-- Warm (diamond) -->
-              <svg viewBox="0 0 44 44" width="64" height="64" fill="currentColor"><rect x="12" y="12" width="20" height="20" transform="rotate(45 22 22)"/></svg>
-            </span>
-          </a>
-          <div class="shape-canvas-label">3D Interactive Demos</div>
+    </section>
+
+    <!-- Programme section like Bauhaus-Archiv -->
+    <section id="programme" class="programme-section">
+      <div class="bauhaus-divider"></div>
+      <div class="section-title">Programme</div>
+      <div class="programme-grid">
+        <div class="programme-item">
+          <div class="programme-date">Module 1</div>
+          <div class="programme-content">
+            <h3>2D Drawing & Animation</h3>
+            <p>Interactive canvas experiments with organic shapes, color theory, and motion design principles.</p>
+            <div class="programme-features">
+              <span class="feature-tag">Organic Grid</span>
+              <span class="feature-tag">Bouncing Ball</span>
+              <span class="feature-tag">Zoom & Pan</span>
+            </div>
+          </div>
         </div>
+        
+        <div class="programme-item">
+          <div class="programme-date">Module 2</div>
+          <div class="programme-content">
+            <h3>3D Spatial Design</h3>
+            <p>Three-dimensional explorations using Three.js, focusing on geometry, lighting, and spatial relationships.</p>
+            <div class="programme-features">
+              <span class="feature-tag">Orbit Controls</span>
+              <span class="feature-tag">Primitives</span>
+              <span class="feature-tag">Lighting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research section like Bauhaus-Archiv -->
+    <section id="research" class="research-section">
+      <div class="bauhaus-divider"></div>
+      <div class="section-title">Research & Education</div>
+      <div class="research-grid">
+        <div class="research-item">
+          <h3>Computational Design</h3>
+          <p>Exploring the intersection of traditional Bauhaus principles with modern computational tools and web technologies.</p>
+        </div>
+        <div class="research-item">
+          <h3>Interactive Art</h3>
+          <p>Developing responsive, user-driven art experiences that embody the Bauhaus philosophy of form following function.</p>
+        </div>
+        <div class="research-item">
+          <h3>Digital Craft</h3>
+          <p>Investigating how digital tools can extend and enhance traditional artistic practices and design methodologies.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bauhaus-style footer -->
+  <footer class="bauhaus-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Columbia GSAPP</h4>
+        <p>Computational Design Practices</p>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>sara.lin@columbia.edu</p>
+      </div>
+      <div class="footer-section">
+        <h4>Advisor</h4>
+        <p>Catherine Griffiths</p>
       </div>
     </div>
-  </main>
+    <div class="bauhaus-divider"></div>
+  </footer>
 </body>
 </html>
