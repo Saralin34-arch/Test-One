@@ -73,7 +73,7 @@ main {
 
 .project-meta, .project-subtitle, .advisor {
   color: var(--bauhaus-gray-600);
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 12px;
   text-align: left;
   font-weight: 400;
@@ -81,7 +81,7 @@ main {
 }
 
 .project-title {
-  font-size: 56px;
+  font-size: 42px;
   font-weight: 700;
   margin-bottom: 24px;
   letter-spacing: -0.03em;
@@ -177,6 +177,8 @@ p {
   transition: color 0.2s ease;
   border-bottom: 1px solid var(--bauhaus-black);
   padding-bottom: 2px;
+  margin-top: 24px;
+  display: inline-block;
 }
 
 .collection-link:hover {
