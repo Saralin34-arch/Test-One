@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>D3 Data Visualization - Columbia GSAPP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="d3-style.css">
+</head>
+
+<body>
+  <!-- Bauhaus-style header with navigation -->
+  <header>
+    <div class="left">Columbia GSAPP</div>
+    <div class="center">
+      Computational Design Practices
+    </div>
+    <div class="right">
+      <a href="index.html">Home</a>
+      <a href="2d-demos.html">2D</a>
+      <a href="3d-demos.html">3D</a>
+    </div>
+  </header>
+
+  <!-- Breadcrumb navigation -->
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> <span>→</span> D3 Data Visualization
+  </div>
+
+  <main>
+    <!-- Exhibition header -->
+    <section class="exhibition-header">
+      <div class="project-meta">2025</div>
+      <div class="project-title">D3 Data Visualization</div>
+      <div class="project-subtitle">Smart Citizen Temporal Analysis</div>
+      <div class="advisor">Sara Lin<br><strong>Catherine Griffiths</strong></div>
+    </section>
+
+    <!-- Exhibition section -->
+    <section class="exhibition-section">
+      <div class="exhibition-item">
+        <div class="exhibition-info">
+          <div class="exhibition-number">01</div>
+          <div class="exhibition-details">
+            <h3>Temperature Over Time</h3>
+            <p class="exhibition-description">Interactive visualization of Smart Citizen sensor data showing temperature variations over time using D3.js.</p>
+            <div class="exhibition-meta">
+              <span class="meta-tag">D3.js</span>
+              <span class="meta-tag">Data Visualization</span>
+              <span class="meta-tag">Time Series</span>
+            </div>
+          </div>
+        </div>
+        <div class="exhibition-canvas">
+          <div id="chart-container">
+            <h4 class="canvas-title">Smart Citizen: Temperature Over Time</h4>
+            <div id="chart"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- Bauhaus-style footer -->
+  <footer class="bauhaus-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Columbia GSAPP</h4>
+        <p>Computational Design Practices</p>
+      </div>
+      <div class="footer-section">
+        <h4>Advisor</h4>
+        <p>Catherine Griffiths</p>
+      </div>
+    </div>
+    <div class="bauhaus-divider"></div>
+  </footer>
+
+  <script src="d3.v7.min.js"></script>
+  <script src="d3-script.js"></script>
+</body>
+</html> 
