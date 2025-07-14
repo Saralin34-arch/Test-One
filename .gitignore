@@ -1,0 +1,24 @@
+# Large data files
+*.geojson
+*.csv
+!data/nyc_trees_sample.csv
+!data/nyc_environmental_data.csv
+!data/nyc_air_quality_full_coords.csv
+!data/geodata.csv
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp 
