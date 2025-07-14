@@ -78,22 +78,15 @@ const complaints = [
   {"Latitude": 40.775496, "Longitude": -73.962306}
 ];
 
-// Sample tree data (street trees)
-const trees = [
-  {"latitude": 40.7128, "longitude": -74.006, "spc_common": "London planetree"},
-  {"latitude": 40.7228, "longitude": -74.001, "spc_common": "Callery pear"},
-  {"latitude": 40.7328, "longitude": -73.996, "spc_common": "Ginkgo"},
-  {"latitude": 40.7188, "longitude": -73.991, "spc_common": "Honeylocust"},
-  {"latitude": 40.7088, "longitude": -73.986, "spc_common": "Red maple"},
-  {"latitude": 40.6988, "longitude": -73.981, "spc_common": "Pin oak"},
-  {"latitude": 40.6888, "longitude": -73.976, "spc_common": "Littleleaf linden"},
-  {"latitude": 40.6788, "longitude": -73.971, "spc_common": "American elm"},
-  {"latitude": 40.6688, "longitude": -73.966, "spc_common": "Norway maple"},
-  {"latitude": 40.6588, "longitude": -73.961, "spc_common": "Silver maple"}
-];
+// Tree data will be loaded from CSV
+let trees = [];
 
-// Load and draw the map
-d3.json("https://raw.githubusercontent.com/dwillis/nyc-maps/master/community-districts.geojson").then(geoData => {
+// Load tree data first, then map data
+Promise.all([
+  d3.csv("data/nyc_trees_sample.csv"),
+  d3.json("https://raw.githubusercontent.com/dwillis/nyc-maps/master/community-districts.geojson")
+]).then(([treeData, geoData]) => {
+  trees = treeData;
   // Create color scale for NO₂ levels
   const no2Map = new Map(airData.map(d => [d["Geo Place Name"], +d.Average_NO2]));
   const color = d3.scaleSequential(d3.interpolateReds)
