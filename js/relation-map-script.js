@@ -1,5 +1,5 @@
-// Import Breite Grotesk font for D3 text elements
-const fontFamily = "'Breite Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+// Using Helvetica font for D3 text elements
+const fontFamily = "'Helvetica Neue', Helvetica, Arial, sans-serif";
 
 // Set up the map dimensions and projection
 const width = 960, height = 800;

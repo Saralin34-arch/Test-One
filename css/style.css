@@ -1,5 +1,4 @@
-/* Import Breite Grotesk font */
-@import url('https://fonts.cdnfonts.com/css/breite-grotesk');
+/* Using Helvetica font family */
 
 :root {
   --bauhaus-red: #e63946;
@@ -11,7 +10,7 @@
 }
 
 body {
-  font-family: 'Breite Grotesk', Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background: var(--bauhaus-white);
   color: var(--bauhaus-black);
   margin: 0;
@@ -62,7 +61,7 @@ main {
 }
 
 .section-title, .project-title, .canvas-title, .canvas-category-title {
-  font-family: 'Breite Grotesk', Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.12em;

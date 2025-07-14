@@ -4,7 +4,7 @@ const height = 600;
 
 svg.attr("width", width)
    .attr("height", height)
-   .style("font-family", "Breite Grotesk, sans-serif");
+   .style("font-family", "Helvetica Neue, Helvetica, Arial, sans-serif");
 
 // Mercator projection centered on NYC
 const projection = d3.geoMercator()
@@ -70,7 +70,7 @@ d3.csv("../data/nyc_air_quality_full_coords.csv").then(data => {
           .style("border", "1px solid #e5e5e5")
           .style("padding", "8px 12px")
           .style("border-radius", "0")
-          .style("font-family", "Breite Grotesk, sans-serif")
+          .style("font-family", "Helvetica Neue, Helvetica, Arial, sans-serif")
           .style("font-size", "14px")
           .style("font-weight", "500")
           .style("pointer-events", "none")
@@ -99,7 +99,7 @@ d3.csv("../data/nyc_air_quality_full_coords.csv").then(data => {
     .attr("x", width / 2)
     .attr("y", 30)
     .attr("text-anchor", "middle")
-    .style("font-family", "Breite Grotesk, sans-serif")
+    .style("font-family", "Helvetica Neue, Helvetica, Arial, sans-serif")
     .style("font-size", "20px")
     .style("font-weight", "700")
     .style("fill", "#000000")
@@ -129,7 +129,7 @@ d3.csv("../data/nyc_air_quality_full_coords.csv").then(data => {
     .join("text")
       .attr("x", 30)
       .attr("y", 12)
-      .style("font-family", "Breite Grotesk, sans-serif")
+      .style("font-family", "Helvetica Neue, Helvetica, Arial, sans-serif")
       .style("font-size", "14px")
       .style("font-weight", "600")
       .style("fill", "#000000")
@@ -139,7 +139,7 @@ d3.csv("../data/nyc_air_quality_full_coords.csv").then(data => {
   legend.append("text")
     .attr("x", 0)
     .attr("y", -10)
-    .style("font-family", "Breite Grotesk, sans-serif")
+    .style("font-family", "Helvetica Neue, Helvetica, Arial, sans-serif")
     .style("font-size", "16px")
     .style("font-weight", "700")
     .style("fill", "#000000")
@@ -153,7 +153,7 @@ d3.csv("../data/nyc_air_quality_full_coords.csv").then(data => {
     .attr("x", width / 2)
     .attr("y", height / 2)
     .attr("text-anchor", "middle")
-    .style("font-family", "Breite Grotesk, sans-serif")
+    .style("font-family", "Helvetica Neue, Helvetica, Arial, sans-serif")
     .style("font-size", "18px")
     .style("font-weight", "600")
     .style("fill", "#525252")
@@ -163,7 +163,7 @@ d3.csv("../data/nyc_air_quality_full_coords.csv").then(data => {
     .attr("x", width / 2)
     .attr("y", height / 2 + 25)
     .attr("text-anchor", "middle")
-    .style("font-family", "Breite Grotesk, sans-serif")
+    .style("font-family", "Helvetica Neue, Helvetica, Arial, sans-serif")
     .style("font-size", "16px")
     .style("font-weight", "500")
     .style("fill", "#525252")
