@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relation Map - Digital Archive</title>
+  <link rel="stylesheet" href="../css/relation-map-style.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="left">Digital Archive</div>
+    <div class="center">Method As Practice</div>
+    <div class="right">
+      <a href="../index.html">Home</a>
+    </div>
+  </header>
+
+  <div class="breadcrumb">
+    <a href="../index.html">Home</a> <span>></span> <a href="d3-demos.html">D3 Demos</a> <span>></span> Relation Map
+  </div>
+
+  <main>
+    <div class="exhibition-header">
+      <div class="project-meta">Class Assignment Series</div>
+      <div class="project-title">Relation Map</div>
+      <div class="project-subtitle">NYC: Tree Coverage vs Air Quality vs Indoor Complaints</div>
+      <div class="advisor">Interactive Data Visualization</div>
+    </div>
+
+    <div class="exhibition-section">
+      <div class="exhibition-item">
+        <div class="exhibition-info">
+          <div class="exhibition-number">04</div>
+          <div class="exhibition-details">
+            <h3>Urban Environmental Relations</h3>
+            <div class="exhibition-description">
+              This interactive map explores the complex relationships between tree coverage, air quality (NO₂ levels), and indoor complaints across New York City neighborhoods. The visualization layers multiple datasets to reveal potential correlations and spatial patterns in urban environmental health.
+            </div>
+            <div class="exhibition-meta">
+              <span class="meta-tag">D3.js</span>
+              <span class="meta-tag">Geospatial</span>
+              <span class="meta-tag">Environmental Data</span>
+            </div>
+          </div>
+        </div>
+        <div class="exhibition-canvas">
+          <div id="relation-map-container">
+            <svg id="relation-map" width="960" height="800"></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="related-section">
+      <h3>Related Projects</h3>
+      <div class="related-grid">
+        <div class="related-item">
+          <h4>NYC Air Quality Contours</h4>
+          <p>Contour mapping of air pollutant concentrations across New York City neighborhoods.</p>
+          <a href="nyc-air-contours.html" class="related-link">View Demo</a>
+        </div>
+        <div class="related-item">
+          <h4>Smart Citizen Temperature</h4>
+          <p>Time series visualization of temperature data from citizen sensors.</p>
+          <a href="d3-demos.html" class="related-link">View Demo</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bauhaus-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Digital Archive</h4>
+        <p>Method As Practice<br>Class Assignment Series</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/relation-map-script.js"></script>
+</body>
+</html> 
