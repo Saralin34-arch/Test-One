@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>U.S. Emissions Source Index Chart - Columbia GSAPP</title>
+  <link rel="stylesheet" href="../css/d3-style.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    .emissions-container {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      padding: 32px;
+      margin: 32px 0;
+      text-align: center;
+    }
+    .emissions-title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .emissions-chart {
+      max-width: 800px;
+      margin: 0 auto;
+      display: block;
+    }
+    .line { 
+      fill: none; 
+      stroke-width: 2px; 
+    }
+    .axis-label { 
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      fill: #525252;
+    }
+    .legend text {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      fill: #000000;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Bauhaus-style header with navigation -->
+  <header>
+    <div class="left">Columbia GSAPP</div>
+    <div class="center">
+      Digital Archive<br>
+      <span>U.S. Emissions Index</span>
+    </div>
+    <div class="right">
+      <a href="../index.html">Home</a>
+      <a href="d3-demos.html">D3 Demos</a>
+      <a href="2d-demos.html">2D</a>
+      <a href="3d-demos.html">3D</a>
+    </div>
+  </header>
+
+  <!-- Breadcrumb navigation -->
+  <div class="breadcrumb">
+    <a href="../index.html">Home</a> <span>→</span> 
+    <a href="d3-demos.html">D3 Demos</a> <span>→</span> 
+    U.S. Emissions Index
+  </div>
+
+  <main>
+    <!-- Exhibition header -->
+    <section class="exhibition-header">
+      <div class="project-meta">2025</div>
+      <div class="project-title">U.S. Emissions Source Index</div>
+      <div class="project-subtitle">Sector Analysis (1990 = 100)</div>
+      <div class="advisor">Sara Lin<br><strong>Catherine Griffiths</strong></div>
+    </section>
+
+    <!-- Emissions Chart Section -->
+    <section class="exhibition-section">
+      <div class="emissions-container">
+        <h2 class="emissions-title">Indexed U.S. Emissions by Sector (1990 = 100)</h2>
+        <svg class="emissions-chart" width="800" height="500"></svg>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bauhaus-style footer -->
+  <footer class="bauhaus-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Columbia GSAPP</h4>
+        <p>Computational Design Practices</p>
+      </div>
+      <div class="footer-section">
+        <h4>Advisor</h4>
+        <p>Catherine Griffiths</p>
+      </div>
+    </div>
+    <div class="bauhaus-divider"></div>
+  </footer>
+
+  <script>
+    const data = [
+      {Year: 1990, Transportation:1230, Electric:1100, Industry:1050, Residential:800, Agriculture:600},
+      {Year: 2000, Transportation:1400, Electric:1300, Industry:1200, Residential:900, Agriculture:620},
+      {Year: 2010, Transportation:1500, Electric:1400, Industry:1300, Residential:850, Agriculture:640},
+      {Year: 2020, Transportation:1600, Electric:1450, Industry:1350, Residential:900, Agriculture:660},
+      {Year: 2022, Transportation:1620, Electric:1480, Industry:1380, Residential:910, Agriculture:670}
+    ];
+
+    const sectors = ["Transportation","Electric","Industry","Residential","Agriculture"];
+    const base = data.find(d => d.Year === 1990);
+    sectors.forEach(sec => base[sec]);
+
+    const indexed = data.map(d => {
+      let obj = {Year: d.Year};
+      sectors.forEach(sec => {
+        obj[sec] = (d[sec] / base[sec]) * 100;
+      });
+      return obj;
+    });
+
+    const svg = d3.select(".emissions-chart"),
+          margin = {top: 20, right: 150, bottom: 40, left: 50},
+          w = +svg.attr("width") - margin.left - margin.right,
+          h = +svg.attr("height") - margin.top - margin.bottom;
+
+    const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+    const x = d3.scaleLinear().domain(d3.extent(indexed, d => d.Year)).range([0, w]);
+    const y = d3.scaleLinear()
+      .domain([d3.min(indexed, d => d3.min(sectors, sec => d[sec])),
+               d3.max(indexed, d => d3.max(sectors, sec => d[sec]))])
+      .nice().range([h, 0]);
+
+    const color = d3.scaleOrdinal()
+      .domain(sectors)
+      .range(d3.schemeTableau10);
+
+    g.append("g").call(d3.axisLeft(y));
+    g.append("g").attr("transform", `translate(0,${h})`).call(d3.axisBottom(x).ticks(5).tickFormat(d3.format("d")));
+
+    const line = d3.line()
+      .x(d => x(d.Year))
+      .y((d,i,arr) => y(d[arr.key]));
+
+    sectors.forEach(sec => {
+      const secData = indexed.map(d => ({Year:d.Year, value:d[sec]}));
+      g.append("path")
+        .datum(secData)
+        .attr("class","line")
+        .attr("stroke", color(sec))
+        .attr("d", d3.line()
+          .x(d => x(d.Year))
+          .y(d => y(d.value))
+        );
+    });
+
+    // Legend
+    const legend = svg.append("g")
+      .attr("class", "legend")
+      .attr("transform", `translate(${w + margin.left + 20}, ${margin.top})`);
+    sectors.forEach((sec,i) => {
+      const yoff = i * 20;
+      legend.append("rect")
+        .attr("x",0).attr("y",yoff).attr("width",10).attr("height",10).attr("fill", color(sec));
+      legend.append("text")
+        .attr("x",15).attr("y",yoff+10)
+        .text(sec);
+    });
+
+    svg.append("text")
+      .attr("transform", `translate(${margin.left + w/2}, ${h + margin.top + margin.bottom - 5})`)
+      .style("text-anchor","middle")
+      .attr("class","axis-label")
+      .text("Year");
+
+    svg.append("text")
+      .attr("transform", `translate(15,${margin.top + h/2}) rotate(-90)`)
+      .style("text-anchor","middle")
+      .attr("class","axis-label")
+      .text("Index (1990 = 100)");
+  </script>
+</body>
+</html> 
