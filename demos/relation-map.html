@@ -24,7 +24,7 @@
     <div class="exhibition-header">
       <div class="project-meta">Class Assignment Series</div>
       <div class="project-title">Relation Map</div>
-      <div class="project-subtitle">NYC: Tree Coverage vs Air Quality vs Indoor Complaints</div>
+      <div class="project-subtitle">Urban Building Systems, Materials, and Environmental Impact</div>
       <div class="advisor">Interactive Data Visualization</div>
     </div>
 
@@ -33,9 +33,23 @@
         <div class="exhibition-info">
           <div class="exhibition-number">04</div>
           <div class="exhibition-details">
-            <h3>Urban Environmental Relations</h3>
+            <h3>Environmental Material and Building Relations</h3>
             <div class="exhibition-description">
-              This interactive map explores the complex relationships between tree coverage, air quality (NO₂ levels), and indoor complaints across New York City neighborhoods. The visualization layers multiple datasets to reveal potential correlations and spatial patterns in urban environmental health.
+              <strong>🗺️ Map Overview:</strong> This force-directed relation map visualizes interconnected elements within the context of urban building systems, material usage, and environmental impact. It highlights how traditional and emerging materials contribute to — or mitigate — carbon emissions and climate-related health impacts.<br><br>
+              <strong>🧩 Node Categories:</strong> Each node belongs to a category, shown by color:<br>
+              <span style="color:#888">Gray</span> – Conventional materials (e.g., Concrete, Steel)<br>
+              <span style="color:#7fc97f">Green</span> – Biomaterials (e.g., Mycelium)<br>
+              <span style="color:#e41a1c">Red</span> – Pollution indicators (e.g., CO₂ Emissions)<br>
+              <span style="color:#377eb8">Blue</span> – Environmental/Health Impacts (e.g., Climate Change, Respiratory Health)<br>
+              <span style="color:#984ea3">Purple</span> – Urban Systems (e.g., Urban Buildings)<br>
+              <span style="color:#4daf4a">Bright Green</span> – Design Solutions (e.g., Sustainable Design)<br><br>
+              <strong>🔗 Key Relationships Visualized:</strong><br>
+              Concrete and Steel → produce → CO₂ Emissions<br>
+              CO₂ Emissions → contribute to → Climate Change and Respiratory Health<br>
+              Mycelium → supports → Sustainable Design<br>
+              Sustainable Design → guides development of → Urban Buildings<br>
+              Urban Buildings → are built with → Concrete, Steel, and Mycelium<br><br>
+              <strong>📌 Purpose & Context:</strong> This map is meant to contextualize the trade-offs and possibilities of urban construction. It contrasts traditional carbon-intensive materials with bio-based alternatives and shows how systems thinking can lead toward environmentally conscious building strategies.
             </div>
             <div class="exhibition-meta">
               <span class="meta-tag">D3.js</span>
@@ -56,13 +70,18 @@
       <h3>Related Projects</h3>
       <div class="related-grid">
         <div class="related-item">
-          <h4>NYC Air Quality Contours</h4>
-          <p>Contour mapping of air pollutant concentrations across New York City neighborhoods.</p>
+          <h4>NYC Environmental Relations Map</h4>
+          <p>Interactive map visualizing the relationships between tree coverage, air quality (NO₂), and indoor complaints across New York City neighborhoods. Reveals spatial patterns and correlations in urban environmental health.</p>
+          <a href="relation-map.html" class="related-link">View Demo</a>
+        </div>
+        <div class="related-item">
+          <h4>Air Quality Contours NYC</h4>
+          <p>Contour mapping of NO₂ and PM2.5 levels across the five boroughs.</p>
           <a href="nyc-air-contours.html" class="related-link">View Demo</a>
         </div>
         <div class="related-item">
-          <h4>Smart Citizen Temperature</h4>
-          <p>Time series visualization of temperature data from citizen sensors.</p>
+          <h4>Smart Citizen Materials</h4>
+          <p>Tracking sustainable materials and CO₂ footprint through citizen sensing.</p>
           <a href="d3-demos.html" class="related-link">View Demo</a>
         </div>
       </div>
