@@ -2,85 +2,91 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>NYC Air Quality D3 Contours - Columbia GSAPP</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/nyc-air-style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temporal Structure - Columbia GSAPP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main-style.css">
+  <!-- REQUIRED: Load D3.js library -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 
 <body>
-  <!-- Bauhaus-style header with navigation -->
-  <header>
-    <div class="left">Columbia GSAPP</div>
-    <div class="center">
-      Digital Archive<br>
-      <span>NYC Air Quality D3 Contours</span>
-    </div>
-    <div class="right">
-      <a href="../index.html">Home</a>
-      <a href="2d-demos.html">2D</a>
-      <a href="3d-demos.html">3D</a>
-      <a href="d3-demos.html">D3</a>
-    </div>
+  <!-- Minimalist header with refined navigation -->
+  <header class="main-header">
+    <nav class="nav-container">
+      <div class="nav-left">
+        <a href="../index.html" class="logo">Columbia GSAPP</a>
+      </div>
+      <div class="nav-center">
+        <span class="nav-subtitle">Computational Design Practices</span>
+      </div>
+      <div class="nav-right">
+        <a href="../index.html" class="nav-link">← Back to Portfolio</a>
+      </div>
+    </nav>
   </header>
 
-  <!-- Breadcrumb navigation -->
-  <div class="breadcrumb">
-    <a href="../index.html">Home</a> <span>→</span> NYC Air Quality D3 Contours
-  </div>
-
   <main>
-    <!-- Exhibition header -->
-    <section class="exhibition-header">
-      <div class="project-meta">2025</div>
-      <div class="project-title">NYC Air Quality D3 Contours</div>
-      <div class="project-subtitle">NO₂ Density Visualization</div>
-      <div class="advisor">Sara Lin<br><strong>Catherine Griffiths</strong></div>
-    </section>
-
-    <!-- Exhibition section -->
-    <section class="exhibition-section">
-      <div class="exhibition-item">
-        <div class="exhibition-info">
-          <div class="exhibition-number">01</div>
-          <div class="exhibition-details">
-            <h3>NYC NO₂ Air Quality Contours</h3>
-            <p class="exhibition-description">Interactive visualization of NYC air quality data showing NO₂ levels (ppb) using spatial density contours based on community district data.</p>
-            <div class="exhibition-meta">
-              <span class="meta-tag">D3.js</span>
-              <span class="meta-tag">Geospatial</span>
-              <span class="meta-tag">Data Visualization</span>
-            </div>
-          </div>
+    <!-- Hero section with elegant typography -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <div class="hero-meta">Digital Object 03</div>
+        <h1 class="hero-title">Temporal Structure</h1>
+        <div class="hero-author">
+          <span class="author-label">Student</span>
+          <span class="author-name">Sara Lin</span>
+          <span class="author-separator">•</span>
+          <span class="author-label">Instructor</span>
+          <span class="author-name">Catherine Griffiths</span>
         </div>
       </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="portfolio-section">
+
       
-      <!-- Full-width map container -->
-      <div class="map-container">
-        <div id="chart-container">
-          <h4 class="canvas-title">NYC Air Quality – NO₂ Density Contours</h4>
-          <p class="canvas-description">This map visualizes average NO₂ levels (ppb) using spatial density contours based on community district data.</p>
-          <div id="nyc-map"></div>
-        </div>
+      <div class="portfolio-grid">
+        <!-- NYC Air Quality Contours -->
+        <article class="portfolio-card" style="margin-top: 40px;">
+          <div class="card-header">
+            <span class="module-number">01</span>
+            <h3 class="card-title">NYC Air Quality Contours</h3>
+          </div>
+          <p class="card-description">This visualization is using the air quality export from NYC open data and the first map is visualizing the average air quality data</p>
+
+          <div class="map-container" id="air-quality-contours" style="margin-top: -10px;"></div>
+        </article>
+
+        <!-- NYC Air Quality Analysis Over Time -->
+        <article class="portfolio-card">
+          <div class="card-header">
+            <span class="module-number">02</span>
+            <h3 class="card-title">NYC Air Quality Analysis Over Time</h3>
+          </div>
+          <p class="card-description">This map showcases the air quality change over time</p>
+
+          <div class="map-container" id="air-quality-map"></div>
+        </article>
+
+        <!-- Environmental Relations Map -->
+        <article class="portfolio-card" style="margin-top: -80px">
+          <div class="card-header">
+            <span class="module-number">03</span>
+            <h3 class="card-title">Environmental Relations Map</h3>
+          </div>
+          <p class="card-description">This map overlays the New York City street tree data and the air quality data both exported from the NYC open data</p>
+
+          <div class="map-container" id="environmental-relations-map" style="margin-top: 20px;"></div>
+        </article>
       </div>
     </section>
   </main>
 
-  <!-- Bauhaus-style footer -->
-  <footer class="bauhaus-footer">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>Columbia GSAPP</h4>
-        <p>Computational Design Practices</p>
-      </div>
-      <div class="footer-section">
-        <h4>Advisor</h4>
-        <p>Catherine Griffiths</p>
-      </div>
-    </div>
-    <div class="bauhaus-divider"></div>
-  </footer>
 
-  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  <!-- Load JavaScript files -->
   <script src="../js/nyc-air-script.js"></script>
+  <script src="../modules/module4-environmental/script.js"></script>
 </body>
 </html> 

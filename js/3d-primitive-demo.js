@@ -1,48 +1,45 @@
 // 3d-primitive-demo.js
-// Click and drag the mouse to view the scene from different angles.
+// Orbit Control Demo - p5.js Instance Mode
 // Author: Sara Lin
 
-function setup() {
-  let c = createCanvas(300, 300, WEBGL);
-  c.parent('3d-primitive-canvas');
-  describe('A white cylinder with a figure inside on a gray background.');
-}
+var sketch3DPrimitive = function(p) {
+  p.setup = function() {
+    // Create canvas with the exact dimensions from the provided code
+    const canvas = p.createCanvas(710, 400, p.WEBGL);
+    canvas.parent('canvas-container-1');
+    
+    p.angleMode(p.DEGREES);
+    p.strokeWeight(5);
+    p.noFill();
+    p.stroke('#4ECDC4'); // Manhattan Teal from NYC Historic Districts color palette
+    
+    p.describe('Users can click on the screen and drag to adjust their perspective in 3D space. The space contains a sphere of Manhattan Teal cubes on a light gray background.');
+  };
 
-function draw() {
-  background(200);
-  // Enable orbiting with the mouse.
-  orbitControl();
-  
-  // Draw large gray bounding box that fills the canvas
-  push();
-  fill(180); // Light gray
-  noStroke();
-  translate(0, 0, -150); // Move back to create background
-  box(300, 300, 1); // Large flat box covering the canvas
-  pop();
-  
-  // Draw the main cylinder.
-  // Set its radius to 30 and height to 50.
-  // Set its detailX to 24 and detailY to 2.
-  push();
-  fill(255);
-  noStroke();
-  cylinder(30, 50, 24, 2);
-  pop();
-  
-  // Draw a smaller figure inside the cylinder
-  push();
-  translate(0, 0, 5); // Move slightly forward
-  fill('#F26B2B'); // Orange color matching 2D palette
-  noStroke();
-  sphere(8); // Small sphere inside
-  pop();
-  
-  // Add another small figure
-  push();
-  translate(0, 0, -5); // Move slightly back
-  fill('#B7DDA8'); // Green color matching 2D palette
-  noStroke();
-  box(6); // Small box inside
-  pop();
-} 
+  p.draw = function() {
+    p.background('#F8F8F8');
+
+    // Call every frame to adjust camera based on mouse/touch
+    p.orbitControl();
+
+    // Rotate rings in a half circle to create a sphere of cubes
+    for (let zAngle = 0; zAngle < 180; zAngle += 30) {
+      // Rotate cubes in a full circle to create a ring of cubes
+      for (let xAngle = 0; xAngle < 360; xAngle += 30) {
+        p.push();
+
+        // Rotate from center of sphere
+        p.rotateZ(zAngle);
+        p.rotateX(xAngle);
+
+        // Then translate down 400 units
+        p.translate(0, 400, 0);
+        p.box();
+        p.pop();
+      }
+    }
+  };
+};
+
+// Initialize the sketch
+new p5(sketch3DPrimitive); 

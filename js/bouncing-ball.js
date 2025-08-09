@@ -12,21 +12,33 @@ var sketch2 = function(p) {
 
   // --- Setup ---
   p.setup = function() {
-    // Create the canvas and attach it to the container
-    var canvas = p.createCanvas(800, 400);
+    // Get container dimensions
+    const container = document.getElementById('canvas-container-2');
+    const containerWidth = container.offsetWidth;
+    const containerHeight = container.offsetHeight;
+    
+    // Create canvas that fits the container
+    const canvas = p.createCanvas(containerWidth, containerHeight);
     canvas.parent('canvas-container-2');
+
+    // Scale factor based on container size
+    const scaleFactor = Math.min(containerWidth, containerHeight) / 400;
+
+    // Scale radii
+    radius1 = 30 * scaleFactor;
+    radius2 = 24 * scaleFactor;
 
     // Ball 1: orange, diagonal route
     x1 = p.width / 4;
     y1 = p.height / 3;
-    dx1 = 5;
-    dy1 = 3;
+    dx1 = 5 * scaleFactor;
+    dy1 = 3 * scaleFactor;
 
     // Ball 2: blue, different route
     x2 = (3 * p.width) / 4;
     y2 = (2 * p.height) / 3;
-    dx2 = -4;
-    dy2 = -2.5;
+    dx2 = -4 * scaleFactor;
+    dy2 = -2.5 * scaleFactor;
   };
 
   // --- Main Draw Loop ---

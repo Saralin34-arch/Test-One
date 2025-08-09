@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 6: CO2 Emissions Visualization - Columbia GSAPP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://d3js.org/topojson.v3.min.js"></script>
+</head>
+<body>
+  <!-- Elegant header with modern navigation -->
+  <header class="main-header">
+    <nav class="nav-container">
+      <div class="nav-left">
+        <a href="../../index.html" class="logo">Columbia GSAPP</a>
+      </div>
+      <div class="nav-center">
+        <span class="nav-subtitle">Computational Design Practices</span>
+      </div>
+      <div class="nav-right">
+        <a href="../../index.html" class="nav-link">← Back to Portfolio</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero section with elegant typography -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <div class="hero-meta">Module 6</div>
+        <h1 class="hero-title">CO2 Emissions Visualization</h1>
+        <p class="hero-subtitle">Environmental data analysis using D3.js and interactive bubble maps</p>
+        <div class="hero-author">
+          <span class="author-label">Student</span>
+          <span class="author-name">Sara Lin</span>
+          <span class="author-separator">•</span>
+          <span class="author-label">Instructor</span>
+          <span class="author-name">Catherine Griffiths</span>
+        </div>
+      </div>
+      
+      <div class="hero-description">
+        <p>This visualization shows CO2 emissions by state using data from the <a href="https://www.eia.gov/state/seds/data.php?incfile=/state/seds/sep_sum/html/sum_co2_tot.html&sid=US" target="_blank">U.S. Energy Information Administration</a>. The interactive bubble map demonstrates how to visualize complex environmental data using D3.js, combining geographic information with quantitative data analysis.</p>
+      </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="demo-section">
+      <div class="section-header">
+        <h2 class="section-title">CO2 Emissions by State (2023)</h2>
+        <p class="section-subtitle">Interactive visualization presenting CO2 emissions data across all U.S. states using a bubble map format</p>
+      </div>
+      
+      <div class="demo-card">
+        <div class="card-header">
+          <span class="demo-number">01</span>
+          <h3 class="card-title">Environmental Data Visualization</h3>
+        </div>
+        <p class="card-description">This interactive visualization presents CO2 emissions data across all U.S. states using a bubble map format. Each bubble represents a state, with size indicating total emissions and color intensity showing the percentage of emissions from petroleum sources. The visualization includes interactive features such as hover effects, tooltips with detailed information, and a legend explaining the data encoding.</p>
+        
+        <div class="canvas-container" id="bubble-map-container"></div>
+        
+        <div class="section-content">
+          <h3>Key Features</h3>
+          <ul>
+            <li><strong>Bubble Size</strong>: Represents total CO2 emissions in million metric tons</li>
+            <li><strong>Color Intensity</strong>: Shows percentage of emissions from petroleum sources</li>
+            <li><strong>Interactive Tooltips</strong>: Display detailed state information on hover</li>
+            <li><strong>Geographic Accuracy</strong>: States positioned according to their actual geographic coordinates</li>
+            <li><strong>Data Source</strong>: U.S. Energy Information Administration (EIA)</li>
+          </ul>
+          
+          <h3>Technical Implementation</h3>
+          <ul>
+            <li><strong>D3.js</strong>: Core visualization library for data binding and DOM manipulation</li>
+            <li><strong>TopoJSON</strong>: Geographic data format for efficient map rendering</li>
+            <li><strong>SVG Graphics</strong>: Scalable vector graphics for crisp visualization</li>
+            <li><strong>Responsive Design</strong>: Adapts to different screen sizes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html> 

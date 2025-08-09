@@ -2,118 +2,169 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Bauhaus Digital Archive - Columbia GSAPP</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Objects & Computational Design - Columbia GSAPP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main-style.css">
 </head>
 
 <body>
-  <!-- Bauhaus-style header with navigation -->
-  <header>
-    <div class="left">Columbia GSAPP</div>
-    <div class="center">
-      Computational Design Practices
-    </div>
-    <div class="right">
-      <a href="#programme">Project Series</a>
-    </div>
+  <!-- Minimalist header with refined navigation -->
+  <header class="main-header">
+    <nav class="nav-container">
+      <div class="nav-left">
+        <a href="#" class="logo">Columbia GSAPP</a>
+      </div>
+      <div class="nav-center">
+        <span class="nav-subtitle">Computational Design Practices</span>
+      </div>
+      <div class="nav-right">
+        <a href="#portfolio" class="nav-link">Digital Objects</a>
+      </div>
+    </nav>
   </header>
 
   <main>
-    <!-- Hero section like Bauhaus-Archiv -->
+    <!-- Hero section with elegant typography -->
     <section class="hero-section">
-      <div class="project-meta">2025</div>
-      <div class="project-title">Method As Practice</div>
-      <div class="project-subtitle">Class Assignment Series</div>
-      <div class="advisor">Instructor Catherine Griffiths<br><strong>Sara Lin</strong></div>
+      <div class="hero-content">
+        <div class="hero-meta">Spring 2025</div>
+        <h1 class="hero-title">Digital Objects & Computational Design</h1>
+        <div class="hero-author">
+          <span class="author-label">Student</span>
+          <span class="author-name">Sara Lin</span>
+          <span class="author-separator">•</span>
+          <span class="author-label">Instructor</span>
+          <span class="author-name">Catherine Griffiths</span>
+        </div>
+      </div>
       
-      <div class="bauhaus-divider"></div>
+
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+      <div class="section-header">
+        <h2 class="section-title">Digital Objects Collection</h2>
+      </div>
       
-      <div class="section-title">Abstract</div>
-      <p>The aim of the project is to learn from beginning how to create web-based art from scratch, exploring the intersection of Bauhaus principles and computational design practices.</p>
+      <div class="portfolio-grid">
+        <!-- 2D Spatial Canvas -->
+        <article class="portfolio-card">
+          <div class="card-header">
+            <span class="module-number">01</span>
+            <h3 class="card-title">2D Spatial Canvas</h3>
+          </div>
+          
+          <div class="card-description">
+            <ul>
+              <li>01. 2D Drawing Demo</li>
+              <li>02. Bouncing Ball Demo</li>
+              <li>03. Zoom & Pan Demo</li>
+              <li>04. Bubble Animation</li>
+            </ul>
+          </div>
+
+          <a href="demos/2d-demos.html" class="card-link">View <span class="arrow">→</span></a>
+        </article>
+
+        <!-- 3D Spatial Canvas -->
+        <article class="portfolio-card">
+          <div class="card-header">
+            <span class="module-number">02</span>
+            <h3 class="card-title">3D Spatial Canvas</h3>
+          </div>
+          
+          <div class="card-description">
+            <ul>
+              <li>01. Orbit Control</li>
+              <li>02. 3D Objects Demo</li>
+              <li>03. Multiple Canvases</li>
+            </ul>
+          </div>
+
+          <a href="demos/3d-demos.html" class="card-link">View <span class="arrow">→</span></a>
+        </article>
+
+        <!-- Temporal Structure -->
+        <article class="portfolio-card">
+          <div class="card-header">
+            <span class="module-number">03</span>
+            <h3 class="card-title">Temporal Structure</h3>
+          </div>
+          
+          <div class="card-description">
+            <ul>
+              <li>01. NYC Air Quality Contours</li>
+              <li>02. NYC Air Quality Analysis Over Time</li>
+              <li>03. Environmental Relations Map</li>
+            </ul>
+          </div>
+
+          <a href="demos/nyc-air-contours.html" class="card-link">View <span class="arrow">→</span></a>
+        </article>
+
+        <!-- Relational Structure -->
+        <article class="portfolio-card">
+          <div class="card-header">
+            <span class="module-number">04</span>
+            <h3 class="card-title">Relational Structure</h3>
+          </div>
+          
+          <div class="card-description">
+            <ul>
+              <li>01. Force-Directed Network Graph</li>
+            </ul>
+          </div>
+
+          <a href="demos/relation-map.html" class="card-link">View <span class="arrow">→</span></a>
+        </article>
+
+        <!-- Geospatial Structure -->
+        <article class="portfolio-card">
+          <div class="card-header">
+            <span class="module-number">05</span>
+            <h3 class="card-title">Geospatial Structure</h3>
+          </div>
+          
+          <div class="card-description">
+            <ul>
+              <li>01. CO₂ Emissions Bubble Map</li>
+              <li>02. My Active Region in Syracuse</li>
+              <li>03. New York Historic Districts Map</li>
+            </ul>
+          </div>
+
+          <a href="demos/co2-emissions.html" class="card-link">View <span class="arrow">→</span></a>
+        </article>
+
+        <!-- Engagement Component -->
+        <article class="portfolio-card">
+          <div class="card-header">
+            <span class="module-number">06</span>
+            <h3 class="card-title">Engagement Component</h3>
+          </div>
+          
+          <div class="card-description">
+            <ul>
+              <li>01. Button Components</li>
+              <li>02. Text Input Component</li>
+              <li>03. Slider Components</li>
+              <li>04. Selection Controls</li>
+              <li>05. Interactive Output Display</li>
+            </ul>
+          </div>
+
+          <a href="demos/engagement-component.html" class="card-link">View <span class="arrow">→</span></a>
+        </article>
+      </div>
     </section>
 
 
 
-    <!-- Programme section like Bauhaus-Archiv -->
-    <section id="programme" class="programme-section">
-      <div class="bauhaus-divider"></div>
-      <div class="section-title">Project Series</div>
-      <div class="programme-grid">
-        <div class="programme-item">
-          <div class="programme-date">Module 1</div>
-          <div class="programme-content">
-            <h3>2D Drawing & Animation</h3>
-            <p>Interactive canvas experiments with organic shapes, color theory, and motion design principles.</p>
-            <div class="programme-features">
-              <span class="feature-tag">Organic Grid</span>
-              <span class="feature-tag">Bouncing Ball</span>
-              <span class="feature-tag">Zoom & Pan</span>
-            </div>
-            <a href="demos/2d-demos.html" class="collection-link">View Demo →</a>
-          </div>
-        </div>
-        
-        <div class="programme-item">
-          <div class="programme-date">Module 2</div>
-          <div class="programme-content">
-            <h3>3D Spatial Design</h3>
-            <p>Three-dimensional explorations using Three.js, focusing on geometry, lighting, and spatial relationships.</p>
-            <div class="programme-features">
-              <span class="feature-tag">Orbit Controls</span>
-              <span class="feature-tag">Primitives</span>
-              <span class="feature-tag">Lighting</span>
-            </div>
-            <a href="demos/3d-demos.html" class="collection-link">View Demo →</a>
-          </div>
-        </div>
-        
-        <div class="programme-item">
-          <div class="programme-date">Module 3</div>
-          <div class="programme-content">
-            <h3>Data Visualization</h3>
-            <p>Geospatial data visualization using D3.js, exploring air quality data and density contours.</p>
-            <div class="programme-features">
-              <span class="feature-tag">D3.js</span>
-              <span class="feature-tag">Geospatial</span>
-              <span class="feature-tag">Contours</span>
-            </div>
-            <a href="demos/nyc-air-contours.html" class="collection-link">View Demo →</a>
-          </div>
-        </div>
-        
-        <div class="programme-item">
-          <div class="programme-date">Module 4</div>
-          <div class="programme-content">
-            <h3>Environmental Relations</h3>
-            <p>Interactive mapping of urban environmental relationships between trees, air quality, and complaints.</p>
-            <div class="programme-features">
-              <span class="feature-tag">D3.js</span>
-              <span class="feature-tag">Environmental</span>
-              <span class="feature-tag">Relations</span>
-            </div>
-            <a href="demos/relation-map.html" class="collection-link">View Demo →</a>
-          </div>
-        </div>
-      </div>
-    </section>
+
+  </main> Emissions Bubble Map
 
 
-  </main>
-
-  <!-- Bauhaus-style footer -->
-  <footer class="bauhaus-footer">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>Columbia GSAPP</h4>
-        <p>Computational Design Practices</p>
-      </div>
-      <div class="footer-section">
-        <h4>Advisor</h4>
-        <p>Catherine Griffiths</p>
-      </div>
-    </div>
-    <div class="bauhaus-divider"></div>
-  </footer>
 </body>
-</html>
+</html> 

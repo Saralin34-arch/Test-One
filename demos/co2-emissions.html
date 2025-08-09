@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geospatial Structure - Columbia GSAPP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main-style.css">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+  <!-- REQUIRED: Load D3.js library -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://d3js.org/topojson.v3.min.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+</head>
+
+<body>
+  <!-- Minimalist header with refined navigation -->
+  <header class="main-header">
+    <nav class="nav-container">
+      <div class="nav-left">
+        <a href="../index.html" class="logo">Columbia GSAPP</a>
+      </div>
+      <div class="nav-center">
+        <span class="nav-subtitle">Computational Design Practices</span>
+      </div>
+      <div class="nav-right">
+        <a href="../index.html" class="nav-link">← Back to Portfolio</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero section with elegant typography -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <div class="hero-meta">Digital Object 05</div>
+        <h1 class="hero-title">Geospatial Structure</h1>
+
+        <div class="hero-author">
+          <span class="author-label">Student</span>
+          <span class="author-name">Sara Lin</span>
+          <span class="author-separator">•</span>
+          <span class="author-label">Instructor</span>
+          <span class="author-name">Catherine Griffiths</span>
+        </div>
+      </div>
+      
+
+    </section>
+
+    <!-- Demo Section -->
+    <section class="portfolio-section">
+      <div class="section-header">
+      </div>
+      
+      <div class="portfolio-grid">
+        <!-- CO2 Bubble Map -->
+        <article class="portfolio-card">
+          <div class="card-header">
+            <span class="module-number">01</span>
+            <h3 class="card-title">CO₂ Emissions Bubble Map</h3>
+          </div>
+          <p class="card-description">This map visualizes the CO₂ emission data from <a href="https://www.eia.gov/environment/emissions/carbon/" target="_blank">U.S. Energy Information Administration</a></p>
+
+          <div class="map-container" id="co2-map"></div>
+        </article>
+
+
+
+        <!-- My Active Region in Syracuse -->
+        <article class="portfolio-card">
+          <div class="card-header">
+            <span class="module-number">02</span>
+            <h3 class="card-title">My Active Region in Syracuse</h3>
+          </div>
+          <p class="card-description">This section is visualizing my common to go places when I was in Syracuse and those data was pulled from google takeout</p>
+
+          <div class="map-container" id="mapbox-container-2"></div>
+          <div class="controls">
+            <button id="toggleLines" class="control-btn">Hide Lines</button>
+            <button id="toggleRegions" class="control-btn">Hide Regions</button>
+            <button id="resetView2" class="control-btn">Reset View</button>
+          </div>
+        </article>
+
+        <!-- Mapbox External Data -->
+        <article class="portfolio-card">
+          <div class="card-header">
+            <span class="module-number">03</span>
+            <h3 class="card-title">New York Historic Districts Map</h3>
+          </div>
+          <p class="card-description">This map uses the historic district data import from the NYC opendata</p>
+          <div class="map-container" id="mapbox-container-3"></div>
+          <div class="controls">
+            <input type="text" id="searchFeature" placeholder="Search neighborhoods..." class="search-input">
+            <button id="resetFilters" class="control-btn">Reset Search</button>
+            <button id="fitToData" class="control-btn">Fit to Data</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+
+
+  <!-- Load JavaScript files -->
+  <script src="../assets/scripts/co2-bubble-map.js"></script>
+  <script src="../modules/module5-geospatial/script.js"></script>
+</body>
+</html> 

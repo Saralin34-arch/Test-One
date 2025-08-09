@@ -1,57 +1,106 @@
 // 3d-spatial-canvas.js
-// Three.js Spatial Canvas Demo
+// Multiple Canvases Demo - p5.js Instance Mode
 // Author: Sara Lin
 
-let scene, camera, renderer;
-let cubes = []; // array to store multiple cube objects
+// NYC Historic Districts Colors
+const colors = {
+  manhattanTeal: '#4ECDC4',
+  brooklynRed: '#FF6B6B',
+  bronxBlue: '#45B7D1',
+  queensGreen: '#96CEB4',
+  statenIslandYellow: '#FFEAA7',
+  defaultGray: '#CCCCCC'
+};
 
-function init() {
-  scene = new THREE.Scene();
-  camera = new THREE.PerspectiveCamera(75, 300 / 300, 0.1, 1000);
-  renderer = new THREE.WebGLRenderer();
-  renderer.setSize(300, 300);
-  
-  // Attach to the correct container
-  let container = document.getElementById('3d-spatial-canvas');
-  container.appendChild(renderer.domElement);
-  
-  // Create cubes at different positions using 2D color palette
-  let positions = [
-    {x: -2, y: 0, z: 0, color: 0xF4C7B6}, // peach
-    {x: 0, y: 0, z: 0, color: 0xD6C5EB},  // lavender
-    {x: 2, y: 0, z: 0, color: 0xF26B2B},  // orange
-    {x: -1, y: 1, z: 0, color: 0xF7D850}, // yellow
-    {x: 1, y: 1, z: 0, color: 0xB7DDA8},  // green
-    {x: 0, y: -1, z: 0, color: 0x8FB4D9}  // blue
-  ];
-  
-  // Create cubes at each stored position
-  for (let i = 0; i < positions.length; i++) {
-    let geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
-    let material = new THREE.MeshBasicMaterial({color: positions[i].color});
-    let cube = new THREE.Mesh(geometry, material);
+// Function for first canvas
+function sketch1(p) {
+  p.setup = function () {
+    const canvas = p.createCanvas(350, 200);
+    canvas.parent('canvas-container-3');
+    canvas.style('display', 'inline-block');
+    canvas.style('margin-right', '10px');
+    p.background(0);
+  };
+  p.draw = function () {
+    p.background(0);
+    p.noStroke();
     
-    // Position cube using array values
-    cube.position.set(positions[i].x, positions[i].y, positions[i].z);
-    scene.add(cube);
-    cubes.push(cube); // add to our array
-  }
-  
-  camera.position.z = 5;
+    // Circle (Manhattan Teal)
+    p.fill(colors.manhattanTeal);
+    p.circle(p.mouseX, p.mouseY, 50);
+    
+    // Triangle (Brooklyn Red)
+    p.push();
+    p.translate(p.mouseX + 100, p.mouseY);
+    p.rotate(p.frameCount * 0.02);
+    p.fill(colors.brooklynRed);
+    p.triangle(0, -25, -25, 25, 25, 25);
+    p.pop();
+    
+    // Ellipse (Bronx Blue)
+    p.fill(colors.bronxBlue);
+    p.ellipse(p.mouseX - 100, p.mouseY, 60, 40);
+    
+    // Rectangle (Queens Green)
+    p.fill(colors.queensGreen);
+    p.rect(p.mouseX - 50, p.mouseY + 60, 40, 30);
+    
+    // Small circles (Staten Island Yellow)
+    p.fill(colors.statenIslandYellow);
+    p.circle(p.mouseX + 150, p.mouseY - 50, 20);
+    p.circle(p.mouseX - 150, p.mouseY + 50, 15);
+  };
 }
 
-function animate() {
-  requestAnimationFrame(animate);
-  
-  // Animate all cubes in the array
-  for (let i = 0; i < cubes.length; i++) {
-    cubes[i].rotation.x += 0.01;
-    cubes[i].rotation.y += 0.01;
-  }
-  
-  renderer.render(scene, camera);
+// Function for second canvas
+function sketch2(p) {
+  p.setup = function () {
+    const canvas = p.createCanvas(350, 200);
+    canvas.parent('canvas-container-3');
+    canvas.style('display', 'inline-block');
+    p.background(255);
+  };
+  p.draw = function () {
+    p.background(255);
+    p.strokeWeight(2);
+    
+    // Square (Manhattan Teal)
+    p.fill(colors.manhattanTeal);
+    p.stroke(255);
+    p.square(p.mouseX, p.mouseY, 50);
+    
+    // Rectangle (Brooklyn Red)
+    p.fill(colors.brooklynRed);
+    p.stroke(0);
+    p.rect(p.mouseX + 80, p.mouseY - 30, 60, 40);
+    
+    // Triangle (Bronx Blue)
+    p.push();
+    p.translate(p.mouseX - 80, p.mouseY);
+    p.rotate(p.frameCount * -0.03);
+    p.fill(colors.bronxBlue);
+    p.stroke(255);
+    p.triangle(0, -20, -20, 20, 20, 20);
+    p.pop();
+    
+    // Line (Queens Green)
+    p.stroke(colors.queensGreen);
+    p.strokeWeight(3);
+    p.line(p.mouseX - 120, p.mouseY - 50, p.mouseX - 120, p.mouseY + 50);
+    
+    // Ellipse (Staten Island Yellow)
+    p.fill(colors.statenIslandYellow);
+    p.stroke(0);
+    p.ellipse(p.mouseX + 150, p.mouseY + 60, 30, 20);
+    
+    // Small squares (Default Gray)
+    p.fill(colors.defaultGray);
+    p.stroke(0);
+    p.square(p.mouseX - 150, p.mouseY - 40, 15);
+    p.square(p.mouseX - 150, p.mouseY + 40, 15);
+  };
 }
 
-// Start the application
-init();
-animate(); 
+// Run both p5 instances
+new p5(sketch1);
+new p5(sketch2); 

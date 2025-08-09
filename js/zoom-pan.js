@@ -1,60 +1,57 @@
 // zoom-pan.js
-// Zoom Pan Sketch - p5.js Instance Mode
+// Zoom and Pan Interactive Canvas - p5.js Instance Mode
 // Author: Sara Lin
-// Description: Interactive version of the 2D drawing demo with zoom and pan.
 
 var sketchZoomPan = function(p) {
-  var canvasWidth = 700;
-  var canvasHeight = 700;
-  var gridSpacing = 40;
-  var zoom = 1;
-  var offsetX = 0;
-  var offsetY = 0;
-  var isDragging = false;
-  var lastMouseX, lastMouseY;
-  var canvas;
+  let zoom = 1;
+  let panX = 0;
+  let panY = 0;
+  let isDragging = false;
+  let lastMouseX, lastMouseY;
 
   p.setup = function() {
-    canvas = p.createCanvas(canvasWidth, canvasHeight);
+    // Get container dimensions
+    const container = document.getElementById('canvas-container-3');
+    const containerWidth = container.offsetWidth;
+    const containerHeight = container.offsetHeight;
+    
+    // Create canvas that fits the container
+    const canvas = p.createCanvas(containerWidth, containerHeight);
     canvas.parent('canvas-container-3');
+    
     p.angleMode(p.DEGREES);
+    p.background('#FFFFFF');
+    
+    // Scale factor based on container size
+    const scaleFactor = Math.min(containerWidth, containerHeight) / 700;
+    
+    // Draw the organic composition with scaling
+    drawOrganicComposition(scaleFactor);
   };
 
   p.draw = function() {
     p.background('#FFFFFF');
-    // Apply pan and zoom
-    p.translate(p.width / 2 + offsetX, p.height / 2 + offsetY);
+    
+    p.push();
+    p.translate(panX, panY);
     p.scale(zoom);
-    p.translate(-p.width / 2, -p.height / 2);
-    drawStraightGrid();
-    drawOrganicComposition();
-  };
-
-  p.mouseWheel = function(event) {
-    if (canvas && canvas.elt.matches(':hover')) {
-      var zoomFactor = 1.05;
-      if (event.delta > 0) {
-        zoom /= zoomFactor;
-      } else {
-        zoom *= zoomFactor;
-      }
-      zoom = p.constrain(zoom, 0.2, 5);
-      return false;
-    }
+    
+    // Redraw the composition
+    const scaleFactor = Math.min(p.width, p.height) / 700;
+    drawOrganicComposition(scaleFactor);
+    
+    p.pop();
+    
+    // Draw zoom indicator
+    p.fill(0);
+    p.noStroke();
+    p.textSize(16);
+    p.text(`Zoom: ${zoom.toFixed(2)}x`, 10, 30);
   };
 
   p.mousePressed = function() {
-    if (canvas && canvas.elt.matches(':hover') && p.mouseButton === p.LEFT && p.mouseX >= 0 && p.mouseX <= p.width && p.mouseY >= 0 && p.mouseY <= p.height) {
+    if (p.mouseX > 0 && p.mouseX < p.width && p.mouseY > 0 && p.mouseY < p.height) {
       isDragging = true;
-      lastMouseX = p.mouseX;
-      lastMouseY = p.mouseY;
-    }
-  };
-
-  p.mouseDragged = function() {
-    if (isDragging && canvas && canvas.elt.matches(':hover')) {
-      offsetX += p.mouseX - lastMouseX;
-      offsetY += p.mouseY - lastMouseY;
       lastMouseX = p.mouseX;
       lastMouseY = p.mouseY;
     }
@@ -64,59 +61,73 @@ var sketchZoomPan = function(p) {
     isDragging = false;
   };
 
-  // --- Helper Functions ---
-  function drawStraightGrid() {
-    p.stroke(200);
-    p.strokeWeight(1);
-    for (let x = 0; x <= p.width; x += gridSpacing) {
-      p.line(x, 0, x, p.height);
+  p.mouseDragged = function() {
+    if (isDragging) {
+      panX += p.mouseX - lastMouseX;
+      panY += p.mouseY - lastMouseY;
+      lastMouseX = p.mouseX;
+      lastMouseY = p.mouseY;
     }
-    for (let y = 0; y <= p.height; y += gridSpacing) {
-      p.line(0, y, p.width, y);
-    }
-  }
+  };
 
-  function drawOrganicComposition() {
+  p.mouseWheel = function(event) {
+    const zoomFactor = 0.1;
+    const newZoom = zoom + (event.delta > 0 ? zoomFactor : -zoomFactor);
+    zoom = p.constrain(newZoom, 0.1, 5);
+  };
+
+  function drawOrganicComposition(scaleFactor) {
     p.noStroke();
+    
     // Top left quarter-circle (peach)
     p.fill('#F4C7B6');
-    p.arc(120, 120, 220, 220, 180, 270, p.PIE);
+    p.arc(120 * scaleFactor, 120 * scaleFactor, 220 * scaleFactor, 220 * scaleFactor, 180, 270, p.PIE);
+    
     // Top right quarter-circle (lavender)
     p.fill('#D6C5EB');
-    p.arc(530, 100, 180, 180, 270, 0, p.PIE);
+    p.arc(530 * scaleFactor, 100 * scaleFactor, 180 * scaleFactor, 180 * scaleFactor, 270, 0, p.PIE);
+    
     // Large orange rounded drop
     p.fill('#F26B2B');
-    drawBlobbyDrop(300, 200, 170);
+    drawBlobbyDrop(300 * scaleFactor, 200 * scaleFactor, 170 * scaleFactor);
+    
     // Yellow pill
     p.fill('#F7D850');
-    drawBlobbyPill(100, 400, 220);
+    drawBlobbyPill(100 * scaleFactor, 400 * scaleFactor, 220 * scaleFactor);
+    
     // Green almond-shaped leaf
     p.fill('#B7DDA8');
-    drawBlobbyLeaf(330, 650, 180);
+    drawBlobbyLeaf(330 * scaleFactor, 650 * scaleFactor, 180 * scaleFactor);
+    
     // Clover
     p.fill('#F7AFAF');
-    drawClover(200, 600, 120);
+    drawClover(200 * scaleFactor, 600 * scaleFactor, 120 * scaleFactor);
+    
     // Arch
     p.fill('#FF6B1C');
-    drawArch(600, 600, 80, 100);
+    drawArch(600 * scaleFactor, 600 * scaleFactor, 80 * scaleFactor, 100 * scaleFactor);
+    
     // Cloud
     p.fill('#F9D6B7');
-    drawCloud(500, 400, 80, 50);
+    drawCloud(500 * scaleFactor, 400 * scaleFactor, 80 * scaleFactor, 50 * scaleFactor);
+    
     // Diamond
     p.fill('#FFE08A');
-    drawDiamond(600, 120, 60);
+    drawDiamond(600 * scaleFactor, 120 * scaleFactor, 60 * scaleFactor);
+    
     // Blue square with unique corner radii
     p.fill('#8FB4D9');
     p.noStroke();
-    p.square(320, 470, 120, 20, 15, 10, 5);
-    // 67 degree thick line (centered at middle top of canvas, thinner and longer)
+    p.square(320 * scaleFactor, 470 * scaleFactor, 120 * scaleFactor, 20 * scaleFactor, 15 * scaleFactor, 10 * scaleFactor, 5 * scaleFactor);
+    
+    // 67 degree thick line
     p.push();
     p.stroke('#8FB4D9');
-    p.strokeWeight(8);
+    p.strokeWeight(8 * scaleFactor);
     p.noFill();
-    p.translate(350, 60);
+    p.translate(350 * scaleFactor, 60 * scaleFactor);
     p.rotate(157);
-    p.line(-160, 0, 240, 0);
+    p.line(-160 * scaleFactor, 0, 240 * scaleFactor, 0);
     p.pop();
   }
 
@@ -127,12 +138,14 @@ var sketchZoomPan = function(p) {
     p.bezierVertex(x + size * 0.5, y + size * 0.5, x - size * 0.5, y + size * 0.5, x - size * 0.5, y);
     p.endShape(p.CLOSE);
   }
+  
   function drawBlobbyPill(x, y, size) {
     p.beginShape();
     p.arc(x, y, size, size, 90, 270);
     p.arc(x + size, y, size, size, 270, 90);
     p.endShape(p.CLOSE);
   }
+  
   function drawBlobbyLeaf(x, y, size) {
     p.beginShape();
     for (let a = 135; a <= 315; a += 5) {
@@ -147,6 +160,7 @@ var sketchZoomPan = function(p) {
     }
     p.endShape(p.CLOSE);
   }
+  
   function drawClover(x, y, r) {
     for (let i = 0; i < 4; i++) {
       let a = i * 90;
@@ -157,14 +171,17 @@ var sketchZoomPan = function(p) {
       p.ellipse(px, py, r, r);
     }
   }
+  
   function drawArch(x, y, w, h) {
     p.arc(x, y, w, h, 180, 0, p.OPEN);
     p.rect(x - w / 2, y, w, h / 2);
   }
+  
   function drawCloud(x, y, w, h) {
     p.ellipse(x - w * 0.3, y, w, h);
     p.ellipse(x + w * 0.3, y, w, h);
   }
+  
   function drawDiamond(x, y, s) {
     p.beginShape();
     p.vertex(x, y - s / 2);

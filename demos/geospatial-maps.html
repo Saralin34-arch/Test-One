@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Geospatial Maps - Columbia GSAPP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main-style.css">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <!-- Minimalist header with refined navigation -->
+  <header class="main-header">
+    <nav class="nav-container">
+      <div class="nav-left">
+        <a href="../index.html" class="logo">Columbia GSAPP</a>
+      </div>
+      <div class="nav-center">
+        <span class="nav-subtitle">Computational Design Practices</span>
+      </div>
+      <div class="nav-right">
+        <a href="../index.html" class="nav-link">← Back to Portfolio</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero section -->
+    <section class="hero-section">
+      <div class="project-meta">Module 5</div>
+      <div class="project-title">Geospatial Structures</div>
+      <div class="advisor">Instructor Catherine Griffiths<br><strong>Sara Lin</strong></div>
+    </section>
+
+
+
+    <!-- Mapbox Advanced Section -->
+    <section class="demo-section">
+      <div class="section-title">Mapbox Advanced: Line Features and Regions</div>
+      
+      <div id="mapbox-container-2" class="map-container"></div>
+      
+      <div class="controls">
+        <button id="toggleLines" class="control-btn">Hide Lines</button>
+        <button id="toggleRegions" class="control-btn">Hide Regions</button>
+        <button id="resetView2" class="control-btn">Reset View</button>
+      </div>
+    </section>
+
+    <!-- Mapbox External Data Section -->
+    <section class="demo-section">
+      <div class="section-title">Mapbox External Data: Loading GeoJSON from Files</div>
+      
+      <div id="mapbox-container-3" class="map-container"></div>
+      
+      <div class="controls">
+        <input type="text" id="searchFeature" placeholder="Search neighborhoods..." class="search-input">
+        <button id="resetFilters" class="control-btn">Reset Search</button>
+        <button id="fitToData" class="control-btn">Fit to Data</button>
+      </div>
+    </section>
+  </main>
+
+
+
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+  <script src="../assets/scripts/mapBox_Sketch_01.js"></script>
+  <script src="../assets/scripts/mapBox_Sketch_02.js"></script>
+  <script src="../assets/scripts/mapBox_Sketch_03.js"></script>
+</body>
+</html> 

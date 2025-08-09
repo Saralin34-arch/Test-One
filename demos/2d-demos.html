@@ -2,142 +2,108 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>2D Interactive Demos - Bauhaus Digital Archive</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/2d-style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2D Spatial Canvas - Columbia GSAPP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main-style.css">
   <!-- REQUIRED: Load p5.js library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
 </head>
 
 <body>
-  <!-- Bauhaus-style header with navigation -->
-  <header>
-    <div class="left">Columbia GSAPP</div>
-    <div class="center">
-      Digital Archive<br>
-      <span>2D Interactive Demos</span>
-    </div>
-    <div class="right">
-      <a href="../index.html">Home</a>
-      <a href="3d-demos.html">3D Demos</a>
-    </div>
+  <!-- Minimalist header with refined navigation -->
+  <header class="main-header">
+    <nav class="nav-container">
+      <div class="nav-left">
+        <a href="../index.html" class="logo">Columbia GSAPP</a>
+      </div>
+      <div class="nav-center">
+        <span class="nav-subtitle">Computational Design Practices</span>
+      </div>
+      <div class="nav-right">
+        <a href="../index.html" class="nav-link">← Back to Portfolio</a>
+      </div>
+    </nav>
   </header>
 
-  <!-- Breadcrumb navigation -->
-  <nav class="breadcrumb">
-    <a href="../index.html">Home</a> → 
-    <a href="#collection">Collection</a> → 
-    <span>2D Interactive Demos</span>
-  </nav>
-
   <main>
-    <!-- Exhibition header -->
-    <section class="exhibition-header">
-      <div class="project-meta">2025</div>
-      <div class="project-title">2D Interactive Demos</div>
-      <div class="project-subtitle">Sara Lin</div>
-      <div class="advisor">Advisor<br><strong>Catherine Griffiths</strong></div>
+    <!-- Hero section with elegant typography -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <div class="hero-meta">Digital Object 01</div>
+        <h1 class="hero-title">2D Spatial Canvas</h1>
+        <p class="hero-subtitle">Three p5.js experiments demonstrating fundamental programming concepts and spatial design principles</p>
+        <div class="hero-author">
+          <span class="author-label">Student</span>
+          <span class="author-name">Sara Lin</span>
+          <span class="author-separator">•</span>
+          <span class="author-label">Instructor</span>
+          <span class="author-name">Catherine Griffiths</span>
+        </div>
+      </div>
       
-      <div class="bauhaus-divider"></div>
-      
-      <div class="section-title">Exhibition Overview</div>
-      <p>This collection explores the intersection of Bauhaus principles and computational design through interactive 2D canvas experiments. Each demo demonstrates different aspects of geometric abstraction, color theory, and user interaction.</p>
+      <div class="hero-description">
+        <p>Three distinct 2D canvas experiments demonstrating fundamental programming concepts, mathematical functions, and spatial design principles using p5.js.</p>
+      </div>
     </section>
 
-    <!-- Exhibition items -->
-    <section class="exhibition-section">
-      <div class="section-title">Exhibition Items</div>
+    <!-- Demo Section -->
+    <section class="portfolio-section">
+      <div class="section-header">
+        <h2 class="section-title">Programming Experiments</h2>
+        <p class="section-subtitle">Three distinct 2D canvas experiments demonstrating fundamental programming concepts</p>
+      </div>
       
-      <!-- Exhibition item 1 -->
-      <article class="exhibition-item">
-        <div class="exhibition-info">
-          <div class="exhibition-number">01</div>
-          <div class="exhibition-details">
-            <h3>2D Drawing Demo</h3>
-            <p class="exhibition-description">Organic grid composition with colorful, soft shapes and geometric elements. Features peanut, clover, arch, cloud, diamond, and circle shapes arranged in a dynamic composition.</p>
-            <div class="exhibition-meta">
-              <span class="meta-tag">Interactive</span>
-              <span class="meta-tag">Geometric</span>
-              <span class="meta-tag">Color Theory</span>
-            </div>
+      <div class="portfolio-grid">
+        <!-- Demo 1 -->
+        <article class="portfolio-card">
+          <div class="card-header">
+            <span class="module-number">01</span>
+            <h3 class="card-title">2D Drawing Demo</h3>
           </div>
-        </div>
-        <div class="exhibition-canvas">
-          <div class="canvas-title" id="2d-drawing-title">2D Drawing Demo</div>
-          <div id="canvas-container-1"></div>
-        </div>
-      </article>
 
-      <div class="bauhaus-divider"></div>
-      
-      <!-- Exhibition item 2 -->
-      <article class="exhibition-item">
-        <div class="exhibition-info">
-          <div class="exhibition-number">02</div>
-          <div class="exhibition-details">
-            <h3>Bouncing Ball Demo</h3>
-            <p class="exhibition-description">Dynamic animation featuring two balls with different colors and trajectories. Demonstrates motion design principles and physics-based interactions.</p>
-            <div class="exhibition-meta">
-              <span class="meta-tag">Animation</span>
-              <span class="meta-tag">Motion</span>
-              <span class="meta-tag">Physics</span>
-            </div>
-          </div>
-        </div>
-        <div class="exhibition-canvas">
-          <div class="canvas-title" id="bouncing-ball-title">Bouncing Ball Demo</div>
-          <div id="canvas-container-2"></div>
-        </div>
-      </article>
+          <div class="canvas-container" id="canvas-container-1"></div>
+        </article>
 
-      <div class="bauhaus-divider"></div>
-      
-      <!-- Exhibition item 3 -->
-      <article class="exhibition-item">
-        <div class="exhibition-info">
-          <div class="exhibition-number">03</div>
-          <div class="exhibition-details">
-            <h3>Zoom & Pan Demo</h3>
-            <p class="exhibition-description">Interactive canvas with zoom and pan functionality. Allows users to explore detailed compositions through spatial navigation.</p>
-            <div class="exhibition-meta">
-              <span class="meta-tag">Navigation</span>
-              <span class="meta-tag">Zoom</span>
-              <span class="meta-tag">Pan</span>
-            </div>
+        <!-- Demo 2 -->
+        <article class="portfolio-card">
+          <div class="card-header">
+            <span class="module-number">02</span>
+            <h3 class="card-title">Bouncing Ball Demo</h3>
           </div>
-        </div>
-        <div class="exhibition-canvas">
-          <div class="canvas-title" id="zoom-pan-title">Zoom & Pan Demo</div>
-          <div id="canvas-container-3"></div>
-        </div>
-      </article>
+
+          <div class="canvas-container" id="canvas-container-2"></div>
+        </article>
+
+        <!-- Demo 3 -->
+        <article class="portfolio-card">
+          <div class="card-header">
+            <span class="module-number">03</span>
+            <h3 class="card-title">Zoom & Pan Demo</h3>
+          </div>
+
+          <div class="canvas-container" id="canvas-container-3"></div>
+        </article>
+
+        <!-- Demo 4 - Bubble Animation -->
+        <article class="portfolio-card">
+          <div class="card-header">
+            <span class="module-number">04</span>
+            <h3 class="card-title">Bubble Animation</h3>
+          </div>
+
+          <div class="canvas-container" id="canvas-container-4"></div>
+        </article>
+      </div>
     </section>
-
-
   </main>
 
-  <!-- Bauhaus-style footer -->
-  <footer class="bauhaus-footer">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>Columbia GSAPP</h4>
-        <p>Computational Design Practices</p>
-      </div>
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <p>sara.lin@columbia.edu</p>
-      </div>
-      <div class="footer-section">
-        <h4>Advisor</h4>
-        <p>Catherine Griffiths</p>
-      </div>
-    </div>
-    <div class="bauhaus-divider"></div>
-  </footer>
 
-  <script src="../js/script.js"></script>
+
+  <!-- Load JavaScript files -->
   <script src="../js/2d-drawing.js"></script>
   <script src="../js/bouncing-ball.js"></script>
   <script src="../js/zoom-pan.js"></script>
+  <script src="../js/bubble-animation.js"></script>
 </body>
 </html> 

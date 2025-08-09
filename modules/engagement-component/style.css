@@ -1,0 +1,541 @@
+/* Import Google Fonts - this loads the Roboto font family from Google's servers */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/* Style the entire body of the webpage */
+body {
+  font-family: 'Roboto', sans-serif;  /* Set the font to Roboto, with sans-serif as backup */
+  background-color: #ffffff;          /* Set background color to white */
+  color: #111;                        /* Set text color to dark gray (almost black) */
+  margin: 0;                          /* Remove default spacing around the body */
+  padding: 0;                         /* Remove default internal spacing */
+}
+
+/* Style the header section at the top of the page */
+header {
+  display: flex;                      /* Use flexbox layout for flexible positioning */
+  justify-content: space-between;     /* Spread items evenly across the header */
+  align-items: center;                /* Center items vertically */
+  padding: 24px 40px;                 /* Add 24px top/bottom, 40px left/right spacing inside */
+  border-bottom: 1px solid #ccc;      /* Add a light gray line at the bottom */
+  font-size: 14px;                    /* Set font size to 14 pixels */
+}
+
+/* Style the left section of the header */
+header .left {
+  color: #aaa;                        /* Set text color to light gray */
+}
+
+/* Style the center section of the header */
+header .center {
+  font-weight: 400;                   /* Set font weight to normal (not bold) */
+  text-align: center;                 /* Center the text horizontally */
+}
+
+/* Style the span element inside the center section */
+header .center span {
+  font-size: 12px;                    /* Make this text smaller (12 pixels) */
+  color: #888;                        /* Set text color to medium gray */
+}
+
+/* Style links in the right section of the header */
+header .right a {
+  color: #000;                        /* Set link color to black */
+  text-decoration: none;              /* Remove the underline from links */
+  font-weight: 400;                   /* Set font weight to normal */
+}
+
+/* Style the main content area */
+main {
+  max-width: 800px;                   /* Limit the maximum width to 800 pixels */
+  margin: 60px auto;                  /* Add 60px top/bottom margin, center horizontally */
+  padding: 0 20px;                    /* Add 20px left/right padding, no top/bottom */
+}
+
+/* Style the project year/date */
+.project-meta {
+  font-size: 14px;                    /* Set font size to 14 pixels */
+  color: #999;                        /* Set text color to light gray */
+  margin-bottom: 8px;                 /* Add 8 pixels of space below this element */
+}
+
+/* Style the main project title */
+.project-title {
+  font-size: 24px;                    /* Set font size to 24 pixels (larger) */
+  font-weight: 400;                   /* Set font weight to normal (not bold) */
+  margin-bottom: 4px;                 /* Add 4 pixels of space below this element */
+}
+
+/* Style the project subtitle */
+.project-subtitle {
+  font-size: 16px;                    /* Set font size to 16 pixels */
+  color: #999;                        /* Set text color to light gray */
+  margin-bottom: 24px;                /* Add 24 pixels of space below this element */
+}
+
+/* Style the advisor information */
+.advisor {
+  font-size: 14px;                    /* Set font size to 14 pixels */
+  margin-bottom: 40px;                /* Add 40 pixels of space below this element */
+  color: #333;                        /* Set text color to dark gray */
+}
+
+/* Style section titles (like "Abstract", "Motivation") */
+.section-title {
+  font-weight: 700;                   /* Make the text bold */
+  text-transform: uppercase;          /* Convert text to all capital letters */
+  margin-top: 40px;                   /* Add 40 pixels of space above this element */
+  margin-bottom: 12px;                /* Add 12 pixels of space below this element */
+  font-size: 14px;                    /* Set font size to 14 pixels */
+}
+
+/* Style all paragraph elements */
+p {
+  font-size: 16px;                    /* Set font size to 16 pixels */
+  line-height: 1.6;                   /* Set space between lines to 1.6 times the font size */
+  margin-bottom: 24px;                /* Add 24 pixels of space below each paragraph */
+  color: #111;                        /* Set text color to dark gray (almost black) */
+}
+
+/* Element Groups - containers for related elements */
+.element-group {
+  margin-bottom: 40px;                /* Space between element groups */
+  padding: 24px;                      /* Internal spacing */
+  display: flex;                       /* Flexbox layout */
+  flex-wrap: nowrap;                   /* No wrapping to new lines */
+  gap: 12px;                          /* Consistent gap between buttons */
+  align-items: center;                 /* Center align buttons */
+}
+
+/* Button Styles */
+button {
+  background-color: #87CEEB;          /* Sky blue background */
+  color: white;                       /* White text */
+  border: none;                       /* No border */
+  padding: 12px 24px;                 /* Internal spacing */
+  font-size: 14px;                    /* Font size */
+  font-weight: 400;                   /* Font weight */
+  cursor: pointer;                    /* Hand cursor on hover */
+  margin: 0;                          /* No margins - using flexbox gap */
+  transition: all 0.2s ease;          /* Smooth transitions */
+  border-radius: 25px 50px 50px 25px; /* Cloud-like shape with varied radius */
+  font-family: 'Roboto', sans-serif;  /* Consistent font */
+  white-space: nowrap;                /* Prevent text wrapping */
+  position: relative;                  /* For cloud shadow effect */
+  box-shadow: 0 4px 8px rgba(135, 206, 235, 0.3); /* Cloud-like shadow */
+}
+
+button:hover {
+  background-color: #5F9EA0;          /* Darker sky blue on hover */
+  transform: translateY(-2px);        /* Enhanced lift effect for cloud */
+  box-shadow: 0 6px 12px rgba(135, 206, 235, 0.4); /* Enhanced cloud shadow */
+}
+
+button:active {
+  transform: translateY(0);           /* Return to normal on click */
+}
+
+/* Button variants */
+.btn-secondary {
+  background-color: #95A5A6;          /* Medium gray */
+  text-align: center;                 /* Center text horizontally */
+  display: flex;                      /* Flexbox for perfect centering */
+  align-items: center;                /* Center text vertically */
+  justify-content: center;             /* Center text horizontally */
+  min-height: 44px;                   /* Consistent height for pill shape */
+}
+
+.btn-secondary:hover {
+  background-color: #7F8C8D;          /* Darker gray on hover */
+}
+
+.btn-outline {
+  background-color: transparent;      /* Transparent background */
+  color: #34495E;                     /* Dark blue-gray text */
+  border: 1px solid #34495E;          /* Dark blue-gray border */
+}
+
+.btn-outline:hover {
+  background-color: #34495E;          /* Dark blue-gray background on hover */
+  color: white;                       /* White text on hover */
+}
+
+.btn-disabled {
+  background-color: #BDC3C7;          /* Light gray */
+  color: #7F8C8D;                     /* Medium gray text */
+  cursor: not-allowed;                /* Not allowed cursor */
+  opacity: 0.6;                       /* Reduced opacity */
+}
+
+.btn-disabled:hover {
+  background-color: #BDC3C7;          /* No change on hover */
+  transform: none;                    /* No transform */
+}
+
+/* Input Group Styles */
+.input-group {
+  margin-bottom: 60px;                /* Much more space between input groups */
+  position: relative;                  /* For floating label effect */
+}
+
+.input-group label {
+  display: block;                     /* Block display */
+  margin-bottom: 8px;                 /* Space below label */
+  font-size: 12px;                    /* Smaller font size */
+  font-weight: 600;                   /* Bold font weight */
+  color: #2C3E50;                     /* Dark blue-gray text */
+  text-transform: uppercase;           /* Uppercase labels */
+  letter-spacing: 0.05em;             /* Letter spacing */
+  text-align: center;                 /* Center the label text */
+}
+
+/* Text Input Styles */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  width: 100%;                        /* Full width */
+  padding: 16px 20px;                 /* Increased internal spacing */
+  border: 2px solid #E5E7EB;          /* Thicker, lighter border */
+  border-radius: 50px;                /* Circular/pill shape */
+  font-size: 14px;                    /* Font size */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;  /* Consistent font */
+  background-color: #F9FAFB;          /* Light gray background */
+  color: #1F2937;                     /* Dark text */
+  transition: all 0.3s ease;          /* Smooth transitions */
+  box-sizing: border-box;             /* Include padding in width */
+  outline: none;                       /* Remove default outline */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border-color: #2C3E50;              /* Dark blue-gray border on focus */
+  background-color: white;             /* White background on focus */
+  box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1); /* Subtle focus ring */
+  transform: translateY(-1px);         /* Slight lift effect */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;                      /* Remove default outline */
+  border-color: #111;                 /* Dark border on focus */
+  box-shadow: 0 0 0 2px rgba(17, 17, 17, 0.1); /* Subtle focus ring */
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder,
+textarea::placeholder {
+  color: #9CA3AF;                     /* Medium gray placeholder text */
+  font-style: italic;                 /* Italic placeholder text */
+}
+
+/* Textarea specific styles */
+textarea {
+  min-height: 120px;                  /* Increased minimum height */
+  resize: vertical;                   /* Only vertical resize */
+  line-height: 1.6;                   /* Improved line spacing */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;  /* Consistent font */
+}
+
+/* Slider Styles */
+.slider-group {
+  margin-bottom: 40px;                /* Increased space between slider groups */
+  padding: 20px;                      /* Internal padding */
+  background: #F9FAFB;                /* Light background */
+  border-radius: 16px;                /* Rounded container */
+  border: 2px solid #E5E7EB;          /* Subtle border */
+  transition: all 0.3s ease;          /* Smooth transitions */
+}
+
+.slider-group:hover {
+  border-color: #87CEEB;              /* Sky blue border on hover */
+  box-shadow: 0 4px 12px rgba(135, 206, 235, 0.2); /* Cloud-like shadow */
+}
+
+.slider-group label {
+  display: block;                     /* Block display */
+  margin-bottom: 12px;                /* Space below label */
+  font-size: 12px;                    /* Smaller font size */
+  font-weight: 600;                   /* Bold font weight */
+  color: #2C3E50;                     /* Dark blue-gray text */
+  text-transform: uppercase;           /* Uppercase labels */
+  letter-spacing: 0.05em;             /* Letter spacing */
+  text-align: center;                 /* Center the label text */
+}
+
+input[type="range"] {
+  width: 100%;                        /* Full width */
+  height: 8px;                        /* Increased height of the slider track */
+  background: #E5E7EB;                /* Light gray track */
+  border-radius: 4px;                 /* Rounded track */
+  outline: none;                      /* Remove outline */
+  -webkit-appearance: none;           /* Remove default webkit appearance */
+  appearance: none;                   /* Remove default appearance */
+  margin-bottom: 12px;                /* Space below slider */
+  transition: all 0.3s ease;          /* Smooth transitions */
+}
+
+input[type="range"]:focus {
+  background: #87CEEB;                /* Sky blue track on focus */
+}
+
+/* Slider thumb (the draggable part) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;           /* Remove default appearance */
+  appearance: none;                   /* Remove default appearance */
+  width: 24px;                        /* Larger width of thumb */
+  height: 24px;                       /* Larger height of thumb */
+  background: #87CEEB;                /* Sky blue background */
+  border-radius: 50%;                 /* Circular thumb */
+  cursor: pointer;                    /* Hand cursor */
+  border: 3px solid white;            /* White border */
+  box-shadow: 0 4px 8px rgba(135, 206, 235, 0.4); /* Cloud-like shadow */
+  transition: all 0.3s ease;          /* Smooth transitions */
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: #5F9EA0;                /* Darker sky blue on hover */
+  transform: scale(1.1);              /* Slight scale effect */
+  box-shadow: 0 6px 12px rgba(135, 206, 235, 0.5); /* Enhanced shadow */
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 24px;                        /* Larger width of thumb */
+  height: 24px;                       /* Larger height of thumb */
+  background: #87CEEB;                /* Sky blue background */
+  border-radius: 50%;                 /* Circular thumb */
+  cursor: pointer;                    /* Hand cursor */
+  border: 3px solid white;            /* White border */
+  box-shadow: 0 4px 8px rgba(135, 206, 235, 0.4); /* Cloud-like shadow */
+  transition: all 0.3s ease;          /* Smooth transitions */
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  background: #5F9EA0;                /* Darker sky blue on hover */
+  transform: scale(1.1);              /* Slight scale effect */
+  box-shadow: 0 6px 12px rgba(135, 206, 235, 0.5); /* Enhanced shadow */
+}
+
+.slider-value {
+  display: inline-block;              /* Inline block display */
+  background-color: #87CEEB;          /* Sky blue background */
+  color: white;                       /* White text */
+  padding: 8px 16px;                  /* Increased internal spacing */
+  border-radius: 20px;                /* Pill-shaped value display */
+  font-size: 14px;                    /* Larger font size */
+  font-weight: 600;                   /* Bold font weight */
+  min-width: 50px;                    /* Increased minimum width */
+  text-align: center;                 /* Center text */
+  box-shadow: 0 2px 6px rgba(135, 206, 235, 0.3); /* Cloud-like shadow */
+  transition: all 0.3s ease;          /* Smooth transitions */
+}
+
+.slider-value:hover {
+  background-color: #5F9EA0;          /* Darker sky blue on hover */
+  transform: translateY(-1px);        /* Slight lift effect */
+  box-shadow: 0 4px 10px rgba(135, 206, 235, 0.4); /* Enhanced shadow */
+}
+
+/* Checkbox and Radio Styles */
+.checkbox-group,
+.radio-group {
+  margin-bottom: 30px;                /* Increased space between groups */
+  padding: 20px;                      /* Internal padding */
+  background: #F9FAFB;                /* Light background */
+  border-radius: 16px;                /* Rounded container */
+  border: 2px solid #E5E7EB;          /* Subtle border */
+  transition: all 0.3s ease;          /* Smooth transitions */
+}
+
+.checkbox-group:hover,
+.radio-group:hover {
+  border-color: #87CEEB;              /* Sky blue border on hover */
+  box-shadow: 0 4px 12px rgba(135, 206, 235, 0.2); /* Cloud-like shadow */
+}
+
+.checkbox-label,
+.radio-label {
+  display: flex;                      /* Flex display */
+  align-items: center;                /* Center items vertically */
+  margin-bottom: 16px;                /* Increased space below each label */
+  cursor: pointer;                    /* Hand cursor */
+  font-size: 14px;                    /* Font size */
+  color: #2C3E50;                     /* Dark blue-gray text */
+  font-weight: 500;                   /* Medium font weight */
+  transition: all 0.3s ease;          /* Smooth transitions */
+  padding: 8px 12px;                  /* Padding for better touch area */
+  border-radius: 8px;                 /* Rounded corners */
+}
+
+.checkbox-label:hover,
+.radio-label:hover {
+  background-color: rgba(135, 206, 235, 0.1); /* Light sky blue background on hover */
+  transform: translateX(4px);         /* Slight slide effect */
+}
+
+.checkbox-label input[type="checkbox"],
+.radio-label input[type="radio"] {
+  display: none;                      /* Hide default inputs */
+}
+
+/* Custom checkbox */
+.checkmark {
+  width: 22px;                        /* Larger width of checkbox */
+  height: 22px;                       /* Larger height of checkbox */
+  border: 2px solid #E5E7EB;          /* Light border */
+  border-radius: 6px;                 /* More rounded corners */
+  margin-right: 16px;                 /* Increased space to the right */
+  position: relative;                 /* For positioning the check mark */
+  background-color: white;            /* White background */
+  transition: all 0.3s ease;          /* Smooth transitions */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.checkbox-label:hover .checkmark {
+  border-color: #87CEEB;              /* Sky blue border on hover */
+  box-shadow: 0 4px 8px rgba(135, 206, 235, 0.3); /* Cloud-like shadow */
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark {
+  background-color: #87CEEB;          /* Sky blue background when checked */
+  border-color: #87CEEB;              /* Sky blue border when checked */
+  box-shadow: 0 4px 8px rgba(135, 206, 235, 0.4); /* Enhanced shadow */
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+  content: '✓';                       /* Check mark */
+  position: absolute;                 /* Absolute positioning */
+  top: 50%;                           /* Center vertically */
+  left: 50%;                          /* Center horizontally */
+  transform: translate(-50%, -50%);   /* Perfect centering */
+  color: white;                       /* White check mark */
+  font-size: 14px;                    /* Larger font size */
+  font-weight: bold;                  /* Bold font weight */
+}
+
+/* Custom radio button */
+.radio-mark {
+  width: 22px;                        /* Larger width of radio button */
+  height: 22px;                       /* Larger height of radio button */
+  border: 2px solid #E5E7EB;          /* Light border */
+  border-radius: 50%;                 /* Circular */
+  margin-right: 16px;                 /* Increased space to the right */
+  position: relative;                 /* For positioning the dot */
+  background-color: white;            /* White background */
+  transition: all 0.3s ease;          /* Smooth transitions */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.radio-label:hover .radio-mark {
+  border-color: #87CEEB;              /* Sky blue border on hover */
+  box-shadow: 0 4px 8px rgba(135, 206, 235, 0.3); /* Cloud-like shadow */
+}
+
+.radio-label input[type="radio"]:checked + .radio-mark {
+  border-color: #87CEEB;              /* Sky blue border when checked */
+  box-shadow: 0 4px 8px rgba(135, 206, 235, 0.4); /* Enhanced shadow */
+}
+
+.radio-label input[type="radio"]:checked + .radio-mark::after {
+  content: '';                        /* Empty content */
+  position: absolute;                 /* Absolute positioning */
+  top: 50%;                           /* Center vertically */
+  left: 50%;                          /* Center horizontally */
+  transform: translate(-50%, -50%);   /* Perfect centering */
+  width: 10px;                        /* Larger width of dot */
+  height: 10px;                       /* Larger height of dot */
+  background-color: #87CEEB;          /* Sky blue dot */
+  border-radius: 50%;                 /* Circular dot */
+}
+
+/* Select Dropdown Styles */
+.select-group {
+  margin-bottom: 20px;                /* Space below select group */
+}
+
+.select-group label {
+  display: block;                     /* Block display */
+  margin-bottom: 8px;                 /* Space below label */
+  font-size: 14px;                    /* Font size */
+  font-weight: 500;                   /* Medium font weight */
+  color: #333;                        /* Dark gray text */
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 40px;                /* Extra padding for arrow */
+}
+
+/* Output Display Styles */
+#output-display {
+  background-color: #F9FAFB;          /* Light background matching other components */
+  border: 2px solid #E5E7EB;          /* Subtle border */
+  border-radius: 16px;                /* Rounded corners matching other components */
+  padding: 24px;                      /* Increased internal spacing */
+  margin-top: 30px;                   /* More space above */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Consistent font */
+  font-size: 14px;                    /* Font size */
+  line-height: 1.8;                   /* Improved line spacing */
+  color: #2C3E50;                     /* Dark blue-gray text matching theme */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  transition: all 0.3s ease;          /* Smooth transitions */
+  position: relative;                  /* For potential effects */
+}
+
+#output-display:hover {
+  border-color: #87CEEB;              /* Sky blue border on hover */
+  box-shadow: 0 4px 12px rgba(135, 206, 235, 0.2); /* Cloud-like shadow */
+  transform: translateY(-2px);        /* Slight lift effect */
+}
+
+#output-display p {
+  margin-bottom: 12px;                /* Increased space between paragraphs */
+  padding: 8px 12px;                  /* Padding for each line */
+  border-radius: 8px;                 /* Rounded corners for each line */
+  background-color: rgba(135, 206, 235, 0.05); /* Very light sky blue background */
+  border-left: 3px solid #87CEEB;     /* Sky blue left border */
+  transition: all 0.3s ease;          /* Smooth transitions */
+}
+
+#output-display p:hover {
+  background-color: rgba(135, 206, 235, 0.1); /* Slightly darker background on hover */
+  transform: translateX(4px);         /* Slight slide effect */
+}
+
+#output-display p:last-child {
+  margin-bottom: 0;                   /* No margin on last paragraph */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  main {
+    padding: 0 16px;                  /* Less padding on mobile */
+    margin: 40px auto;                /* Less margin on mobile */
+  }
+  
+  header {
+    padding: 16px 20px;               /* Less padding on mobile */
+    flex-direction: column;           /* Stack header items vertically */
+    gap: 12px;                        /* Space between items */
+  }
+  
+  .element-group {
+    padding: 16px;                    /* Less padding on mobile */
+  }
+  
+  button {
+    width: 100%;                      /* Full width buttons on mobile */
+    margin-right: 0;                  /* No right margin */
+    margin-bottom: 8px;               /* Less bottom margin */
+  }
+}

@@ -3,110 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Relation Map - Digital Archive</title>
-  <link rel="stylesheet" href="../css/relation-map-style.css">
+  <title>Relational Structure - Columbia GSAPP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main-style.css">
+  <!-- REQUIRED: Load D3.js library -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
+
 <body>
-  <header>
-    <div class="left">Digital Archive</div>
-    <div class="center">Method As Practice</div>
-    <div class="right">
-      <a href="../index.html">Home</a>
-    </div>
+  <!-- Minimalist header with refined navigation -->
+  <header class="main-header">
+    <nav class="nav-container">
+      <div class="nav-left">
+        <a href="../index.html" class="logo">Columbia GSAPP</a>
+      </div>
+      <div class="nav-center">
+        <span class="nav-subtitle">Computational Design Practices</span>
+      </div>
+      <div class="nav-right">
+        <a href="../index.html" class="nav-link">← Back to Portfolio</a>
+      </div>
+    </nav>
   </header>
 
-  <div class="breadcrumb">
-    <a href="../index.html">Home</a> <span>></span> <a href="d3-demos.html">D3 Demos</a> <span>></span> Relation Map
-  </div>
-
   <main>
-    <div class="exhibition-header">
-      <div class="project-meta">Class Assignment Series</div>
-      <div class="project-title">Relation Map</div>
-      <div class="project-subtitle">Urban Building Systems, Materials, and Environmental Impact</div>
-      <div class="advisor">Interactive Data Visualization</div>
-    </div>
-
-    <div class="exhibition-section">
-      <div class="exhibition-item">
-        <div class="exhibition-info">
-          <div class="exhibition-number">04</div>
-          <div class="exhibition-details">
-            <h3>Environmental Material and Building Relations</h3>
-            <div class="exhibition-description">
-              <strong>Overview</strong><br>
-              This force-directed relation map visualizes the interconnected roles of materials, systems, and impacts within urban construction. It highlights how conventional building materials like concrete and steel contribute to CO₂ emissions, which in turn drive climate change and affect respiratory health. The map also introduces biomaterials such as mycelium and sustainable design strategies as alternative solutions, illustrating how systems thinking and material innovation can help mitigate environmental and health impacts in the built environment.
-              <br><br>
-              <strong>Node Categories</strong><br>
-              Each node belongs to a category, shown by color:
-              <ul style="margin: 0 0 0 1.5em; padding: 0; font-size: 1em;">
-                <li><span style="color:#888">Gray</span> – Conventional materials (e.g., Concrete, Steel)</li>
-                <li><span style="color:#7fc97f">Green</span> – Biomaterials (e.g., Mycelium)</li>
-                <li><span style="color:#e41a1c">Red</span> – Pollution indicators (e.g., CO₂ Emissions)</li>
-                <li><span style="color:#377eb8">Blue</span> – Environmental/Health Impacts (e.g., Climate Change, Respiratory Health)</li>
-                <li><span style="color:#984ea3">Purple</span> – Urban Systems (e.g., Urban Buildings)</li>
-                <li><span style="color:#4daf4a">Bright Green</span> – Design Solutions (e.g., Sustainable Design)</li>
-              </ul>
-              <br>
-              <strong>Key Relationships</strong><br>
-              <ul style="margin: 0 0 0 1.5em; padding: 0; font-size: 1em;">
-                <li>Concrete and Steel → produce → CO₂ Emissions</li>
-                <li>CO₂ Emissions → contribute to → Climate Change and Respiratory Health</li>
-                <li>Mycelium → supports → Sustainable Design</li>
-                <li>Sustainable Design → guides development of → Urban Buildings</li>
-                <li>Urban Buildings → are built with → Concrete, Steel, and Mycelium</li>
-              </ul>
-              <br>
-              <strong>Purpose & Context</strong><br>
-              This map is meant to contextualize the trade-offs and possibilities of urban construction. It contrasts traditional carbon-intensive materials with bio-based alternatives and shows how systems thinking can lead toward environmentally conscious building strategies.
-            </div>
-            <div class="exhibition-meta">
-              <span class="meta-tag">D3.js</span>
-              <span class="meta-tag">Geospatial</span>
-              <span class="meta-tag">Environmental Data</span>
-            </div>
-          </div>
-        </div>
-        <div class="exhibition-canvas">
-          <div id="relation-map-container">
-            <svg id="relation-map" width="960" height="800"></svg>
-          </div>
+    <!-- Hero section with elegant typography -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <div class="hero-meta">Digital Object 04</div>
+        <h1 class="hero-title">Relational Structure</h1>
+        <div class="hero-author">
+          <span class="author-label">Student</span>
+          <span class="author-name">Sara Lin</span>
+          <span class="author-separator">•</span>
+          <span class="author-label">Instructor</span>
+          <span class="author-name">Catherine Griffiths</span>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="related-section">
-      <h3>Related Projects</h3>
-      <div class="related-grid">
-        <div class="related-item">
-          <h4>NYC Environmental Relations Map</h4>
-          <p><strong>NYC Environmental Relations Map:</strong> This interactive map explores the spatial relationships between tree coverage, air quality (NO₂ levels), and indoor air quality complaints across New York City neighborhoods. By layering multiple environmental datasets, the map reveals patterns and potential correlations in urban environmental health, helping users understand how natural and built factors interact to shape the city’s ecological and public health landscape.</p>
-          <a href="relation-map.html" class="related-link">View Demo</a>
-        </div>
-        <div class="related-item">
-          <h4>Air Quality Contours NYC</h4>
-          <p>Contour mapping of NO₂ and PM2.5 levels across the five boroughs.</p>
-          <a href="nyc-air-contours.html" class="related-link">View Demo</a>
-        </div>
-        <div class="related-item">
-          <h4>Smart Citizen Materials</h4>
-          <p>Tracking sustainable materials and CO₂ footprint through citizen sensing.</p>
-          <a href="d3-demos.html" class="related-link">View Demo</a>
-        </div>
+    <!-- Demo Section -->
+    <section class="portfolio-section">
+      <div class="section-header">
       </div>
-    </div>
+      
+      <div class="portfolio-grid">
+        <!-- Main Demo -->
+        <article class="portfolio-card">
+          <div class="card-header">
+            <span class="module-number">01</span>
+            <h3 class="card-title">Force-Directed Network Graph</h3>
+          </div>
+
+          <div class="map-container" id="relation-map"></div>
+        </article>
+      </div>
+    </section>
   </main>
 
-  <footer class="bauhaus-footer">
+  <!-- Footer -->
+  <footer class="main-footer">
     <div class="footer-content">
       <div class="footer-section">
-        <h4>Digital Archive</h4>
-        <p>Method As Practice<br>Class Assignment Series</p>
+        <h4>Columbia GSAPP</h4>
+        <p>Graduate School of Architecture, Planning and Preservation</p>
+        <p>Computational Design Practices</p>
+        <p>Spring 2025</p>
       </div>
+      
+      <div class="footer-section">
+        <h4>Student</h4>
+        <p>Sara Lin</p>
+        <p>Computational Design Portfolio</p>
+        <p>Digital Objects Collection</p>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Instructor</h4>
+        <p>Catherine Griffiths</p>
+        <p>Computational Design Practices</p>
+        <p>Columbia University</p>
+      </div>
+    </div>
+    
+    <div class="footer-divider"></div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 Columbia GSAPP. All rights reserved.</p>
     </div>
   </footer>
 
+  <!-- Load JavaScript files -->
   <script src="../js/relation-map-script.js"></script>
 </body>
 </html> 

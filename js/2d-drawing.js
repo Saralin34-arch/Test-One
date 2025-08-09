@@ -4,78 +4,84 @@
 
 var sketch1 = function(p) {
   p.setup = function() {
-    p.createCanvas(700, 700);
+    // Get container dimensions
+    const container = document.getElementById('canvas-container-1');
+    const containerWidth = container.offsetWidth;
+    const containerHeight = container.offsetHeight;
+    
+    // Create canvas that fits the container
+    const canvas = p.createCanvas(containerWidth, containerHeight);
+    canvas.parent('canvas-container-1');
+    
     p.noLoop();
     p.angleMode(p.DEGREES);
     p.background('#FFFFFF'); // pure white background
 
+    // Scale factor based on container size
+    const scaleFactor = Math.min(containerWidth, containerHeight) / 700;
+
     // Draw non-tilted grid
-    drawStraightGrid();
+    drawStraightGrid(scaleFactor);
 
     p.noStroke();
 
     // Top left quarter-circle (peach)
     p.fill('#F4C7B6');
-    p.arc(120, 120, 220, 220, 180, 270, p.PIE);
+    p.arc(120 * scaleFactor, 120 * scaleFactor, 220 * scaleFactor, 220 * scaleFactor, 180, 270, p.PIE);
 
     // Top right quarter-circle (lavender)
     p.fill('#D6C5EB');
-    p.arc(530, 100, 180, 180, 270, 0, p.PIE);
+    p.arc(530 * scaleFactor, 100 * scaleFactor, 180 * scaleFactor, 180 * scaleFactor, 270, 0, p.PIE);
 
     // Large orange rounded drop
     p.fill('#F26B2B');
-    drawBlobbyDrop(300, 200, 170);
+    drawBlobbyDrop(300 * scaleFactor, 200 * scaleFactor, 170 * scaleFactor);
 
     // Yellow pill
     p.fill('#F7D850');
-    drawBlobbyPill(100, 400, 220);
+    drawBlobbyPill(100 * scaleFactor, 400 * scaleFactor, 220 * scaleFactor);
 
     // Green almond-shaped leaf
     p.fill('#B7DDA8');
-    drawBlobbyLeaf(330, 650, 180);
+    drawBlobbyLeaf(330 * scaleFactor, 650 * scaleFactor, 180 * scaleFactor);
 
-    // --- ICON GEOMETRIES ---
-    // Peanut (Friendly) - filled, much wider
-    // p.fill('#FFB84C');
-    // drawPeanut(540, 220, 180, 100); // 3x wider
-    // Peanut (Friendly) - outline only, much wider
-    // p.noFill();
-    // p.stroke('#FFB84C');
-    // p.strokeWeight(4);
-    // drawPeanut(540, 320, 180, 100); // 3x wider, outline
-    // p.noStroke();
+    // Clover
     p.fill('#F7AFAF');
-    drawClover(200, 600, 120);
+    drawClover(200 * scaleFactor, 600 * scaleFactor, 120 * scaleFactor);
+    
+    // Arch
     p.fill('#FF6B1C');
-    drawArch(600, 600, 80, 100);
+    drawArch(600 * scaleFactor, 600 * scaleFactor, 80 * scaleFactor, 100 * scaleFactor);
+    
+    // Cloud
     p.fill('#F9D6B7');
-    drawCloud(500, 400, 80, 50);
+    drawCloud(500 * scaleFactor, 400 * scaleFactor, 80 * scaleFactor, 50 * scaleFactor);
+    
+    // Diamond
     p.fill('#FFE08A');
-    drawDiamond(600, 120, 60);
-    // Blue square with unique corner radii (substitute for half ellipse)
+    drawDiamond(600 * scaleFactor, 120 * scaleFactor, 60 * scaleFactor);
+    
+    // Blue square with unique corner radii
     p.fill('#8FB4D9');
     p.noStroke();
-    p.square(320, 470, 120, 20, 15, 10, 5);
-    // Circle (Bouncing Ball)
-    // p.fill('#C75B12');
-    // p.ellipse(350, 350, 60, 60);
+    p.square(320 * scaleFactor, 470 * scaleFactor, 120 * scaleFactor, 20 * scaleFactor, 15 * scaleFactor, 10 * scaleFactor, 5 * scaleFactor);
 
-    // --- 67 degree thick line (centered at middle top of canvas, thinner and longer) ---
+    // 67 degree thick line
     p.push();
     p.stroke('#8FB4D9');
-    p.strokeWeight(8);
+    p.strokeWeight(8 * scaleFactor);
     p.noFill();
-    p.translate(350, 60); // center at middle top
-    p.rotate(157); // 67 + 90 degrees
-    p.line(-160, 0, 240, 0);
+    p.translate(350 * scaleFactor, 60 * scaleFactor);
+    p.rotate(157);
+    p.line(-160 * scaleFactor, 0, 240 * scaleFactor, 0);
     p.pop();
   };
 
   // 🟥 Non-tilted grid (horizontal + vertical lines)
-  function drawStraightGrid() {
+  function drawStraightGrid(scaleFactor) {
     p.stroke(200);
-    p.strokeWeight(1);
-    let gridSize = 40;
+    p.strokeWeight(1 * scaleFactor);
+    let gridSize = 40 * scaleFactor;
     for (let x = 0; x <= p.width; x += gridSize) {
       p.line(x, 0, x, p.height);
     }
